@@ -29,9 +29,6 @@ const Layout = ({ children }) => {
           display: flex;
           ${bpMaxSM} {
             flex-direction: column;
-          },
-          a {
-            color: #5BC5CF;
           }
         `}>
         <div
