@@ -4,23 +4,17 @@ import styled from '@emotion/styled'
 import Link from '../components/link'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
-
+import Image from '../components/image'
 import SEO from '../components/seo'
+import Layout from '../components/layout'
 
-export default function Index({ data: { images, site } }) {
+export default function Index({ data: { site, placeholderImage } }) {
   return (
     <>
-      <SEO title={site.siteMetadata.title} />
-      <div
-        css={css({
-          minWidth: '100vw',
-          minHeight: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        })}>
+      <Layout>
+        <Img fluid={placeholderImage.childImageSharp.fluid} />
         <h1>Hello!</h1>
-      </div>
+      </Layout>
     </>
   )
 }
@@ -30,6 +24,14 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    placeholderImage: file(relativePath: { eq: "social-card.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+          src
+        }
       }
     }
   }
