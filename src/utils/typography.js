@@ -1,14 +1,20 @@
 import Typography from 'typography'
-import bootstrapTheme from 'typography-theme-bootstrap'
 
-bootstrapTheme.baseFontSize = '20px'
-bootstrapTheme.overrideThemeStyles = ({ rhythm }, options) => ({
-  p: {
-    fontWeight: 'medium',
-  },
-})
+const typography = new Typography ({
+  baseFontSize: '18px',
+  baseLineHeight: 1.8,
+  headerFontFamily: [
+    "Avenir Next",
+    "Helvetica Neue",
+    "sans-serif"
+  ],
+  bodyFontFamily: ["Roboto", "sans-serif"]
+}
+)
 
-const typography = new Typography(bootstrapTheme)
+
+
 export default typography
 export const rhythm = typography.rhythm
 export const scale = typography.scale
+

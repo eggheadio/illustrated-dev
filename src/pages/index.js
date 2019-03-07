@@ -12,21 +12,25 @@ export default function Index({ data: { site, projects, placeholderImage } }) {
   return (
     <>
       <Layout>
-        <h1>Hello!</h1>
-        <div
-          css={css({
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr 1fr',
-            gridGap: '20px',
-          })}>
-          {projects.edges.map(({ node: data }) => (
-            <div>
-              <Link to={data.fields.slug}>
-                <h1>{data.frontmatter.title}</h1>
-                <Img fluid={data.frontmatter.banner.childImageSharp.fluid} />
-              </Link>
-            </div>
-          ))}
+        <div css={css({
+            margin: '3em',
+        })}>
+          <h1>Hello!</h1>
+          <div
+            css={css({
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr 1fr',
+              gridGap: '30px',
+            })}>
+            {projects.edges.map(({ node: data }) => (
+              <div>
+                <Link to={data.fields.slug}>
+                  <h1>{data.frontmatter.title}</h1>
+                  <Img fluid={data.frontmatter.banner.childImageSharp.fluid} />
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </Layout>
     </>
