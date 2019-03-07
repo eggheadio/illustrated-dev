@@ -8,12 +8,26 @@ import Image from '../components/image'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 
-export default function Index({ data: { site, placeholderImage } }) {
+export default function Index({ data: { site, projects, placeholderImage } }) {
   return (
     <>
       <Layout>
-        <Img fluid={placeholderImage.childImageSharp.fluid} />
         <h1>Hello!</h1>
+        <div
+          css={css({
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr',
+            gridGap: '20px',
+          })}>
+          {projects.edges.map(({ node: data }) => (
+            <div>
+              <Link to={data.fields.slug}>
+                <h1>{data.frontmatter.title}</h1>
+                <Img fluid={data.frontmatter.banner.childImageSharp.fluid} />
+              </Link>
+            </div>
+          ))}
+        </div>
       </Layout>
     </>
   )
@@ -26,6 +40,33 @@ export const pageQuery = graphql`
         title
       }
     }
+
+    projects: allMdx(
+      sort: { order: ASC, fields: fields___slug }
+      filter: { fields: { collection: { eq: "projects" } } }
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            categories
+            banner {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
     placeholderImage: file(relativePath: { eq: "social-card.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
