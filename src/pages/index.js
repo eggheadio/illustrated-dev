@@ -15,7 +15,7 @@ export default function Index({ data: { site, projects, placeholderImage } }) {
         <div css={css({
             margin: '3em',
         })}>
-          <h1>Hello!</h1>
+          <h1>Illustrated.dev</h1>
           <div
             css={css({
               display: 'grid',
@@ -25,7 +25,7 @@ export default function Index({ data: { site, projects, placeholderImage } }) {
             {projects.edges.map(({ node: data }) => (
               <div>
                 <Link to={data.fields.slug}>
-                  <h1>{data.frontmatter.title}</h1>
+                  <h2>{data.frontmatter.title}</h2>
                   <Img fluid={data.frontmatter.banner.childImageSharp.fluid} />
                 </Link>
               </div>

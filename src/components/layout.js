@@ -29,15 +29,18 @@ const Layout = ({ children }) => {
           display: flex;
           ${bpMaxSM} {
             flex-direction: column;
+          },
+          a {
+            color: #5BC5CF;
           }
         `}>
         <div
           css={{
-            margin: '2rem auto',
+            margin: '3rem auto',
             [bpMaxSM]: {
               margin: '0 auto',
             },
-            maxWidth: '960px',
+            maxWidth: '1060px',
             width: '100%',
             padding: '0 1.0875rem 0 1.0875rem',
             paddingTop: 0,

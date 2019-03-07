@@ -3,12 +3,9 @@ import Typography from 'typography'
 const typography = new Typography ({
   baseFontSize: '18px',
   baseLineHeight: 1.8,
-  headerFontFamily: [
-    "Avenir Next",
-    "Helvetica Neue",
-    "sans-serif"
-  ],
-  bodyFontFamily: ["Roboto", "sans-serif"]
+  headerWeight: 500,
+  headerFontFamily: ['Avenir Next', 'sans-serif'],
+  headerColor: '#474751'
 }
 )
 

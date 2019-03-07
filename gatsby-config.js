@@ -93,8 +93,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Illustrated.tech',
-        short_name: 'Illustrated.tech',
+        name: 'Illustrated.dev',
+        short_name: 'Illustrated.dev',
         background_color: '#3852E4',
         theme_color: '#3852E4',
         display: 'minimal-ui',
