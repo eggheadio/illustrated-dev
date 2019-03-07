@@ -1,6 +1,6 @@
 const minSM = 545
 const minMD = 768
-const minLG = 992
+const minLG = 900
 const minXL = 1200
 const minXXL = 1920
 
