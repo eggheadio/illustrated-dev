@@ -39,8 +39,8 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            fluid(maxWidth: 500) {
-              ...GatsbyImageSharpFluid
+            fluid(maxWidth: 900) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }

@@ -52,6 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   frontmatter {
                     title
+                    slug
                   }
                 }
               }
@@ -76,6 +77,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   frontmatter {
                     title
+                    slug
                   }
                 }
               }

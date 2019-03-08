@@ -33,7 +33,7 @@ export default function Index({ data: { site, wtf } }) {
           <Masonry className={'masonry-item'}>
             {wtf.edges.map(({ node: data }) => (
               <div className="grid-item" key={data.id}>
-                <Link to={data.fields.slug}>
+                <Link to={`/${data.fields.slug}`}>
                   <h2>{data.frontmatter.title}</h2>
                   <Img fluid={data.frontmatter.image.childImageSharp.fluid} />
                 </Link>
@@ -64,12 +64,13 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
+            slug
             title
             categories
             image {
               childImageSharp {
                 fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }

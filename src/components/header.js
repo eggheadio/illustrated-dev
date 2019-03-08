@@ -6,9 +6,13 @@ const Header = () => (
   <header
     css={css({
       padding: '30px',
+      h1: {
+        fontSize: '28px',
+        fontWeight: '800',
+      },
     })}>
     <Link to="/">
-      <h1>Illustrated.tech</h1>
+      <h1>Illustrated.dev</h1>
     </Link>
   </header>
 )
