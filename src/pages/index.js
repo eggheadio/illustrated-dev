@@ -15,10 +15,6 @@ export default function Index({ data: { site, wtf } }) {
         <SEO title={site.siteMetadata.title} />
         <div
           css={css({
-            // display: 'grid',
-            // gridTemplateColumns: '1fr 1fr 1fr',
-            // gridGap: '30px',
-
             h1: {
               fontFamily: 'Brandon Grotesque, sans-serif',
               fontWeight: 500,
@@ -55,7 +51,7 @@ export default function Index({ data: { site, wtf } }) {
           <Masonry className={'masonry-item'}>
             {wtf.edges.map(({ node: data }) => (
               <div className="grid-item" key={data.id}>
-                <Link to={`/${data.fields.slug}`}>
+                <Link to={`/${data.frontmatter.slug}`}>
                   <h1>{data.frontmatter.title}</h1>
                   <hr />
                   <Img fluid={data.frontmatter.image.childImageSharp.fluid} />

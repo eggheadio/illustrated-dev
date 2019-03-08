@@ -21,7 +21,7 @@ class WhatTheForkTemplate extends React.Component {
           {wtf.frontmatter.title}
         </h1>
         {next && (
-          <Link to={`/${next.fields.slug}`} rel="next">
+          <Link to={`/${next.frontmatter.slug}`} rel="next">
             <div
               css={css({
                 padding: '30px',

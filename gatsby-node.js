@@ -110,7 +110,7 @@ exports.createPages = ({ graphql, actions }) => {
           const next = index === wtf.length - 1 ? null : wtf[index + 1].node
           const previous = index === 0 ? null : wtf[index - 1].node
           createPage({
-            path: node.fields.slug,
+            path: node.frontmatter.slug,
             component: path.resolve(`./src/templates/wtf.js`),
             context: { id: node.id, previous, next },
           })
