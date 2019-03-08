@@ -1,5 +1,6 @@
 p {
   font-size: 22px;
+  font-family: 'ff-tisa-web-pro', Georgia, 'Times New Roman', Times, serif;
 }
 
 html {
@@ -14,12 +15,18 @@ body {
 }
 h1,
 h2,
+h4, {
+  font-family: 'ff-tisa-web-pro', Georgia, 'Times New Roman', Times, serif;
+  font-weight: 100;
+  text-rendering: optimizeLegibility;
+}
+
 h3,
-h4,
 h5,
-h6 {
-  font-family: ff-tisa-web-pro, Georgia, 'Times New Roman', Times, serif;
-  font-weight: 300;
+h6,
+footer {
+  font-family: 'brandon-grotesque', -apple-system, sans-serif;
+  font-weight: 100;
   text-rendering: optimizeLegibility;
 }
 
@@ -76,7 +83,7 @@ dfn {
   font-style: italic;
 }
 h1 {
-  font-size: 2em;
+  font-size: 3em;
   margin: 0.67em 0;
 }
 mark {
@@ -215,7 +222,6 @@ html {
 }
 body {
   color: #474751;
-  font-family: 'Brandon Grotesque', sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;

@@ -6,11 +6,16 @@ const Header = () => (
   <header
     css={css({
       paddingTop: '40px',
+      paddingLeft: '40px',
+      a: { color: 'rgb(70, 60, 70)' },
       h1: {
-        fontSize: '28px',
+        fontFamily: 'brandon-grotesque',
+        fontSize: '20px',
         fontWeight: '800',
+        textTransform: 'uppercase',
+
       },
-      textAlign: 'center',
+      textAlign: 'left',
     })}>
     <h1>
       <Link to="/">Illustrated.dev</Link>
