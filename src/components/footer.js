@@ -1,5 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import SignUp from './subscribe'
 
 const Footer = () => (
   <footer
@@ -7,7 +8,12 @@ const Footer = () => (
       padding: '80px 0',
       textAlign: 'center',
     })}>
-    © Maggie Appleton
+    <SignUp
+      css={css({
+        marginBottom: '30px',
+      })}
+    />
+    <p>© Maggie Appleton</p>
   </footer>
 )
 export default Footer

@@ -8,6 +8,7 @@
     "@emotion/styled": "^10.0.7",
     "@mdx-js/mdx": "^0.16.6",
     "@mdx-js/tag": "^0.16.6",
+    "formik": "^1.5.1",
     "gatsby": "^2.1.0",
     "gatsby-image": "^2.0.29",
     "gatsby-mdx": "^0.3.2",
@@ -35,7 +36,8 @@
     "react-masonry-component": "^6.2.1",
     "react-responsive-embed": "^2.1.0",
     "react-twitter-embed": "^2.0.4",
-    "react-typography": "^0.16.18"
+    "react-typography": "^0.16.18",
+    "yup": "^0.26.10"
   },
   "keywords": [
     "gatsby"
