@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: `Illustrated dev`,
+    title: `Illustrated.dev`,
     description: ``,
     author: '@mappletons',
   },
@@ -22,7 +22,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 960,
+              maxWidth: 900,
               sizeByPixelDensity: false,
               linkImagesToOriginal: true,
               wrapperStyle: {
