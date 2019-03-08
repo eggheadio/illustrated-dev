@@ -18,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-  /* font-family: ff-tisa-web-pro, Georgia, 'Times New Roman', Times, serif; */
+  font-family: ff-tisa-web-pro, Georgia, 'Times New Roman', Times, serif;
   font-weight: 300;
   text-rendering: optimizeLegibility;
 }

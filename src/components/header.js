@@ -8,7 +8,7 @@ const Header = () => (
       padding: '30px',
     })}>
     <Link to="/">
-      <h1>Illustrated.dev</h1>
+      <h1>Illustrated.tech</h1>
     </Link>
   </header>
 )
