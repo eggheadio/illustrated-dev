@@ -2,40 +2,35 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-import ArticleLayout from '../components/article-layout'
+import Layout from '../components/layout'
 import { bpMinLG } from '../utils/breakpoints'
 import Link from '../components/link'
 
 class WhatTheForkTemplate extends React.Component {
   render() {
-    const drawerItem = this.props.data.mdx
+    const wtf = this.props.data.mdx
+    const { previous } = this.props.pageContext
     return (
-      <ArticleLayout>
-        <h1
-          css={css`
-            font-size: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.7;
-            ${bpMinLG} {
-              ${drawerItem.frontmatter.title && 'margin-top: -10px;'}
-            }
-            margin-top: 20px;
-          `}>
-          <Link to="/">HOME</Link> /{' '}
-          <Link to={`/${drawerItem.fields.collection}`}>
-            {drawerItem.fields.collection}
-          </Link>{' '}
-          / {drawerItem.frontmatter.title && drawerItem.frontmatter.title}
-        </h1>
-        <MDXRenderer>{drawerItem.code.body}</MDXRenderer>
-      </ArticleLayout>
+      <Layout>
+        <h1>{wtf.frontmatter.title}</h1>
+        <MDXRenderer>{wtf.code.body}</MDXRenderer>
+        {previous && (
+          <Link to={`/${previous.fields.slug}`} rel="previous">
+            <div>
+              <h5>next</h5>
+              <h4>
+                {previous.frontmatter.title} <span>→</span>
+              </h4>
+            </div>
+          </Link>
+        )}
+      </Layout>
     )
   }
 }
 
 export const pageQuery = graphql`
-  query DrawerQuery($id: String) {
+  query wtfQuery($id: String) {
     mdx(id: { eq: $id }) {
       id
       frontmatter {

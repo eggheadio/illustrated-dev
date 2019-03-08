@@ -23,7 +23,7 @@ class ProjectTemplate extends React.Component {
             }
             margin-top: 20px;
           `}>
-          <Link to='/'>HOME</Link> /{' '}
+          <Link to="/">HOME</Link> /{' '}
           <Link to={`/${project.fields.collection}`}>
             {project.fields.collection}
           </Link>{' '}
@@ -31,7 +31,7 @@ class ProjectTemplate extends React.Component {
         </h1>
         <MDXRenderer>{project.code.body}</MDXRenderer>
         {previous && (
-          <Link to={`/${previous.fields.slug}`} rel='previous'>
+          <Link to={`/${previous.fields.slug}`} rel="previous">
             <div>
               <h5>next</h5>
               <h4>

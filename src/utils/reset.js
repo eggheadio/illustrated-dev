@@ -20,7 +20,7 @@ h3 {
   padding: 10px 0 30px;
 }
 .active {
-  color: #3C55E4;
+  color: #FF7B53;
 }
   form {
     margin: 0;
@@ -57,12 +57,12 @@ h3 {
   ::selection {
   }
   a {
-    color: #3C55E4;
+    color: #FF7B53;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
     &:hover,
     &:focus {
-      color: #3C55E4;
+      color: #FF7B53;
     }
     
   }
@@ -79,7 +79,7 @@ h3 {
     }
   }
   blockquote {
-    border-left: 5px solid #3C55E4;
+    border-left: 5px solid #FF7B53;
     padding-left: 1rem !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
