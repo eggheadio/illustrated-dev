@@ -2,31 +2,34 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import Link from '../components/link'
+import Layout from '../components/layout'
 
-export default function SiteMap({ data: { projects, articles, drawer } }) {
+export default function SiteMap({ data: { wtf, articles } }) {
   return (
-    <Main>
-      <h1>Table of Contents</h1>
+    <Layout>
+      <Main>
+        <h1>Table of Contents</h1>
 
-      <h2>What The Fork Series</h2>
-      {projects.edges.map(({ node: data }) => (
-        <div>
-          <h3>
-            <Link to={`/${data.fields.slug}`}>{data.frontmatter.title}</Link>
-          </h3>
-          <p>{data.excerpt}</p>
-        </div>
-      ))}
-      <h2>Blog</h2>
-      {articles.edges.map(({ node: data }) => (
-        <div>
-          <h3>
-            <Link to={`/${data.fields.slug}`}>{data.frontmatter.title}</Link>
-          </h3>
-          <p>{data.excerpt}</p>
-        </div>
-      ))}
-    </Main>
+        <h2>What The Fork Series</h2>
+        {wtf.edges.map(({ node: data }) => (
+          <div>
+            <h3>
+              <Link to={`/${data.fields.slug}`}>{data.frontmatter.title}</Link>
+            </h3>
+            <p>{data.excerpt}</p>
+          </div>
+        ))}
+        <h2>Blog</h2>
+        {articles.edges.map(({ node: data }) => (
+          <div>
+            <h3>
+              <Link to={`/${data.fields.slug}`}>{data.frontmatter.title}</Link>
+            </h3>
+            <p>{data.excerpt}</p>
+          </div>
+        ))}
+      </Main>
+    </Layout>
   )
 }
 
@@ -58,9 +61,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    projects: allMdx(
+    wtf: allMdx(
       sort: { order: ASC, fields: fields___slug }
-      filter: { fields: { collection: { eq: "projects" } } }
+      filter: { fields: { collection: { eq: "wtf" } } }
     ) {
       edges {
         node {
