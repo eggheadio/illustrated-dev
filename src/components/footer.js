@@ -8,11 +8,11 @@ const Footer = () => (
       padding: '80px 0',
       textAlign: 'center',
       textTransform: 'uppercase',
-      fontSize: '14px'
+      fontSize: '14px',
     })}>
     <SignUp
       css={css({
-        marginBottom: '30px',
+        marginBottom: '20px',
       })}
     />
     <p>© Maggie Appleton</p>
