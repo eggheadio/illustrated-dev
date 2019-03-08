@@ -5,17 +5,20 @@ import SignUp from './subscribe'
 const Footer = () => (
   <footer
     css={css({
-      padding: '80px 0',
-      textAlign: 'center',
-      textTransform: 'uppercase',
-      fontSize: '14px',
-    })}>
+      padding: "80px",
+      textAlign: "left",
+      textTransform: "uppercase",
+      fontSize: "14px",
+      background: "rgb(45, 45, 58)",
+      color: "rgb(85, 85, 98)"
+    })}
+  >
     <SignUp
       css={css({
-        marginBottom: '30px',
+        marginBottom: "30px"
       })}
     />
-    <p>© Maggie Appleton</p>
+    <sub>© Maggie Appleton</sub>
   </footer>
-)
+);
 export default Footer

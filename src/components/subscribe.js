@@ -71,35 +71,44 @@ class SignUp extends React.Component {
     return (
       <div
         css={css({
-          marginBottom: '100px',
-          'label > div': {
-            marginTop: '20px',
+          marginBottom: "40px",
+          "label > div": {
+            marginTop: "20px"
           },
           input: {
-            textAlign: 'center',
-            margin: '4px',
-            border: '1px solid hsla(0, 0%, 0%, 0.25)',
+            textAlign: "center",
+            margin: "10px 10px 10px 0",
+            border: "none",
+            borderRadius: "4px",
+            padding: "10px"
           },
-          button: { marginTop: '15px' },
-          '.field-error': {
-            marginLeft: '5px',
-            opacity: 0.5,
+          button: {
+            margin: "20px",
+            border: "none",
+            borderRadius: "4px",
+            padding: "15px 30px"
           },
-        })}>
+          ".field-error": {
+            marginLeft: "5px",
+            opacity: 0.5
+          }
+        })}
+      >
         {!successful && (
           <h2
             css={css`
               margin-bottom: 10px;
               margin-top: 0;
-            `}>
+            `}
+          >
             Join the Newsletter
           </h2>
         )}
 
         <Formik
           initialValues={{
-            email_address: '',
-            first_name: '',
+            email_address: "",
+            first_name: ""
           }}
           validationSchema={SubscribeSchema}
           onSubmit={values => this.handleSubmit(values)}
@@ -108,23 +117,25 @@ class SignUp extends React.Component {
               {!successful && (
                 <Form
                   css={css({
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
                     [bpMaxSM]: {
-                      flexDirection: 'column',
-                    },
-                  })}>
+                      flexDirection: "column"
+                    }
+                  })}
+                >
                   <div
                     css={css({
-                      display: 'flex',
-                      flexDirection: 'column',
+                      display: "flex",
+                      flexDirection: "column",
                       [bpMinSM]: {
-                        display: 'flex',
-                        flexDirection: 'row',
-                      },
-                    })}>
+                        display: "flex",
+                        flexDirection: "row"
+                      }
+                    })}
+                  >
                     <label htmlFor="first_name">
                       <div>
                         First Name
@@ -162,17 +173,18 @@ class SignUp extends React.Component {
                   </div>
                   <button
                     css={css({
-                      cursor: 'pointer',
-                      background: 'black',
-                      border: 'none',
-                      color: 'white',
-                      padding: '5px 15px',
+                      cursor: "pointer",
+                      background: "black",
+                      border: "none",
+                      color: "white",
+                      padding: "5px 15px"
                     })}
                     data-element="submit"
                     type="submit"
-                    disabled={isSubmitting}>
-                    {!isSubmitting && 'Subscribe'}
-                    {isSubmitting && 'Submitting...'}
+                    disabled={isSubmitting}
+                  >
+                    {!isSubmitting && "Subscribe"}
+                    {isSubmitting && "Submitting..."}
                   </button>
                 </Form>
               )}
@@ -184,7 +196,7 @@ class SignUp extends React.Component {
           )}
         />
       </div>
-    )
+    );
   }
 }
 
