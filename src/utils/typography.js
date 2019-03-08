@@ -4,7 +4,8 @@ const typography = new Typography ({
   baseFontSize: '18px',
   baseLineHeight: 1.8,
   headerWeight: 500,
-  headerFontFamily: ['Avenir Next', 'sans-serif'],
+  headerFontFamily: ['FF Tisa Web Pro', 'serif'],
+  bodyFontFamily: ['Brandon Grotesque', 'sans-serif'],
   headerColor: '#474751'
 }
 )
