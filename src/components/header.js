@@ -12,9 +12,9 @@ const Header = () => (
       },
       textAlign: 'center',
     })}>
-    <Link to="/">
-      <h1>Illustrated.dev</h1>
-    </Link>
+    <h1>
+      <Link to="/">Illustrated.dev</Link>
+    </h1>
   </header>
 )
 export default Header
