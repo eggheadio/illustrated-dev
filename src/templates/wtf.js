@@ -4,7 +4,6 @@ import Img from 'gatsby-image'
 import { css } from '@emotion/core'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import Layout from '../components/layout'
-import { bpMinLG } from '../utils/breakpoints'
 import Link from '../components/link'
 
 class WhatTheForkTemplate extends React.Component {

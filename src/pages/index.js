@@ -18,11 +18,33 @@ export default function Index({ data: { site, wtf } }) {
             // display: 'grid',
             // gridTemplateColumns: '1fr 1fr 1fr',
             // gridGap: '30px',
+
+            h1: {
+              fontFamily: 'Brandon Grotesque, sans-serif',
+              fontWeight: 500,
+              fontSize: '24px',
+              textAlign: 'center',
+              opacity: 0.8,
+              marginTop: '30px',
+              marginBottom: '15px',
+            },
+            hr: {
+              width: '20px',
+              height: '2px',
+              background: '#FF7B53',
+              margin: '0 auto',
+              borderRadius: '1px',
+            },
+            'a:hover': {
+              h1: {
+                opacity: 1,
+              },
+            },
             '.grid-item': {
               width: '100%',
 
               [bpMinMD]: {
-                maxWidth: '33.33333%',
+                maxWidth: '50%',
                 padding: '25px',
               },
               maxWidth: '50%',
@@ -34,7 +56,8 @@ export default function Index({ data: { site, wtf } }) {
             {wtf.edges.map(({ node: data }) => (
               <div className="grid-item" key={data.id}>
                 <Link to={`/${data.fields.slug}`}>
-                  <h2>{data.frontmatter.title}</h2>
+                  <h1>{data.frontmatter.title}</h1>
+                  <hr />
                   <Img fluid={data.frontmatter.image.childImageSharp.fluid} />
                 </Link>
               </div>
