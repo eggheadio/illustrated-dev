@@ -11,8 +11,8 @@ import Masonry from 'react-masonry-component'
 export default function Index({ data: { site, wtf } }) {
   return (
     <>
+      <SEO title={site.siteMetadata.title} />
       <Layout>
-        <SEO title={site.siteMetadata.title} />
         <div
           css={css({
             h1: {
