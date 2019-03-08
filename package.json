@@ -27,6 +27,7 @@
     "lodash": "^4.17.11",
     "mdx-utils": "^0.0.2",
     "prism-react-renderer": "^0.1.5",
+    "process-env": "^1.1.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",

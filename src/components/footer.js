@@ -12,7 +12,7 @@ const Footer = () => (
     })}>
     <SignUp
       css={css({
-        marginBottom: '20px',
+        marginBottom: '30px',
       })}
     />
     <p>© Maggie Appleton</p>

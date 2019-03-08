@@ -9391,6 +9391,11 @@ probe-image-size@^4.0.0:
     request "^2.83.0"
     stream-parser "~0.3.1"
 
+process-env@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/process-env/-/process-env-1.1.0.tgz#c810f5ae72cd9a9b20b42553ccf30957ea4d739e"
+  integrity sha1-yBD1rnLNmpsgtCVTzPMJV+pNc54=
+
 process-nextick-args@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
