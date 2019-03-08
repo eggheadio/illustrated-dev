@@ -13,7 +13,7 @@ class WhatTheForkTemplate extends React.Component {
     const { previous } = this.props.pageContext
     return (
       <Layout>
-        <h1>{wtf.frontmatter.title}</h1>
+        <h1 css={css({ textAlign: 'center' })}>{wtf.frontmatter.title}</h1>
         <Img fluid={wtf.frontmatter.image.childImageSharp.fluid} />
         <MDXRenderer>{wtf.code.body}</MDXRenderer>
         {previous && (

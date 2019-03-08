@@ -10,6 +10,7 @@ const Header = () => (
         fontSize: '28px',
         fontWeight: '800',
       },
+      textAlign: 'center',
     })}>
     <Link to="/">
       <h1>Illustrated.dev</h1>
