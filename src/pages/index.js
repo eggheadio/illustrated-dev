@@ -18,7 +18,7 @@ export default function Index({ data: { site, wtf } }) {
             h1: {
               fontFamily: "ff-tisa-web-pro, sans-serif",
               fontWeight: 100,
-              fontSize: '2.6em',
+              fontSize: '2.2em',
               textAlign: 'center',
               opacity: 0.8,
               marginTop: '30px',
@@ -39,10 +39,9 @@ export default function Index({ data: { site, wtf } }) {
             },
             '.grid-item': {
               width: '100%',
-
               [bpMinMD]: {
-                maxWidth: '50%',
-                padding: '25px',
+                maxWidth: '33.333%',
+                padding: '30px 15px',
               },
               maxWidth: '50%',
               padding: '20px 8px',
@@ -55,7 +54,11 @@ export default function Index({ data: { site, wtf } }) {
                 <Link to={`/${data.frontmatter.slug}`}>
                   <h1>{data.frontmatter.title}</h1>
                   <hr />
-                  <Img fluid={data.frontmatter.image.childImageSharp.fluid} />
+                  <Img css={css({
+                    maxHeight: '300px',
+                    overflow: 'hidden'
+                  })}
+                    fluid={data.frontmatter.image.childImageSharp.fluid} />
                 </Link>
               </div>
             ))}

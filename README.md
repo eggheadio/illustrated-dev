@@ -1,3 +1,4 @@
-# illustrateddev
-Drawing the internet
+# Illustrated.dev
+
+Web development, illustrated.
 
