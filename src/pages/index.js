@@ -16,13 +16,14 @@ export default function Index({ data: { site, wtf } }) {
         <div
           css={css({
             h1: {
-              fontFamily: 'Brandon Grotesque, sans-serif',
-              fontWeight: 500,
-              fontSize: '24px',
+              fontFamily: "ff-tisa-web-pro, sans-serif",
+              fontWeight: 100,
+              fontSize: '2.6em',
               textAlign: 'center',
               opacity: 0.8,
               marginTop: '30px',
-              marginBottom: '15px',
+              marginBottom: '30px',
+              color: 'rgb(60, 50, 60)'
             },
             hr: {
               width: '20px',

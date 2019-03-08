@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
           [bpMaxSM]: {
             margin: '0 auto',
           },
-          maxWidth: '1060px',
+          maxWidth: '1200px',
           width: '100%',
           padding: '0 1.0875rem 0 1.0875rem',
           paddingTop: 0,
