@@ -56,33 +56,9 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
-            projects: allMdx(
+            wtf: allMdx(
               sort: { order: ASC, fields: fields___slug }
-              filter: { fields: { collection: { eq: "projects" } } }
-            ) {
-              edges {
-                node {
-                  id
-                  parent {
-                    ... on File {
-                      name
-                      sourceInstanceName
-                    }
-                  }
-                  excerpt(pruneLength: 250)
-                  fields {
-                    collection
-                    slug
-                  }
-                  frontmatter {
-                    title
-                  }
-                }
-              }
-            }
-            drawer: allMdx(
-              sort: { order: ASC, fields: fields___slug }
-              filter: { fields: { collection: { eq: "drawer" } } }
+              filter: { fields: { collection: { eq: "wtf" } } }
             ) {
               edges {
                 node {
@@ -116,12 +92,8 @@ exports.createPages = ({ graphql, actions }) => {
           return e.node.parent.sourceInstanceName === 'articles'
         })
 
-        const projects = result.data.projects.edges.filter(e => {
-          return e.node.parent.sourceInstanceName === 'projects'
-        })
-
-        const drawer = result.data.drawer.edges.filter(e => {
-          return e.node.parent.sourceInstanceName === 'drawer'
+        const wtf = result.data.wtf.edges.filter(e => {
+          return e.node.parent.sourceInstanceName === 'wtf'
         })
 
         articles.forEach(({ node }) => {
@@ -132,21 +104,12 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        drawer.forEach(({ node }) => {
+        wtf.forEach(({ node }, index) => {
+          const previous = index === wtf.length - 1 ? null : wtf[index + 1].node
+          const next = index === 0 ? null : wtf[index - 1].node
           createPage({
             path: node.fields.slug,
-            component: path.resolve(`./src/templates/drawer-template.js`),
-            context: { id: node.id },
-          })
-        })
-
-        projects.forEach(({ node }, index) => {
-          const previous =
-            index === projects.length - 1 ? null : projects[index + 1].node
-          const next = index === 0 ? null : projects[index - 1].node
-          createPage({
-            path: node.fields.slug,
-            component: path.resolve(`./src/templates/project.js`),
+            component: path.resolve(`./src/templates/wtf.js`),
             context: { id: node.id, previous, next },
           })
         })

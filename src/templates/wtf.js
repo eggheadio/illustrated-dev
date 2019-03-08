@@ -6,7 +6,7 @@ import ArticleLayout from '../components/article-layout'
 import { bpMinLG } from '../utils/breakpoints'
 import Link from '../components/link'
 
-class DrawerTemplate extends React.Component {
+class WhatTheForkTemplate extends React.Component {
   render() {
     const drawerItem = this.props.data.mdx
     return (
@@ -22,7 +22,7 @@ class DrawerTemplate extends React.Component {
             }
             margin-top: 20px;
           `}>
-          <Link to='/'>HOME</Link> /{' '}
+          <Link to="/">HOME</Link> /{' '}
           <Link to={`/${drawerItem.fields.collection}`}>
             {drawerItem.fields.collection}
           </Link>{' '}
@@ -51,4 +51,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default DrawerTemplate
+export default WhatTheForkTemplate

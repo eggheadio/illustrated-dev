@@ -7,18 +7,8 @@ export default function SiteMap({ data: { projects, articles, drawer } }) {
   return (
     <Main>
       <h1>Table of Contents</h1>
-      <h2>
-        <Link to='/'>Drawer (Home)</Link>
-      </h2>
-      {drawer.edges.map(({ node: data }) => (
-        <div>
-          <h3>
-            <Link to={`/${data.fields.slug}`}>{data.frontmatter.title}</Link>
-          </h3>
-          <p>{data.excerpt}</p>
-        </div>
-      ))}
-      <h2>Projects</h2>
+
+      <h2>What The Fork Series</h2>
       {projects.edges.map(({ node: data }) => (
         <div>
           <h3>
@@ -27,7 +17,7 @@ export default function SiteMap({ data: { projects, articles, drawer } }) {
           <p>{data.excerpt}</p>
         </div>
       ))}
-      <h2>Articles</h2>
+      <h2>Blog</h2>
       {articles.edges.map(({ node: data }) => (
         <div>
           <h3>
@@ -94,29 +84,6 @@ export const pageQuery = graphql`
     articles: allMdx(
       sort: { order: ASC, fields: fields___slug }
       filter: { fields: { collection: { eq: "articles" } } }
-    ) {
-      edges {
-        node {
-          id
-          parent {
-            ... on File {
-              sourceInstanceName
-            }
-          }
-          fields {
-            collection
-            slug
-          }
-          excerpt(pruneLength: 50)
-          frontmatter {
-            title
-          }
-        }
-      }
-    }
-    drawer: allMdx(
-      sort: { order: ASC, fields: fields___slug }
-      filter: { fields: { collection: { eq: "drawer" } } }
     ) {
       edges {
         node {

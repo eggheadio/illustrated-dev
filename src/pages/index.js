@@ -8,13 +8,14 @@ import Image from '../components/image'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 
-export default function Index({ data: { site, projects, placeholderImage } }) {
+export default function Index({ data: { site, wtf } }) {
   return (
     <>
       <Layout>
-        <div css={css({
+        <div
+          css={css({
             margin: '3em',
-        })}>
+          })}>
           <h1>Illustrated.dev</h1>
           <div
             css={css({
@@ -22,7 +23,7 @@ export default function Index({ data: { site, projects, placeholderImage } }) {
               gridTemplateColumns: '1fr 1fr 1fr',
               gridGap: '30px',
             })}>
-            {projects.edges.map(({ node: data }) => (
+            {wtf.edges.map(({ node: data }) => (
               <div>
                 <Link to={data.fields.slug}>
                   <h2>{data.frontmatter.title}</h2>
@@ -45,9 +46,9 @@ export const pageQuery = graphql`
       }
     }
 
-    projects: allMdx(
+    wtf: allMdx(
       sort: { order: ASC, fields: fields___slug }
-      filter: { fields: { collection: { eq: "projects" } } }
+      filter: { fields: { collection: { eq: "wtf" } } }
     ) {
       edges {
         node {
@@ -67,15 +68,6 @@ export const pageQuery = graphql`
               }
             }
           }
-        }
-      }
-    }
-
-    placeholderImage: file(relativePath: { eq: "social-card.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
-          src
         }
       }
     }
