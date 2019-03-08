@@ -2,7 +2,6 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Global, css } from '@emotion/core'
 import reset from '../utils/reset'
-import SEO from './seo'
 import './layout-styles.css'
 import { bpMaxSM } from '../utils/breakpoints'
 import Header from './header'
@@ -25,9 +24,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Global styles={globalStyles} />
-      <SEO title={data.site.siteMetadata.title} />
       <Header />
-
       <div
         css={{
           margin: '0 auto 3rem auto',

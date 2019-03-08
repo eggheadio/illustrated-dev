@@ -3,14 +3,16 @@ import { graphql } from 'gatsby'
 import Link from '../components/link'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
+import SEO from '../components/seo'
 import { bpMinMD } from '../utils/breakpoints'
 import Layout from '../components/layout'
 import Masonry from 'react-masonry-component'
 
-export default function Index({ data: { wtf } }) {
+export default function Index({ data: { site, wtf } }) {
   return (
     <>
       <Layout>
+        <SEO title={site.siteMetadata.title} />
         <div
           css={css({
             // display: 'grid',
@@ -33,7 +35,7 @@ export default function Index({ data: { wtf } }) {
               <div className="grid-item" key={data.id}>
                 <Link to={data.fields.slug}>
                   <h2>{data.frontmatter.title}</h2>
-                  <Img fluid={data.frontmatter.banner.childImageSharp.fluid} />
+                  <Img fluid={data.frontmatter.image.childImageSharp.fluid} />
                 </Link>
               </div>
             ))}
@@ -46,6 +48,11 @@ export default function Index({ data: { wtf } }) {
 
 export const pageQuery = graphql`
   query IndexPageQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     wtf: allMdx(
       sort: { order: ASC, fields: fields___slug }
       filter: { fields: { collection: { eq: "wtf" } } }
@@ -59,11 +66,10 @@ export const pageQuery = graphql`
           frontmatter {
             title
             categories
-            banner {
+            image {
               childImageSharp {
                 fluid(maxWidth: 500) {
                   ...GatsbyImageSharpFluid
-                  src
                 }
               }
             }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import { css } from '@emotion/core'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import Layout from '../components/layout'
@@ -13,6 +14,7 @@ class WhatTheForkTemplate extends React.Component {
     return (
       <Layout>
         <h1>{wtf.frontmatter.title}</h1>
+        <Img fluid={wtf.frontmatter.image.childImageSharp.fluid} />
         <MDXRenderer>{wtf.code.body}</MDXRenderer>
         {previous && (
           <Link to={`/${previous.fields.slug}`} rel="previous">
@@ -35,6 +37,13 @@ export const pageQuery = graphql`
       id
       frontmatter {
         title
+        image {
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       fields {
         collection
