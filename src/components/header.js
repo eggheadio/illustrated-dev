@@ -5,7 +5,7 @@ import { css } from '@emotion/core'
 const Header = () => (
   <header
     css={css({
-      padding: '30px',
+      paddingTop: '40px',
       h1: {
         fontSize: '28px',
         fontWeight: '800',

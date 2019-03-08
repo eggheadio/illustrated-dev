@@ -4,7 +4,7 @@ import { css } from '@emotion/core'
 const Footer = () => (
   <footer
     css={css({
-      padding: '30px',
+      padding: '80px 0',
       textAlign: 'center',
     })}>
     © Maggie Appleton

@@ -8,7 +8,6 @@ import Header from './header'
 import Footer from './footer'
 
 export const globalStyles = css({
-  marginTop: '30px',
   ...reset,
 })
 
