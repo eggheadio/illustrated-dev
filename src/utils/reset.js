@@ -42,7 +42,7 @@ h3 {
     font-style: normal;
     padding: 0;
     margin: 0; 
-    background: #fafafa;
+    background: #fff;
   }
   html {
     text-rendering: optimizeLegibility;
