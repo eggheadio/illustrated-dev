@@ -107,8 +107,8 @@ exports.createPages = ({ graphql, actions }) => {
         })
 
         wtf.forEach(({ node }, index) => {
-          const previous = index === wtf.length - 1 ? null : wtf[index + 1].node
-          const next = index === 0 ? null : wtf[index - 1].node
+          const next = index === wtf.length - 1 ? null : wtf[index + 1].node
+          const previous = index === 0 ? null : wtf[index - 1].node
           createPage({
             path: node.fields.slug,
             component: path.resolve(`./src/templates/wtf.js`),

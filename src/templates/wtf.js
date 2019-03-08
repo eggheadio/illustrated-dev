@@ -10,18 +10,18 @@ import Link from '../components/link'
 class WhatTheForkTemplate extends React.Component {
   render() {
     const wtf = this.props.data.mdx
-    const { previous } = this.props.pageContext
+    const { next } = this.props.pageContext
     return (
       <Layout>
         <h1 css={css({ textAlign: 'center' })}>{wtf.frontmatter.title}</h1>
         <Img fluid={wtf.frontmatter.image.childImageSharp.fluid} />
         <MDXRenderer>{wtf.code.body}</MDXRenderer>
-        {previous && (
-          <Link to={`/${previous.fields.slug}`} rel="previous">
-            <div>
+        {next && (
+          <Link to={`/${next.fields.slug}`} rel="previous">
+            <div css={css({ padding: '30px' })}>
               <h5>next</h5>
               <h4>
-                {previous.frontmatter.title} <span>→</span>
+                {next.frontmatter.title} <span>→</span>
               </h4>
             </div>
           </Link>

@@ -5,6 +5,7 @@ import reset from '../utils/reset'
 import './layout-styles.css'
 import { bpMaxSM } from '../utils/breakpoints'
 import Header from './header'
+import Footer from './footer'
 
 export const globalStyles = css({
   marginTop: '30px',
@@ -38,6 +39,7 @@ const Layout = ({ children }) => {
         }}>
         {children}
       </div>
+      <Footer />
     </>
   )
 }
