@@ -3,4 +3,3 @@ node_modules
 public
 .DS_store
 /content/screenshots.sketch
-.env.*
