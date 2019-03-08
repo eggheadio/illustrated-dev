@@ -75,12 +75,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: '',
@@ -106,9 +100,12 @@ module.exports = {
       options: {
         typekit: {
           id: 'vre2jfc',
-          families: ['FF Tisa Web Pro:100,300,800', 'Brandon Grotesque:400,700'],
-        }
-      }
+          families: [
+            'FF Tisa Web Pro:100,300,800',
+            'Brandon Grotesque:400,700',
+          ],
+        },
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
