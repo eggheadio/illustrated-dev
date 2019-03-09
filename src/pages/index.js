@@ -16,14 +16,7 @@ export default function Index({ data: { site, wtf } }) {
         <div
           css={css({
             h1: {
-              fontFamily: "ff-tisa-web-pro, sans-serif",
-              fontWeight: 100,
-              fontSize: '2.2em',
-              textAlign: 'center',
-              opacity: 0.8,
-              marginTop: '30px',
-              marginBottom: '30px',
-              color: 'rgb(60, 50, 60)'
+              fontFamily: "ff-tisa-web-pro, sans-serif"
             },
             hr: {
               width: '20px',
@@ -48,7 +41,25 @@ export default function Index({ data: { site, wtf } }) {
             },
             a: { color: 'black' },
           })}>
-          <Masonry className={'masonry-item'}>
+          <h1 css={css({
+            h1: {
+              padding: '80px',
+              fontWeight: '600',
+              fontSize: '80px',
+            }
+          })}>Web Development, Illustrated</h1>
+          <Masonry css={css({
+            h1: {
+              fontFamily: "ff-tisa-web-pro, sans-serif",
+              fontWeight: '100',
+              fontSize: '32px',
+              textAlign: 'center',
+              marginTop: '30px',
+              marginBottom: '30px',
+              color: 'rgb(60, 50, 60)'
+            }
+          })
+          } className={'masonry-item'}>
             {wtf.edges.map(({ node: data }) => (
               <div className="grid-item" key={data.id}>
                 <Link to={`/${data.frontmatter.slug}`}>

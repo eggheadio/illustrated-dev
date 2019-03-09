@@ -10,7 +10,7 @@ const Header = () => (
       a: { color: 'rgb(70, 60, 70)' },
       h1: {
         fontFamily: 'brandon-grotesque',
-        fontSize: '20px',
+        fontSize: '18px',
         fontWeight: '800',
         textTransform: 'uppercase',
 
