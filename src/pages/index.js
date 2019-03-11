@@ -43,9 +43,9 @@ export default function Index({ data: { site, wtf } }) {
           })}>
           <h1 css={css({
             h1: {
-              padding: '80px',
               fontWeight: '600',
-              fontSize: '80px',
+              fontSize: '120px',
+              padding: '80px 40px'
             }
           })}>Web Development, Illustrated</h1>
           <Masonry css={css({

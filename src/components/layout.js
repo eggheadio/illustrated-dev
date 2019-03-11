@@ -27,14 +27,13 @@ const Layout = ({ children }) => {
       <Header />
       <div
         css={{
-          margin: '0 auto 3rem auto',
+          margin: '0 auto',
           [bpMaxSM]: {
             margin: '0 auto',
           },
           maxWidth: '1300px',
           width: '100%',
-          padding: '0 1.0875rem 0 1.0875rem',
-          paddingTop: 0,
+          textAlign: 'center'
         }}>
         {children}
       </div>

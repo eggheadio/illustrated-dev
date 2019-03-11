@@ -29,10 +29,10 @@ const Header = () => (
       h1: {
         fontFamily: "freight-sans-pro",
         fontSize: "18px",
-        fontWeight: "800",
+        fontWeight: "600",
         textTransform: "uppercase"
       },
-      textAlign: "left"
+      textAlign: "center"
     })}
   >
     <h1>
