@@ -2,23 +2,23 @@ import React from 'react'
 import Link from './link'
 import { css } from '@emotion/core'
 
-const Navbar = function(props) {
-  return (
-    <ul css={{
-      listStyle: 'none',
-      textAlign: 'right',
-      padding: '40px'
-    }}>
-      <li>
-        <a href="/about">About</a>
-    </li>
-    <li>
-      <a href="">Thing</a>
-    </li >
-  </ul >
-  )
+// const Navbar = function(props) {
+//   return (
+//     <ul css={{
+//       listStyle: 'none',
+//       textAlign: 'right',
+//       padding: '40px'
+//     }}>
+//       <li>
+//         <a href="/about">About</a>
+//     </li>
+//     <li>
+//       <a href="">Thing</a>
+//     </li >
+//   </ul >
+//   )
   
-}
+// }
 
 const Header = () => (
   <header
@@ -37,7 +37,7 @@ const Header = () => (
   >
     <h1>
       <Link to="/">Illustrated.dev</Link>
-      <Navbar />
+      {/* <Navbar /> */}
     </h1>
   </header>
 );
