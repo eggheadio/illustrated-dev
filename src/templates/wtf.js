@@ -12,39 +12,55 @@ class WhatTheForkTemplate extends React.Component {
     const { next, previous } = this.props.pageContext
     return (
       <Layout>
-        <h1 css={css({ textAlign: 'center', marginTop: '100px', fontWeight: '100', fontSize: '3em', fontFamily: 'ff-tisa-web-pro, serif' })}>
+        <h1
+          css={css({
+            textAlign: "center",
+            marginTop: "100px",
+            fontWeight: "100",
+            fontSize: "3em",
+            fontFamily: "ff-tisa-web-pro, serif"
+          })}
+        >
           {wtf.frontmatter.title}
         </h1>
         <Img
-          css={css({ maxWidth: '700px', margin: '0 auto' })}
+          css={css({ maxWidth: "700px", margin: "0 auto" })}
           fluid={wtf.frontmatter.image.childImageSharp.fluid}
         />
         <MDXRenderer>{wtf.code.body}</MDXRenderer>
-        
+
         {next && (
           <Link to={`/${next.frontmatter.slug}`} rel="next">
             <div
               css={css({
-                padding: '30px',
-                marginTop: '80px',
-                textAlign: 'center',
-                border: '2px solid #f1f1f1',
+                padding: "30px",
+                marginTop: "80px",
+                textAlign: "center",
+                border: "2px solid #f1f1f1",
                 h4: {
-                  fontFamily: 'brandon-grotesque, sans-serif',
-                  textTransform: 'uppercase',
-                  fontSize: '16px',
-                  color: 'hsla(0, 0%, 0%, 0.5)',
-                },
-              })}>
+                  fontFamily: "freight-sans-pro, sans-serif",
+                  textTransform: "uppercase",
+                  fontSize: "16px",
+                  color: "hsla(0, 0%, 0%, 0.5)"
+                }
+              })}
+            >
               <h4>next</h4>
-              <h2 css={css({ fontWeight: '100', fontFamily: 'ff-tisa-web-pro, serif', fontSize: '2.2em', fontStyle: 'italic' })}>
+              <h2
+                css={css({
+                  fontWeight: "100",
+                  fontFamily: "ff-tisa-web-pro, serif",
+                  fontSize: "2.2em",
+                  fontStyle: "italic"
+                })}
+              >
                 {next.frontmatter.title} <span>→</span>
               </h2>
             </div>
           </Link>
         )}
       </Layout>
-    )
+    );
   }
 }
 

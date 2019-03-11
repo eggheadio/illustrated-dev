@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Illustrated.dev`,
     description: `Web development, illustrated`,
-    author: '@mappletons',
+    author: "@mappletons"
   },
   plugins: [
     {
@@ -16,91 +16,88 @@ module.exports = {
           export default { ResponsiveEmbed, TwitterTweetEmbed };
         `,
         defaultLayouts: {
-          default: path.resolve('./src/components/layout.js'),
+          default: path.resolve("./src/components/layout.js")
         },
         gatsbyRemarkPlugins: [
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 900,
               sizeByPixelDensity: false,
               linkImagesToOriginal: true,
               wrapperStyle: {
-                float: 'left',
-              },
-            },
-          },
-        ],
-      },
+                float: "left"
+              }
+            }
+          }
+        ]
+      }
     },
-    'gatsby-transformer-remark',
-    'gatsby-plugin-react-helmet',
+    "gatsby-transformer-remark",
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`,
-        ignore: [`**/\.*`], // ignore files starting with a dot
-      },
+        ignore: [`**/\.*`] // ignore files starting with a dot
+      }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/content/articles/`,
-        name: 'articles',
-        ignore: [`**/\.*`], // ignore files starting with a dot,
-      },
+        name: "articles",
+        ignore: [`**/\.*`] // ignore files starting with a dot,
+      }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/content/wtf/`,
-        name: 'wtf',
-        ignore: [`**/\.*`], // ignore files starting with a dot,
-      },
+        name: "wtf",
+        ignore: [`**/\.*`] // ignore files starting with a dot,
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: '',
-        head: true,
-      },
+        trackingId: "",
+        head: true
+      }
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-emotion',
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-emotion",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Illustrated.dev',
-        short_name: 'Illustrated.dev',
-        background_color: '#3852E4',
-        theme_color: '#3852E4',
-        display: 'minimal-ui',
-        icon: 'src/images/icon.png', // This path is relative to the root of the site.
-      },
+        name: "Illustrated.dev",
+        short_name: "Illustrated.dev",
+        background_color: "#3852E4",
+        theme_color: "#3852E4",
+        display: "minimal-ui",
+        icon: "src/images/icon.png" // This path is relative to the root of the site.
+      }
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         typekit: {
-          id: 'vre2jfc',
-          families: [
-            'FF Tisa Web Pro:100,300,800',
-            'Brandon Grotesque:400,700',
-          ],
-        },
-      },
-    },
+          id: "vre2jfc",
+          families: ["FF Tisa Web Pro:100,300,800", "Freight Sans Pro:300,400,600"]
+        }
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-  ],
-}
+  ]
+};
