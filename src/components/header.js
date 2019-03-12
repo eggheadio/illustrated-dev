@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from './link'
 import { css } from '@emotion/core'
+import Container from './container'
 
 // const Navbar = function(props) {
 //   return (
@@ -17,28 +18,30 @@ import { css } from '@emotion/core'
 //     </li >
 //   </ul >
 //   )
-  
+
 // }
 
-const Header = () => (
+const Header = ({ background }) => (
   <header
     css={css({
-      paddingTop: "40px",
-      paddingLeft: "40px",
-      a: { color: "rgb(70, 60, 70)" },
+      background: background,
+      paddingTop: '25px',
+      a: { color: 'rgb(70, 60, 70)' },
       h1: {
-        fontFamily: "freight-sans-pro",
-        fontSize: "18px",
-        fontWeight: "600",
-        textTransform: "uppercase"
+        fontFamily: 'freight-sans-pro',
+        fontSize: '18px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        margin: 0,
+        textAlign: 'center',
       },
-      textAlign: "center"
-    })}
-  >
-    <h1>
-      <Link to="/">Illustrated.dev</Link>
-      {/* <Navbar /> */}
-    </h1>
+    })}>
+    <Container noVerticalPadding>
+      <h1>
+        <Link to="/">Illustrated.dev</Link>
+        {/* <Navbar /> */}
+      </h1>
+    </Container>
   </header>
-);
+)
 export default Header

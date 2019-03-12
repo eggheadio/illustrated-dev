@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { css } from '@emotion/core'
-import { bpMaxSM, bpMinSM, bpMaxMD } from '../utils/breakpoints'
+import { bpMaxSM, bpMinSM, bpMinMD, bpMaxMD } from '../utils/breakpoints'
 //import Message from '../ConfirmMessage/Message'
 //import { PleaseConfirmIllustration } from '../ConfirmMessage/Illustrations'
 
@@ -71,44 +71,64 @@ class SignUp extends React.Component {
     return (
       <div
         css={css({
-          marginBottom: "40px",
-          "label > div": {
-            marginTop: "20px"
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          p: {
+            maxWidth: '500px',
           },
           input: {
-            textAlign: "center",
-            margin: "10px 10px 10px 0",
-            border: "none",
-            borderRadius: "4px",
-            padding: "10px"
+            border: '1px solid #E3E6E6',
+            borderRadius: '0',
+            padding: '10px 15px',
+            [bpMinMD]: {
+              marginRight: '30px',
+            },
+            marginRight: 0,
+            width: '240px',
           },
           button: {
-            margin: "20px",
-            border: "none",
-            borderRadius: "4px",
-            padding: "15px 30px"
+            border: '1px solid #303745',
+            borderRadius: '0',
+            padding: '10px 20px',
+            cursor: 'pointer',
+            background: '#303745',
+            color: 'white',
+            [bpMinMD]: {
+              marginTop: 0,
+            },
+            marginTop: '30px',
           },
-          ".field-error": {
-            marginLeft: "5px",
-            opacity: 0.5
-          }
-        })}
-      >
+          '.field-error': {
+            marginLeft: '5px',
+            opacity: 0.5,
+          },
+          label: {
+            display: 'block',
+            fontWeight: 500,
+            marginBottom: '10px',
+          },
+        })}>
         {!successful && (
-          <h2
-            css={css`
-              margin-bottom: 10px;
-              margin-top: 0;
-            `}
-          >
-            Join the Newsletter
-          </h2>
+          <div>
+            <h2
+              css={css`
+                margin-bottom: 30px;
+                margin-top: 0;
+              `}>
+              Join the Newsletter
+            </h2>
+            <p>
+              A once-a-week roundup of a fresh set of illustrated web
+              development topics in your inbox.
+            </p>
+          </div>
         )}
 
         <Formik
           initialValues={{
-            email_address: "",
-            first_name: ""
+            email_address: '',
+            first_name: '',
           }}
           validationSchema={SubscribeSchema}
           onSubmit={values => this.handleSubmit(values)}
@@ -117,74 +137,57 @@ class SignUp extends React.Component {
               {!successful && (
                 <Form
                   css={css({
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    [bpMaxSM]: {
-                      flexDirection: "column"
-                    }
-                  })}
-                >
-                  <div
-                    css={css({
-                      display: "flex",
-                      flexDirection: "column",
-                      [bpMinSM]: {
-                        display: "flex",
-                        flexDirection: "row"
-                      }
-                    })}
-                  >
+                    display: 'flex',
+                    [bpMinMD]: {
+                      flexDirection: 'row',
+                      alignItems: 'flex-end',
+                    },
+                    alignItems: 'center',
+                    flexDirection: 'column',
+                    //justifyContent: 'space-between',
+                    marginTop: '30px',
+                  })}>
+                  <div css={css({ textAlign: 'left' })}>
                     <label htmlFor="first_name">
-                      <div>
-                        First Name
-                        <ErrorMessage
-                          name="first_name"
-                          component="span"
-                          className="field-error"
-                        />
-                      </div>
-                      <Field
-                        aria-label="your first name"
-                        aria-required="false"
+                      First Name
+                      <ErrorMessage
                         name="first_name"
-                        placeholder="Jane"
-                        type="text"
+                        component="span"
+                        className="field-error"
                       />
                     </label>
+                    <Field
+                      aria-label="your first name"
+                      aria-required="false"
+                      name="first_name"
+                      placeholder="Jane"
+                      type="text"
+                    />
+                  </div>
+                  <div css={css({ textAlign: 'left' })}>
                     <label htmlFor="email">
-                      <div>
-                        Email
-                        <ErrorMessage
-                          name="email_address"
-                          component="span"
-                          className="field-error"
-                        />
-                      </div>
-                      <Field
-                        aria-label="your email address"
-                        aria-required="true"
+                      Email
+                      <ErrorMessage
                         name="email_address"
-                        placeholder="jane@acme.com"
-                        type="email"
+                        component="span"
+                        className="field-error"
                       />
                     </label>
+                    <Field
+                      aria-label="your email address"
+                      aria-required="true"
+                      name="email_address"
+                      placeholder="jane@acme.com"
+                      type="email"
+                    />
                   </div>
                   <button
-                    css={css({
-                      cursor: "pointer",
-                      background: "black",
-                      border: "none",
-                      color: "white",
-                      padding: "5px 15px"
-                    })}
+                    css={css({})}
                     data-element="submit"
                     type="submit"
-                    disabled={isSubmitting}
-                  >
-                    {!isSubmitting && "Subscribe"}
-                    {isSubmitting && "Submitting..."}
+                    disabled={isSubmitting}>
+                    {!isSubmitting && 'Subscribe'}
+                    {isSubmitting && 'Submitting...'}
                   </button>
                 </Form>
               )}
@@ -196,7 +199,7 @@ class SignUp extends React.Component {
           )}
         />
       </div>
-    );
+    )
   }
 }
 

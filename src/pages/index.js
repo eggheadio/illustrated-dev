@@ -6,75 +6,37 @@ import { css } from '@emotion/core'
 import SEO from '../components/seo'
 import { bpMinMD } from '../utils/breakpoints'
 import Layout from '../components/layout'
-import Masonry from 'react-masonry-component'
+import Container from '../components/container'
+import Card from '../components/card'
 
 export default function Index({ data: { site, wtf } }) {
   return (
     <>
       <SEO title={site.siteMetadata.title} />
       <Layout>
-        <div
-          css={css({
-            h1: {
-              fontFamily: "ff-tisa-web-pro, sans-serif"
-            },
-            hr: {
-              width: '20px',
-              height: '2px',
-              background: '#FF7B53',
-              margin: '0 auto',
-              borderRadius: '1px',
-            },
-            'a:hover': {
-              h1: {
-                opacity: 1,
+        <Container>
+          <h1 css={css({ textAlign: 'center', marginBottom: '50px' })}>
+            Web Development, Illustrated
+          </h1>
+          <div
+            css={css({
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr) )',
+              gridGap: '20px',
+              a: {
+                color: 'inherit',
               },
-            },
-            '.grid-item': {
-              width: '100%',
-              [bpMinMD]: {
-                maxWidth: '33.333%',
-                padding: '30px 15px',
-              },
-              maxWidth: '50%',
-              padding: '20px 8px',
-            },
-            a: { color: 'black' },
-          })}>
-          <h1 css={css({
-            h1: {
-              fontWeight: '600',
-              fontSize: '120px',
-              padding: '80px 40px'
-            }
-          })}>Web Development, Illustrated</h1>
-          <Masonry css={css({
-            h1: {
-              fontFamily: "ff-tisa-web-pro, sans-serif",
-              fontWeight: '100',
-              fontSize: '32px',
-              textAlign: 'center',
-              marginTop: '30px',
-              marginBottom: '30px',
-              color: 'rgb(60, 50, 60)'
-            }
-          })
-          } className={'masonry-item'}>
+            })}>
             {wtf.edges.map(({ node: data }) => (
-              <div className="grid-item" key={data.id}>
-                <Link to={`/${data.frontmatter.slug}`}>
-                  <h1>{data.frontmatter.title}</h1>
-                  <hr />
-                  <Img css={css({
-                    maxHeight: '300px',
-                    overflow: 'hidden'
-                  })}
-                    fluid={data.frontmatter.image.childImageSharp.fluid} />
-                </Link>
-              </div>
+              <Link to={`/${data.frontmatter.slug}`} key={data.id}>
+                <Card
+                  title={data.frontmatter.title}
+                  image={data.frontmatter.thumbnail.childImageSharp.fluid}
+                />
+              </Link>
             ))}
-          </Masonry>
-        </div>
+          </div>
+        </Container>
       </Layout>
     </>
   )
@@ -100,8 +62,7 @@ export const pageQuery = graphql`
           frontmatter {
             slug
             title
-            categories
-            image {
+            thumbnail {
               childImageSharp {
                 fluid(maxWidth: 500) {
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG

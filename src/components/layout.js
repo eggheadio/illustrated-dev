@@ -11,7 +11,7 @@ export const globalStyles = css({
   ...reset,
 })
 
-const Layout = ({ children }) => {
+const Layout = ({ children, background = 'transparent' }) => {
   const data = useStaticQuery(graphql`
     query LayoutQuery {
       site {
@@ -24,17 +24,11 @@ const Layout = ({ children }) => {
   return (
     <>
       <Global styles={globalStyles} />
-      <Header />
+      <Header background={background} />
       <div
-        css={{
-          margin: '0 auto',
-          [bpMaxSM]: {
-            margin: '0 auto',
-          },
-          maxWidth: '1300px',
-          width: '100%',
-          textAlign: 'center'
-        }}>
+        css={css({
+          background: background,
+        })}>
         {children}
       </div>
       <Footer />

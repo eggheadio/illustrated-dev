@@ -15,6 +15,9 @@ h3 {
   margin-bottom: 0.5em;
   margin-top: 1.2em;
 }
+p {
+  font-family: 'Brandon Grotesque', sans-serif;
+}
 
 .twitter-tweet {
   padding: 10px 0 30px;
@@ -42,7 +45,7 @@ h3 {
     font-style: normal;
     padding: 0;
     margin: 0; 
-    background: #fff;
+    background: #F0F3F4;
   }
   html {
     text-rendering: optimizeLegibility;
