@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Link from '../components/link'
 import { css } from '@emotion/core'
 import SEO from '../components/seo'
-import { bpMinSM } from '../utils/breakpoints'
+import { bpMinSM, bpMinMD } from '../utils/breakpoints'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Card from '../components/card'
@@ -14,7 +14,11 @@ export default function Index({ data: { site, wtf } }) {
     <>
       <SEO title={site.siteMetadata.title} />
       <Layout>
-        <Container>
+        <Container
+          css={css({
+            [bpMinMD]: { paddingTop: 'auto', paddingBottom: 0 },
+            paddingTop: '35px',
+          })}>
           <h1 css={css({ textAlign: 'center', marginBottom: '50px' })}>
             Web Development, Illustrated
           </h1>
@@ -24,6 +28,7 @@ export default function Index({ data: { site, wtf } }) {
               [bpMinSM]: {
                 gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr) )',
               },
+
               gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr) )',
               gridGap: '20px',
               a: {
@@ -48,10 +53,20 @@ export default function Index({ data: { site, wtf } }) {
                   image={data.frontmatter.thumbnail.childImageSharp.fluid}
                   featured={data.frontmatter.featured}
                   description={data.frontmatter.description}
+                  tags={data.frontmatter.tags}
                 />
               </Link>
             ))}
           </div>
+        </Container>
+        <Container
+          noVerticalPadding
+          css={css({
+            [bpMinMD]: {
+              padding: 'auto',
+            },
+            padding: 0,
+          })}>
           <Bio />
         </Container>
       </Layout>
@@ -81,6 +96,7 @@ export const pageQuery = graphql`
             title
             featured
             description
+            tags
             thumbnail {
               childImageSharp {
                 fluid(maxWidth: 500) {

@@ -1,47 +1,53 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import Img from 'gatsby-image'
-import { bpMinMD } from '../utils/breakpoints'
+import { bpMinSM, bpMinMD } from '../utils/breakpoints'
 
-const Card = ({ title, image = [], description, date, featured, children }) => (
+const Card = ({
+  title,
+  image = [],
+  description,
+  date,
+  tags = [],
+  featured,
+  children,
+}) => (
   <div
     css={css({
-      background: 'white',
-      [bpMinMD]: {
-        height: '440px',
+      [bpMinSM]: {
+        height: featured ? '380px' : '440px',
         flexDirection: featured ? 'row' : 'column',
       },
+      background: 'white',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
       '.gatsby-image-wrapper': {
-        [bpMinMD]: {
-          width: featured ? '400px' : '100%',
-          height: featured ? '400px' : '100%',
+        [bpMinSM]: {
+          width: featured ? '330px' : '100%',
+          height: featured ? '330px' : '100%',
         },
         width: '100%',
         height: '100%',
       },
 
-      img: {
-        margin: 0,
-      },
       h1: {
-        [bpMinMD]: { fontSize: featured ? '30px' : '23px' },
+        [bpMinSM]: { fontSize: featured ? '30px' : '23px' },
         fontSize: '23px',
         fontWeight: '300',
         height: featured ? 'auto' : '60px',
         lineHeight: '1.2',
       },
       '.description': {
+        [bpMinMD]: {
+          display: 'block',
+        },
         fontFamily: 'brandon-grotesque, sans-serif',
         fontSize: '20px',
         lineHeight: 1.4,
         opacity: 0.9,
         display: 'none',
-        [bpMinMD]: {
-          display: 'block',
-        },
+        margin: 0,
       },
       ':hover': {
         boxShadow: '0 10px 30px -10px rgba(0,0,0,0.15)',
@@ -49,18 +55,37 @@ const Card = ({ title, image = [], description, date, featured, children }) => (
         h1: {
           color: 'inherit',
         },
+        '.tags': {
+          display: 'block',
+        },
       },
       transition: 'all 250ms ease',
+      '.tags': {
+        display: featured ? 'block' : 'none',
+      },
     })}>
     <div
       css={css({
-        padding: featured ? '50px' : '50px 50px 0 50px',
+        padding: featured ? '50px 40px 50px 50px' : '50px 50px 0 50px',
         display: featured && 'flex',
         flexDirection: featured && 'column',
         justifyContent: 'space-between',
       })}>
       <h1>{title}</h1>
       {featured && <p className="description">{description}</p>}
+      {/* {tags && (
+        <div className="tags">
+          {tags.map(tag => (
+            <span
+              css={css({
+                marginRight: '10px',
+                fontFamily: 'brandon-grotesque, sans-serif',
+              })}>
+              {tag}
+            </span>
+          ))}
+        </div>
+      )} */}
     </div>
     <div
       css={css({

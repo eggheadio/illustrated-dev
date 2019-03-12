@@ -23,10 +23,14 @@ class WhatTheForkTemplate extends React.Component {
             })}>
             {wtf.frontmatter.title}
           </h1>
-          <Img
-            css={css({ maxWidth: '700px', margin: '0 auto' })}
-            fluid={wtf.frontmatter.image.childImageSharp.fluid}
-          />
+          <a
+            href={`${wtf.frontmatter.image.childImageSharp.original.src}`}
+            css={css({ cursor: 'zoom-in' })}>
+            <Img
+              css={css({ maxWidth: '700px', margin: '0 auto' })}
+              fluid={wtf.frontmatter.image.childImageSharp.fluid}
+            />
+          </a>
           <MDXRenderer>{wtf.code.body}</MDXRenderer>
 
           {next && (
@@ -73,6 +77,9 @@ export const pageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 900) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+            original {
+              src
             }
           }
         }
