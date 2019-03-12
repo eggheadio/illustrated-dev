@@ -63,11 +63,6 @@ p {
     color: #FF7B53;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
-    &:hover,
-    &:focus {
-      color: #FF7B53;
-    }
-    
   }
   a:not([href]):not([tabindex]) {
     color: inherit;

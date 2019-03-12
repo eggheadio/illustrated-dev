@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import Img from 'gatsby-image'
-import { bpMaxSM, bpMaxMD, bpMinSM, bpMinMD } from '../utils/breakpoints'
+import { bpMinMD } from '../utils/breakpoints'
 
 const Card = ({ title, image = [], description, date, featured }) => (
   <div
@@ -22,14 +22,7 @@ const Card = ({ title, image = [], description, date, featured }) => (
         width: '100%',
         height: '100%',
       },
-      ':hover': {
-        boxShadow: '0 10px 30px -10px rgba(0,0,0,0.15)',
-        transition: 'all 250ms ease',
-        h1: {
-          color: 'inherit',
-        },
-      },
-      transition: 'all 250ms ease',
+
       img: {
         margin: 0,
       },
@@ -49,10 +42,21 @@ const Card = ({ title, image = [], description, date, featured }) => (
           display: 'block',
         },
       },
+      ':hover': {
+        boxShadow: '0 10px 30px -10px rgba(0,0,0,0.15)',
+        transition: 'all 250ms ease',
+        h1: {
+          color: 'inherit',
+        },
+      },
+      transition: 'all 250ms ease',
     })}>
     <div
       css={css({
-        padding: '50px 50px 0 50px',
+        padding: featured ? '50px' : '50px 50px 0 50px',
+        display: featured && 'flex',
+        flexDirection: featured && 'column',
+        justifyContent: 'space-between',
       })}>
       <h1>{title}</h1>
       {featured && <p className="description">{description}</p>}

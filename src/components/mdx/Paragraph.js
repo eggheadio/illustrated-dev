@@ -1,6 +1,12 @@
 import styled from '@emotion/styled'
+import { bpMinSM } from '../../utils/breakpoints'
 
 export default styled.p`
   text-align: left;
-  line-height: 1.7;
+  ${bpMinSM} {
+    line-height: 1.7;
+    font-size: 22px;
+  }
+  line-height: 1.5;
+  font-size: 20px;
 `

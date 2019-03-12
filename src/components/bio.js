@@ -2,10 +2,11 @@ import React from 'react'
 import { css } from '@emotion/core'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
-import { bpMaxSM, bpMaxMD, bpMinSM, bpMinMD } from '../utils/breakpoints'
+import { bpMinMD } from '../utils/breakpoints'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import mdx from './mdx'
 
-const Bio = ({ children }) => {
+const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioPageQuery {
       profilePic: file(relativePath: { eq: "maggie.png" }) {
@@ -43,12 +44,24 @@ const Bio = ({ children }) => {
         css={css({
           background: 'white',
           [bpMinMD]: {
-            padding: '100px 150px',
+            padding: '50px 150px',
             marginTop: '-50px',
           },
+          marginTop: '-35px',
           padding: '30px',
         })}>
-        <MDXRenderer>{data.about.code.body}</MDXRenderer>
+        <MDXRenderer
+          components={mdx}
+          css={css({
+            p: {
+              [bpMinMD]: {
+                fontSize: '22px',
+              },
+              fontSize: '15px',
+            },
+          })}>
+          {data.about.code.body}
+        </MDXRenderer>
       </div>
     </div>
   )

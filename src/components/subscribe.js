@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { css } from '@emotion/core'
-import { bpMaxSM, bpMinSM, bpMinMD, bpMaxMD } from '../utils/breakpoints'
+import { bpMinMD } from '../utils/breakpoints'
 //import Message from '../ConfirmMessage/Message'
 //import { PleaseConfirmIllustration } from '../ConfirmMessage/Illustrations'
 
@@ -71,6 +71,7 @@ class SignUp extends React.Component {
     return (
       <div
         css={css({
+          textAlign: 'center',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -85,7 +86,7 @@ class SignUp extends React.Component {
               marginRight: '30px',
             },
             marginRight: 0,
-            width: '240px',
+            width: '260px',
           },
           button: {
             border: '1px solid #303745',
@@ -94,6 +95,7 @@ class SignUp extends React.Component {
             cursor: 'pointer',
             background: '#303745',
             color: 'white',
+            width: '140px',
             [bpMinMD]: {
               marginTop: 0,
             },

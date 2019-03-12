@@ -1,15 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Link from '../components/link'
-import Img from 'gatsby-image'
 import { css } from '@emotion/core'
 import SEO from '../components/seo'
-import { bpMinMD } from '../utils/breakpoints'
+import { bpMinSM } from '../utils/breakpoints'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Card from '../components/card'
 import Bio from '../components/bio'
-import { MDXRenderer } from 'gatsby-mdx'
 
 export default function Index({ data: { site, wtf } }) {
   return (
@@ -23,7 +21,10 @@ export default function Index({ data: { site, wtf } }) {
           <div
             css={css({
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr) )',
+              [bpMinSM]: {
+                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr) )',
+              },
+              gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr) )',
               gridGap: '20px',
               a: {
                 color: 'inherit',
@@ -36,7 +37,7 @@ export default function Index({ data: { site, wtf } }) {
                 css={
                   data.frontmatter.featured &&
                   css({
-                    [bpMinMD]: {
+                    [bpMinSM]: {
                       gridColumnStart: '1',
                       gridColumnEnd: '3',
                     },

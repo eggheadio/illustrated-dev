@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Global, css } from '@emotion/core'
+import { bpMinSM } from '../utils/breakpoints'
 import reset from '../utils/reset'
 import './layout-styles.css'
 import { bpMaxSM } from '../utils/breakpoints'
