@@ -8,6 +8,8 @@ import { bpMinMD } from '../utils/breakpoints'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Card from '../components/card'
+import Bio from '../components/bio'
+import { MDXRenderer } from 'gatsby-mdx'
 
 export default function Index({ data: { site, wtf } }) {
   return (
@@ -28,14 +30,28 @@ export default function Index({ data: { site, wtf } }) {
               },
             })}>
             {wtf.edges.map(({ node: data }) => (
-              <Link to={`/${data.frontmatter.slug}`} key={data.id}>
+              <Link
+                to={`/${data.frontmatter.slug}`}
+                key={data.id}
+                css={
+                  data.frontmatter.featured &&
+                  css({
+                    [bpMinMD]: {
+                      gridColumnStart: '1',
+                      gridColumnEnd: '3',
+                    },
+                  })
+                }>
                 <Card
                   title={data.frontmatter.title}
                   image={data.frontmatter.thumbnail.childImageSharp.fluid}
+                  featured={data.frontmatter.featured}
+                  description={data.frontmatter.description}
                 />
               </Link>
             ))}
           </div>
+          <Bio />
         </Container>
       </Layout>
     </>
@@ -50,7 +66,7 @@ export const pageQuery = graphql`
       }
     }
     wtf: allMdx(
-      sort: { order: ASC, fields: fields___slug }
+      sort: { order: ASC, fields: [fields___slug, frontmatter___featured] }
       filter: { fields: { collection: { eq: "wtf" } } }
     ) {
       edges {
@@ -62,6 +78,8 @@ export const pageQuery = graphql`
           frontmatter {
             slug
             title
+            featured
+            description
             thumbnail {
               childImageSharp {
                 fluid(maxWidth: 500) {

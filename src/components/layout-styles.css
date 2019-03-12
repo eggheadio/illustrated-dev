@@ -1,6 +1,7 @@
 p {
   font-size: 22px;
   font-family: 'ff-tisa-web-pro', Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.5;
 }
 
 html {
@@ -29,7 +30,6 @@ footer {
   font-weight: 100;
   text-rendering: optimizeLegibility;
 }
-
 article,
 aside,
 details,

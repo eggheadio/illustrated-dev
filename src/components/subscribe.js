@@ -107,6 +107,10 @@ class SignUp extends React.Component {
             display: 'block',
             fontWeight: 500,
             marginBottom: '10px',
+            [bpMinMD]: {
+              marginTop: 0,
+            },
+            marginTop: '20px',
           },
         })}>
         {!successful && (

@@ -3,27 +3,51 @@ import { css } from '@emotion/core'
 import Img from 'gatsby-image'
 import { bpMaxSM, bpMaxMD, bpMinSM, bpMinMD } from '../utils/breakpoints'
 
-const Card = ({ title, image = [], description, date, tags }) => (
+const Card = ({ title, image = [], description, date, featured }) => (
   <div
     css={css({
       background: 'white',
       [bpMinMD]: {
         height: '440px',
+        flexDirection: featured ? 'row' : 'column',
       },
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
+      '.gatsby-image-wrapper': {
+        [bpMinMD]: {
+          width: featured ? '400px' : '100%',
+          height: featured ? '400px' : '100%',
+        },
+        width: '100%',
+        height: '100%',
+      },
       ':hover': {
         boxShadow: '0 10px 30px -10px rgba(0,0,0,0.15)',
         transition: 'all 250ms ease',
+        h1: {
+          color: 'inherit',
+        },
       },
       transition: 'all 250ms ease',
-      img: { margin: 0 },
+      img: {
+        margin: 0,
+      },
       h1: {
+        [bpMinMD]: { fontSize: featured ? '30px' : '23px' },
         fontSize: '23px',
         fontWeight: '300',
-        height: '60px',
+        height: featured ? 'auto' : '60px',
         lineHeight: '1.2',
+      },
+      '.description': {
+        fontSize: '20px',
+        lineHeight: 1.4,
+        opacity: 0.9,
+        display: 'none',
+        [bpMinMD]: {
+          display: 'block',
+        },
       },
     })}>
     <div
@@ -31,10 +55,14 @@ const Card = ({ title, image = [], description, date, tags }) => (
         padding: '50px 50px 0 50px',
       })}>
       <h1>{title}</h1>
-      {description}
-      {date}
+      {featured && <p className="description">{description}</p>}
     </div>
-    <div>
+    <div
+      css={css({
+        display: 'flex',
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end',
+      })}>
       <Img fluid={image} />
     </div>
   </div>
