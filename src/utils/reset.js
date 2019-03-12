@@ -16,7 +16,7 @@ h3 {
   margin-top: 1.2em;
 }
 p {
-  font-family: 'Brandon Grotesque', sans-serif;
+  font-family: 'brandon-grotesque', sans-serif;
 }
 
 .twitter-tweet {

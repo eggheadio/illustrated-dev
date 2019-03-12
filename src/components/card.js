@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 import Img from 'gatsby-image'
 import { bpMinMD } from '../utils/breakpoints'
 
-const Card = ({ title, image = [], description, date, featured }) => (
+const Card = ({ title, image = [], description, date, featured, children }) => (
   <div
     css={css({
       background: 'white',
@@ -34,6 +34,7 @@ const Card = ({ title, image = [], description, date, featured }) => (
         lineHeight: '1.2',
       },
       '.description': {
+        fontFamily: 'brandon-grotesque, sans-serif',
         fontSize: '20px',
         lineHeight: 1.4,
         opacity: 0.9,
@@ -68,6 +69,7 @@ const Card = ({ title, image = [], description, date, featured }) => (
         alignItems: 'flex-end',
       })}>
       <Img fluid={image} />
+      {children}
     </div>
   </div>
 )

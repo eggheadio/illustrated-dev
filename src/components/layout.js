@@ -12,7 +12,7 @@ export const globalStyles = css({
   ...reset,
 })
 
-const Layout = ({ children, background = 'transparent' }) => {
+const Layout = ({ children, background = 'transparent', noSubscribe }) => {
   const data = useStaticQuery(graphql`
     query LayoutQuery {
       site {
@@ -32,7 +32,7 @@ const Layout = ({ children, background = 'transparent' }) => {
         })}>
         {children}
       </div>
-      <Footer />
+      <Footer noSubscribe={noSubscribe} />
     </>
   )
 }

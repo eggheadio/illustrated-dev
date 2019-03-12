@@ -5,14 +5,14 @@ import SignUp from './subscribe'
 import Container from './container'
 import eggheadpwrd from '../images/egghead-powered.svg'
 
-const Footer = ({ background = 'transparent' }) => (
+const Footer = ({ background = 'transparent', noSubscribe }) => (
   <footer
     css={css({
       background: background,
       marginTop: '60px',
     })}>
     <Container noVerticalPadding>
-      <SignUp />
+      {!noSubscribe && <SignUp />}
       <div
         css={css({
           display: 'flex',
