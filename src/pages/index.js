@@ -77,6 +77,7 @@ export default function Index({ data: { site, wtf } }) {
           css={css({
             [bpMinMD]: {
               padding: 'auto',
+              paddingBottom: '30px',
             },
             padding: 0,
           })}>
