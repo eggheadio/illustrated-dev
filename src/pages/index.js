@@ -3,7 +3,13 @@ import { graphql } from 'gatsby'
 import Link from '../components/link'
 import { css } from '@emotion/core'
 import SEO from '../components/seo'
-import { bpMinSM, bpMinMD } from '../utils/breakpoints'
+import {
+  bpMinSM,
+  bpMinMD,
+  bpMaxMD,
+  bpMinLG,
+  bpMaxLG,
+} from '../utils/breakpoints'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Card from '../components/card'
@@ -25,11 +31,18 @@ export default function Index({ data: { site, wtf } }) {
           <div
             css={css({
               display: 'grid',
-              [bpMinSM]: {
+              [bpMaxMD]: {
                 gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr) )',
               },
-
-              gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr) )',
+              [bpMinMD]: {
+                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr) )',
+              },
+              [bpMinLG]: {
+                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr) )',
+              },
+              [bpMaxLG]: {
+                gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr) )',
+              },
               gridGap: '20px',
               a: {
                 color: 'inherit',
