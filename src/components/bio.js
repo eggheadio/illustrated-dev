@@ -35,7 +35,7 @@ const Bio = ({ children }) => {
           fluid={data.profilePic.childImageSharp.fluid}
         />
         <div css={css({ padding: '0 40px 40px 40px' })}>
-          <h5>HEY, I'M</h5>
+          <h5>Made by</h5>
           <h2>Maggie Appleton</h2>
         </div>
       </div>
