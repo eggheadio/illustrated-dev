@@ -98,7 +98,7 @@ export default function Index({ data: { site, wtf } }) {
         >
           <Bio />
           <Link 
-            to="https://egghead.io/browse"
+            to="https://egghead.io/"
             aria-label="Browse development courses on egghead.io">
             <img css={css({
               margin: '80px auto 60px',
