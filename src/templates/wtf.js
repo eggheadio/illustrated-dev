@@ -6,6 +6,13 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import Layout from '../components/layout'
 import Link from '../components/link'
 import Container from '../components/container'
+import {
+  bpMinSM,
+  bpMinMD,
+  bpMaxMD,
+  bpMinLG,
+  bpMaxLG
+} from "../utils/breakpoints";
 
 class WhatTheForkTemplate extends React.Component {
   render() {
@@ -17,16 +24,19 @@ class WhatTheForkTemplate extends React.Component {
           <div
             css={css({
               background: "white",
-              padding: "100px 0",
+              [bpMinMD]: { padding: "80px 20px", margin: '0' },
+              padding: "40px 20px",
+              marginTop: "40px",
               borderRadius: "2px",
               boxShadow: "0px 1px 2px rgba(52, 61, 68, 0.1)",
+              clear: "both"
             })}
           >
             <h1
               css={css({
                 fontWeight: "100",
                 fontSize: "40px",
-                paddingBottom: '40px',
+                paddingBottom: "40px",
                 fontFamily: "ff-tisa-web-pro, serif",
                 textAlign: "center"
               })}
@@ -38,11 +48,11 @@ class WhatTheForkTemplate extends React.Component {
               css={css({ cursor: "zoom-in" })}
             >
               <Img
-                css={css({ margin: "0 auto", maxWidth: '700px' })}
+                css={css({ margin: "0 auto", maxWidth: "700px" })}
                 fluid={wtf.frontmatter.image.childImageSharp.fluid}
               />
             </a>
-            <MDXRenderer >{wtf.code.body}</MDXRenderer>
+            <MDXRenderer>{wtf.code.body}</MDXRenderer>
           </div>
 
           {next && (

@@ -30,9 +30,15 @@ export default function Index({ data: { site, wtf } }) {
           <h1
             css={css({
               textAlign: "left",
-              padding: "20px 0 40px 0",
-              fontSize: "4.4em",
-              letterSpacing: '-0.02em'
+              paddingBottom: "40px",
+              marginTop: "60px",
+              clear: "both",
+              [bpMinMD]: {
+                fontSize: "4.4em",
+                marginTop: "0px"
+              },
+              fontSize: "3em",
+              letterSpacing: "-0.02em"
             })}
           >
             Web development,
@@ -97,14 +103,18 @@ export default function Index({ data: { site, wtf } }) {
           })}
         >
           <Bio />
-          <Link 
+          <Link
             to="https://egghead.io/"
-            aria-label="Browse development courses on egghead.io">
-            <img css={css({
-              margin: '80px auto 60px',
-              display: 'flex',
-            })}
-            src={eggheadpwrd} alt="Powered by egghead.io" />
+            aria-label="Browse development courses on egghead.io"
+          >
+            <img
+              css={css({
+                margin: "80px auto 60px",
+                display: "flex"
+              })}
+              src={eggheadpwrd}
+              alt="Powered by egghead.io"
+            />
           </Link>
         </Container>
       </Layout>
