@@ -17,7 +17,7 @@ class WhatTheForkTemplate extends React.Component {
           <div
             css={css({
               background: "white",
-              padding: "60px",
+              padding: "100px 0",
               borderRadius: "2px",
               boxShadow: "0px 1px 2px rgba(52, 61, 68, 0.1)",
             })}
@@ -26,6 +26,7 @@ class WhatTheForkTemplate extends React.Component {
               css={css({
                 fontWeight: "100",
                 fontSize: "40px",
+                paddingBottom: '40px',
                 fontFamily: "ff-tisa-web-pro, serif",
                 textAlign: "center"
               })}
