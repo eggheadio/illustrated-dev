@@ -24,46 +24,46 @@ const Bio = () => {
     }
   `)
   return (
-    <div css={css({ marginTop: '100px' })}>
-      <div css={css({ display: 'flex', alignItems: 'center' })}>
+    <div css={css({ maxWidth: '80%', alignItems: "center", margin: 'auto', marginTop: "160px", marginBottom: "120px" })}>
+      <div css={css({ display: "flex", alignItems: "center" })}>
         <Img
           css={css({
-            [bpMinMD]: { marginLeft: '-60px' },
             marginLeft: 0,
-            maxWidth: '165px',
-            width: '100%',
+            maxWidth: "165px",
+            width: "100%"
           })}
           fluid={data.profilePic.childImageSharp.fluid}
         />
-        <div css={css({ padding: '0 40px 40px 40px' })}>
+        <div css={css({ padding: "0 40px 40px 40px" })}>
           <h5>Made by</h5>
           <h2>Maggie Appleton</h2>
         </div>
       </div>
       <div
         css={css({
-          background: 'white',
+          background: "white",
           [bpMinMD]: {
-            padding: '50px 150px',
-            marginTop: '-50px',
+            padding: "50px 150px"
           },
-          marginTop: '-35px',
-          padding: '30px',
-        })}>
+          marginTop: "-35px",
+          padding: "30px"
+        })}
+      >
         <MDXRenderer
           components={mdx}
           css={css({
             p: {
               [bpMinMD]: {
-                fontSize: '22px',
+                fontSize: "20px"
               },
-              fontSize: '15px',
-            },
-          })}>
+              fontSize: "15px"
+            }
+          })}
+        >
           {data.about.code.body}
         </MDXRenderer>
       </div>
     </div>
-  )
+  );
 }
 export default Bio

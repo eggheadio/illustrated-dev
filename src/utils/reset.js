@@ -16,14 +16,14 @@ h3 {
   margin-top: 1.2em;
 }
 p {
-  font-family: 'brandon-grotesque', sans-serif;
+  font-family: 'freight-sans-pro', sans-serif;
 }
 
 .twitter-tweet {
   padding: 10px 0 30px;
 }
 .active {
-  color: #FF7B53;
+  color: #3FCCDC;
 }
   form {
     margin: 0;
@@ -60,7 +60,7 @@ p {
   ::selection {
   }
   a {
-    color: #FF7B53;
+    color: #28C7D9;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
   }
@@ -77,7 +77,7 @@ p {
     }
   }
   blockquote {
-    border-left: 5px solid #FF7B53;
+    border-left: 5px solid #3FCCDC;
     padding-left: 1rem !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -179,6 +179,6 @@ p {
   [hidden] {
     display: none !important;
   }
-`
+`;
 
 export default reset

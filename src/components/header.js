@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from './link'
+import Subbutton from './subbutton'
 import { css } from '@emotion/core'
 import Container from './container'
 
@@ -25,23 +26,38 @@ const Header = ({ background }) => (
   <header
     css={css({
       background: background,
-      paddingTop: '25px',
-      a: { color: 'rgb(70, 60, 70)' },
-      h1: {
-        fontFamily: 'freight-sans-pro',
-        fontSize: '18px',
-        fontWeight: '600',
-        textTransform: 'uppercase',
+      paddingTop: "40px",
+      a: {
+        fontFamily: "brandon-grotesque, sans-serif",
+        fontSize: "14px",
+        letterSpacing: "0.1em",
+        fontWeight: "700",
+        textTransform: "uppercase",
         margin: 0,
-        textAlign: 'center',
-      },
-    })}>
+        textAlign: "left"
+      }
+    })}
+  >
     <Container noVerticalPadding>
       <h1>
-        <Link to="/">Illustrated.dev</Link>
+        <Link
+          css={css({
+            border: "2px solid #FFFFFF",
+            boxSizing: "border-box",
+            borderRadius: "4px",
+            color: "rgb(79, 88, 95)",
+            padding: "15px 20px",
+            fontWeight: "700",
+            float: "left"
+          })}
+          to="/"
+        >
+          Illustrated.dev
+        </Link>
         {/* <Navbar /> */}
+        <Subbutton />
       </h1>
     </Container>
   </header>
-)
+);
 export default Header

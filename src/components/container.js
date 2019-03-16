@@ -4,7 +4,7 @@ import { bpMaxSM, bpMinMD } from '../utils/breakpoints'
 
 const Container = props => {
   const {
-    maxWidth = 720,
+    maxWidth = 1100,
     noHorizontalPadding = false,
     noVerticalPadding = false,
     ...restProps
@@ -14,10 +14,10 @@ const Container = props => {
       css={css`
         width: 100%;
         margin: 0 auto;
-        max-width: ${maxWidth + (noHorizontalPadding ? 0 : 80)}px;
+        max-width: ${maxWidth + (noHorizontalPadding ? 0 : 60)}px;
         ${bpMinMD} {
-          padding: ${noVerticalPadding ? 0 : '40'}px
-            ${noHorizontalPadding ? 0 : '40'}px;
+          padding: ${noVerticalPadding ? 0 : 120}px
+            ${noHorizontalPadding ? 0 : 60}px;
         }
         padding: ${noVerticalPadding ? 0 : '20'}px
           ${noHorizontalPadding ? 0 : '20'}px;

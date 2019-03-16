@@ -12,50 +12,61 @@ class WhatTheForkTemplate extends React.Component {
     const wtf = this.props.data.mdx
     const { next, previous } = this.props.pageContext
     return (
-      <Layout background="white">
+      <Layout>
         <Container>
-          <h1
+          <div
             css={css({
-              fontWeight: '600',
-              fontSize: '40px',
-              fontFamily: 'ff-tisa-web-pro, serif',
-              textAlign: 'center',
-            })}>
-            {wtf.frontmatter.title}
-          </h1>
-          <a
-            href={`${wtf.frontmatter.image.childImageSharp.original.src}`}
-            css={css({ cursor: 'zoom-in' })}>
-            <Img
-              css={css({ maxWidth: '700px', margin: '0 auto' })}
-              fluid={wtf.frontmatter.image.childImageSharp.fluid}
-            />
-          </a>
-          <MDXRenderer>{wtf.code.body}</MDXRenderer>
+              background: "white",
+              padding: "60px",
+              borderRadius: "2px",
+              boxShadow: "0px 1px 2px rgba(52, 61, 68, 0.1)",
+            })}
+          >
+            <h1
+              css={css({
+                fontWeight: "100",
+                fontSize: "40px",
+                fontFamily: "ff-tisa-web-pro, serif",
+                textAlign: "center"
+              })}
+            >
+              {wtf.frontmatter.title}
+            </h1>
+            <a
+              href={`${wtf.frontmatter.image.childImageSharp.original.src}`}
+              css={css({ cursor: "zoom-in" })}
+            >
+              <Img
+                css={css({ margin: "0 auto", maxWidth: '700px' })}
+                fluid={wtf.frontmatter.image.childImageSharp.fluid}
+              />
+            </a>
+            <MDXRenderer >{wtf.code.body}</MDXRenderer>
+          </div>
 
           {next && (
             <Link to={`/${next.frontmatter.slug}`} rel="next">
               <div
                 css={css({
-                  padding: '30px',
-                  marginTop: '80px',
-                  textAlign: 'center',
-                  border: '2px solid #f1f1f1',
+                  marginTop: "80px",
+                  textAlign: "center",
                   h4: {
-                    fontFamily: 'freight-sans-pro, sans-serif',
-                    textTransform: 'uppercase',
-                    fontSize: '16px',
-                    color: 'hsla(0, 0%, 0%, 0.5)',
-                  },
-                })}>
+                    fontFamily: "freight-sans-pro, sans-serif",
+                    textTransform: "uppercase",
+                    fontSize: "16px",
+                    color: "hsla(0, 0%, 0%, 0.5)"
+                  }
+                })}
+              >
                 <h4>next</h4>
                 <h2
                   css={css({
-                    fontWeight: '100',
-                    fontFamily: 'ff-tisa-web-pro, serif',
-                    fontSize: '2.2em',
-                    fontStyle: 'italic',
-                  })}>
+                    fontWeight: "100",
+                    fontFamily: "ff-tisa-web-pro, serif",
+                    fontSize: "2.2em",
+                    fontStyle: "italic"
+                  })}
+                >
                   {next.frontmatter.title} <span>→</span>
                 </h2>
               </div>
@@ -63,7 +74,7 @@ class WhatTheForkTemplate extends React.Component {
           )}
         </Container>
       </Layout>
-    )
+    );
   }
 }
 
