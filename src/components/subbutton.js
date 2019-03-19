@@ -13,9 +13,10 @@ class Subbutton extends React.Component {
               color: "#fff",
               padding: "15px 20px",
               fontWeight: "700",
-              float: "right"
+              float: "right",
+              cursor: "pointer"
             })}
-            to={`/`}
+            onClick={this.props.onClick}
           >
             Subscribe
           </Link>

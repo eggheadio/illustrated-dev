@@ -22,7 +22,7 @@ import Container from './container'
 
 // }
 
-const Header = ({ background }) => (
+const Header = ({ background, scrollToFooter }) => (
   <header
     css={css({
       background: background,
@@ -55,7 +55,7 @@ const Header = ({ background }) => (
           Illustrated.dev
         </Link>
         {/* <Navbar /> */}
-        <Subbutton />
+        <Subbutton onClick={scrollToFooter}/>
       </h1>
     </Container>
   </header>

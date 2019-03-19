@@ -3,8 +3,9 @@ import { css } from '@emotion/core'
 import SignUp from './subscribe'
 import Container from './container'
 
-const Footer = ({ background = '#303745', noSubscribe }) => (
+const Footer = ({ background = '#303745', noSubscribe, forwardedRef }) => (
   <footer
+    ref={forwardedRef}
     css={css({
       background: background
     })}>
@@ -48,4 +49,5 @@ const Footer = ({ background = '#303745', noSubscribe }) => (
     </Container>
   </footer>
 )
+
 export default Footer

@@ -1,4 +1,5 @@
 import React from 'react'
+import { findDOMNode } from 'react-dom'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Global, css } from '@emotion/core'
 import { bpMinSM } from '../utils/breakpoints'
@@ -13,6 +14,14 @@ export const globalStyles = css({
 })
 
 const Layout = ({ children, background = 'transparent', noSubscribe }) => {
+  const footerRef = React.useRef(null)
+
+  const scrollToFooter = () => {
+    if (footerRef && footerRef.current) {
+      const footer = findDOMNode(footerRef.current)
+      footer.scrollIntoView()
+    }
+  }
   const data = useStaticQuery(graphql`
     query LayoutQuery {
       site {
@@ -25,14 +34,14 @@ const Layout = ({ children, background = 'transparent', noSubscribe }) => {
   return (
     <>
       <Global styles={globalStyles} />
-      <Header background={background} />
+      <Header background={background} scrollToFooter={scrollToFooter}/>
       <div
         css={css({
           background: background,
         })}>
         {children}
       </div>
-      <Footer noSubscribe={noSubscribe} />
+      <Footer noSubscribe={noSubscribe} forwardedRef={footerRef}/>
     </>
   )
 }
