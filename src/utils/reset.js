@@ -65,7 +65,6 @@ p {
     text-decoration: none;
   }
   a:not([href]):not([tabindex]) {
-    color: inherit;
     text-decoration: none;
     &:hover,
     &:focus {
