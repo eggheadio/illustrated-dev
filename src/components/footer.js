@@ -7,7 +7,7 @@ const Footer = ({ background = '#303745', noSubscribe, forwardedRef }) => (
   <footer
     ref={forwardedRef}
     css={css({
-      background: background
+      background: background,
     })}>
     <Container noVerticalPadding>
       {!noSubscribe && <SignUp />}
@@ -21,6 +21,7 @@ const Footer = ({ background = '#303745', noSubscribe, forwardedRef }) => (
           h6: {
             fontSize: '18px',
             margin: 0,
+            fontWeight: '500',
           },
           img: {
             maxWidth: '140px',
@@ -38,12 +39,14 @@ const Footer = ({ background = '#303745', noSubscribe, forwardedRef }) => (
             },
           },
           a: { color: 'inherit' },
-          h6: { fontWeight: '500' },
         })}>
         <a href="mailto:maggie@egghead.io" aria-label="Contact me">
-          <h6 css={css({
-            paddingBottom: "30px"
-          })}>© Maggie Appleton</h6>
+          <h6
+            css={css({
+              paddingBottom: '30px',
+            })}>
+            © Maggie Appleton
+          </h6>
         </a>
       </div>
     </Container>

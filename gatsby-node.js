@@ -1,5 +1,6 @@
 const { createFilePath } = require('gatsby-source-filesystem')
 const _ = require('lodash')
+const slugify = require('@sindresorhus/slugify')
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -82,6 +83,31 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+            pages: allMdx(
+              sort: { order: ASC, fields: fields___slug }
+              filter: { fields: { collection: { eq: "pages" } } }
+            ) {
+              edges {
+                node {
+                  id
+                  parent {
+                    ... on File {
+                      name
+                      sourceInstanceName
+                    }
+                  }
+                  excerpt(pruneLength: 250)
+                  fields {
+                    collection
+                    slug
+                  }
+                  frontmatter {
+                    title
+                    slug
+                  }
+                }
+              }
+            }
           }
         `
       ).then(result => {
@@ -90,12 +116,28 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
+        const pages = result.data.pages.edges.filter(e => {
+          return e.node.parent.sourceInstanceName === 'pages'
+        })
+
         const articles = result.data.articles.edges.filter(e => {
           return e.node.parent.sourceInstanceName === 'articles'
         })
 
         const wtf = result.data.wtf.edges.filter(e => {
           return e.node.parent.sourceInstanceName === 'wtf'
+        })
+
+        pages.forEach(({ node }) => {
+          createPage({
+            path: `${
+              node.frontmatter.title
+                ? slugify(node.frontmatter.title)
+                : node.fields.slug
+            }`,
+            component: path.resolve(`./src/templates/page.js`),
+            context: { id: node.id },
+          })
         })
 
         articles.forEach(({ node }) => {

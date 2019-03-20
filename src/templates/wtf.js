@@ -11,8 +11,8 @@ import {
   bpMinMD,
   bpMaxMD,
   bpMinLG,
-  bpMaxLG
-} from "../utils/breakpoints";
+  bpMaxLG,
+} from '../utils/breakpoints'
 
 class WhatTheForkTemplate extends React.Component {
   render() {
@@ -23,32 +23,29 @@ class WhatTheForkTemplate extends React.Component {
         <Container>
           <div
             css={css({
-              background: "white",
-              [bpMinMD]: { padding: "80px 20px", margin: '0' },
-              padding: "40px 20px",
-              marginTop: "40px",
-              borderRadius: "2px",
-              boxShadow: "0px 1px 2px rgba(52, 61, 68, 0.1)",
-              clear: "both"
-            })}
-          >
+              background: 'white',
+              [bpMinMD]: { padding: '80px 20px', margin: '0' },
+              padding: '40px 20px',
+              marginTop: '40px',
+              borderRadius: '2px',
+              boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.1)',
+              clear: 'both',
+            })}>
             <h1
               css={css({
-                fontWeight: "100",
-                fontSize: "40px",
-                paddingBottom: "40px",
-                fontFamily: "ff-tisa-web-pro, serif",
-                textAlign: "center"
-              })}
-            >
+                fontWeight: '100',
+                fontSize: '40px',
+                paddingBottom: '40px',
+                fontFamily: 'ff-tisa-web-pro, serif',
+                textAlign: 'center',
+              })}>
               {wtf.frontmatter.title}
             </h1>
             <a
               href={`${wtf.frontmatter.image.childImageSharp.original.src}`}
-              css={css({ cursor: "zoom-in" })}
-            >
+              css={css({ cursor: 'zoom-in' })}>
               <Img
-                css={css({ margin: "0 auto", maxWidth: "700px" })}
+                css={css({ margin: '0 auto', maxWidth: '700px' })}
                 fluid={wtf.frontmatter.image.childImageSharp.fluid}
               />
             </a>
@@ -59,25 +56,23 @@ class WhatTheForkTemplate extends React.Component {
             <Link to={`/${next.frontmatter.slug}`} rel="next">
               <div
                 css={css({
-                  marginTop: "80px",
-                  textAlign: "center",
+                  marginTop: '80px',
+                  textAlign: 'center',
                   h4: {
-                    fontFamily: "freight-sans-pro, sans-serif",
-                    textTransform: "uppercase",
-                    fontSize: "16px",
-                    color: "hsla(0, 0%, 0%, 0.5)"
-                  }
-                })}
-              >
+                    fontFamily: 'freight-sans-pro, sans-serif',
+                    textTransform: 'uppercase',
+                    fontSize: '16px',
+                    color: 'hsla(0, 0%, 0%, 0.5)',
+                  },
+                })}>
                 <h4>next</h4>
                 <h2
                   css={css({
-                    fontWeight: "100",
-                    fontFamily: "ff-tisa-web-pro, serif",
-                    fontSize: "2.2em",
-                    fontStyle: "italic"
-                  })}
-                >
+                    fontWeight: '100',
+                    fontFamily: 'ff-tisa-web-pro, serif',
+                    fontSize: '2.2em',
+                    fontStyle: 'italic',
+                  })}>
                   {next.frontmatter.title} <span>→</span>
                 </h2>
               </div>
@@ -85,7 +80,7 @@ class WhatTheForkTemplate extends React.Component {
           )}
         </Container>
       </Layout>
-    );
+    )
   }
 }
 
