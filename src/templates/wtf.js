@@ -32,27 +32,42 @@ class WhatTheForkTemplate extends React.Component {
               clear: "both"
             })}
           >
-            <h1
+            <div
               css={css({
-                fontWeight: "100",
-                fontSize: "40px",
-                paddingBottom: "40px",
-                fontFamily: "ff-tisa-web-pro, serif",
-                textAlign: "center"
+                maxWidth: "700px",
+                margin: "0 auto"
               })}
             >
-              {wtf.frontmatter.title}
-            </h1>
-            <a
-              href={`${wtf.frontmatter.image.childImageSharp.original.src}`}
-              css={css({ cursor: "zoom-in" })}
-            >
-              <Img
-                css={css({ margin: "0 auto", maxWidth: "700px" })}
-                fluid={wtf.frontmatter.image.childImageSharp.fluid}
-              />
-            </a>
-            <MDXRenderer>{wtf.code.body}</MDXRenderer>
+              <h1
+                css={css({
+                  fontWeight: "100",
+                  fontSize: "40px",
+                  paddingBottom: "40px",
+                  fontFamily: "ff-tisa-web-pro, serif",
+                  textAlign: "center"
+                })}
+              >
+                {wtf.frontmatter.title}
+              </h1>
+              {/* <a
+                href={`${wtf.frontmatter.image.childImageSharp.original.src}`}
+                css={css({ cursor: "zoom-in" })}
+              >
+                <Img
+                  css={css({ margin: "0 auto", maxWidth: "700px" })}
+                  fluid={wtf.frontmatter.image.childImageSharp.fluid}
+                />
+              </a> */}
+              <MDXRenderer>{wtf.code.body}</MDXRenderer>
+
+              <h5
+                css={css({
+                  paddingTop: "40px"
+                })}
+              >
+                Topics: {wtf.frontmatter.tags[0]}, {wtf.frontmatter.tags[1]}, {wtf.frontmatter.tags[2]}
+              </h5>
+            </div>
           </div>
           <div
             css={css({
@@ -156,6 +171,7 @@ export const pageQuery = graphql`
       id
       frontmatter {
         title
+        tags
         image {
           childImageSharp {
             fluid(maxWidth: 900) {
