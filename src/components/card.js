@@ -15,7 +15,7 @@ const Card = ({
   <div
     css={css({
       [bpMinSM]: {
-        height: "380px",
+        height: "420px",
         flexDirection: featured ? "row" : "column"
       },
       background: "white",
