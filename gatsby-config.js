@@ -35,7 +35,6 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
-    'gatsby-plugin-page-transitions',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
