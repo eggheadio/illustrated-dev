@@ -18,6 +18,7 @@
     "gatsby-plugin-manifest": "^2.0.13",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-offline": "^2.0.20",
+    "gatsby-plugin-page-transitions": "^1.0.7",
     "gatsby-plugin-react-helmet": "^3.0.5",
     "gatsby-plugin-sharp": "^2.0.21",
     "gatsby-plugin-web-font-loader": "^1.0.4",

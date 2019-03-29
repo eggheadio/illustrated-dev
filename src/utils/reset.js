@@ -76,7 +76,8 @@ p {
     }
   }
   blockquote {
-    border-left: 5px solid #3FCCDC;
+    border-bottom: 1px solid #3FCCDC;
+    border-top: 1px solid #3FCCDC;
     padding-left: 1rem !important;
     margin-left: 0 !important;
     margin-right: 0 !important;

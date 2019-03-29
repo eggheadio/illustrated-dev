@@ -60,13 +60,6 @@ class WhatTheForkTemplate extends React.Component {
               </a> */}
               <MDXRenderer>{wtf.code.body}</MDXRenderer>
 
-              <h5
-                css={css({
-                  paddingTop: "40px"
-                })}
-              >
-                Topics: {wtf.frontmatter.tags[0]}, {wtf.frontmatter.tags[1]}, {wtf.frontmatter.tags[2]}
-              </h5>
             </div>
           </div>
           <div

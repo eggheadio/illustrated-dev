@@ -32,6 +32,7 @@ export default function Index({ data: { site, wtf } }) {
               textAlign: "left",
               paddingBottom: "40px",
               marginTop: "60px",
+              fontWeight: "600",
               clear: "both",
               [bpMinMD]: {
                 fontSize: "4.4em",
