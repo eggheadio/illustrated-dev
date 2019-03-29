@@ -41,25 +41,31 @@ class WhatTheForkTemplate extends React.Component {
               <h1
                 css={css({
                   fontWeight: "100",
-                  fontSize: "40px",
-                  paddingBottom: "40px",
+                  fontSize: "2.8rem",
+                  marginBottom: "40px",
                   fontFamily: "ff-tisa-web-pro, serif",
-                  textAlign: "center"
+                  textAlign: "left"
                 })}
               >
                 {wtf.frontmatter.title}
               </h1>
-              {/* <a
-                href={`${wtf.frontmatter.image.childImageSharp.original.src}`}
-                css={css({ cursor: "zoom-in" })}
+              <div
+                css={css({
+                  textAlign: "left"
+                })}
               >
-                <Img
-                  css={css({ margin: "0 auto", maxWidth: "700px" })}
-                  fluid={wtf.frontmatter.image.childImageSharp.fluid}
-                />
-              </a> */}
-              <MDXRenderer>{wtf.code.body}</MDXRenderer>
+                <h5
+                  css={css({
+                    marginBottom: "60px"
+                  })}
+                >
+                  {wtf.frontmatter.author}
+                </h5>
+              </div>
 
+              <MDXRenderer >
+                {wtf.code.body}
+              </MDXRenderer>
             </div>
           </div>
           <div
@@ -165,6 +171,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         tags
+        author
         image {
           childImageSharp {
             fluid(maxWidth: 900) {
