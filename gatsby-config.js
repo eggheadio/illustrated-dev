@@ -17,7 +17,7 @@ module.exports = {
           export default { ResponsiveEmbed, TwitterTweetEmbed };
         `,
         defaultLayouts: {
-          default: here('./src/templates/page.js'),
+          default: here('./src/components/layout.js'),
         },
         gatsbyRemarkPlugins: [
           {
