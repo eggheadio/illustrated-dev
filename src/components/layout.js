@@ -1,5 +1,4 @@
 import React from "react";
-import PageTransition from "gatsby-plugin-page-transitions";
 import { findDOMNode } from "react-dom";
 import { useStaticQuery, graphql } from "gatsby";
 import { Global, css } from "@emotion/core";
@@ -34,9 +33,6 @@ const Layout = ({ children, background = "transparent", noSubscribe }) => {
   `);
   return (
     <>
-      <PageTransition
-        transitionTime={800}
-      >
         <Global styles={globalStyles} />
         <Header background={background} scrollToFooter={scrollToFooter} />
         <div
@@ -47,7 +43,6 @@ const Layout = ({ children, background = "transparent", noSubscribe }) => {
           {children}
         </div>
         <Footer noSubscribe={noSubscribe} forwardedRef={footerRef} />
-      </PageTransition>
     </>
   );
 };
