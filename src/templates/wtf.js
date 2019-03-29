@@ -49,20 +49,6 @@ class WhatTheForkTemplate extends React.Component {
               >
                 {wtf.frontmatter.title}
               </h1>
-              <div
-                css={css({
-                  textAlign: "left"
-                })}
-              >
-                <h5
-                  css={css({
-                    marginBottom: "60px"
-                  })}
-                >
-                  {wtf.frontmatter.author}
-                </h5>
-              </div>
-
               <MDXRenderer >
                 {wtf.code.body}
               </MDXRenderer>
@@ -171,7 +157,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         tags
-        author
         image {
           childImageSharp {
             fluid(maxWidth: 900) {
