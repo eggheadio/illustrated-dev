@@ -4,7 +4,7 @@ const here = (...p) => path.join(__dirname, ...p)
 module.exports = {
   siteMetadata: {
     title: `Illustrated.dev`,
-    description: `Web development, illustrated`,
+    description: `Illustrated web development & javascript tutorials`,
     author: '@mappletons',
   },
   plugins: [
