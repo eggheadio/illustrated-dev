@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import theme from 'prism-react-renderer/themes/dracula'
+import theme from '../duotoneDark'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
@@ -19,8 +19,7 @@ const Code = ({ codeString, language, ...props }) => {
         {...defaultProps}
         code={codeString}
         language={language}
-        theme={theme}
-      >
+        theme={theme}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className} style={style}>
             {tokens.map((line, i) => (
@@ -31,8 +30,10 @@ const Code = ({ codeString, language, ...props }) => {
                     width: 2em;
                     user-select: none;
                     opacity: 0.3;
-                  `}
-                >
+
+                    font-family: 'Operator SSm', 'Dank Mono', source-code-pro,
+                      monospace;
+                  `}>
                   {i + 1}
                 </span>
                 {line.map((token, key) => (
