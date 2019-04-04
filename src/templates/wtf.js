@@ -8,6 +8,7 @@ import Link from '../components/link'
 import Container from '../components/container'
 import { bpMinMD } from '../utils/breakpoints'
 import SEO from '../components/seo'
+import get from 'lodash/get'
 
 class WhatTheForkTemplate extends React.Component {
   render() {
@@ -17,7 +18,7 @@ class WhatTheForkTemplate extends React.Component {
       <>
         <SEO
           description={wtf.frontmatter.description}
-          image={wtf.frontmatter.thumbnail.childImageSharp.fluid}
+          image={get(wtf, 'frontmatter.thumbnail.childImageSharp.fluid')}
           title={wtf.frontmatter.title}
         />
         <Layout>
