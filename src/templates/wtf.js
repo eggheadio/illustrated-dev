@@ -15,11 +15,12 @@ class WhatTheForkTemplate extends React.Component {
     const wtf = this.props.data.mdx
     const { next, previous } = this.props.pageContext
     const image = get(wtf, 'frontmatter.thumbnail.childImageSharp.fluid')
+
     return (
       <>
         <SEO
           description={wtf.frontmatter.description}
-          image={image && `https://illustrated.dev/${image}`}
+          image={image && `https://illustrated.dev${image.src}`}
           title={wtf.frontmatter.title}
         />
         <Layout>
