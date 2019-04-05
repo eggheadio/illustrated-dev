@@ -39,13 +39,15 @@ const Share = ({ socialConfig, tags }) => (
       hashtags={tags}>
       <img src={twitterIcon} width="100%" alt="Twitter" />
     </TwitterShareButton>
-    <PinterestShareButton
-      css={ShareButton}
-      media={socialConfig.config.media}
-      url={socialConfig.config.url}
-      title={socialConfig.config.title}>
-      <img src={pinterestIcon} width="100%" alt="Twitter" />
-    </PinterestShareButton>
+    {socialConfig.config.media && (
+      <PinterestShareButton
+        css={ShareButton}
+        media={socialConfig.config.media}
+        url={socialConfig.config.url}
+        title={socialConfig.config.title}>
+        <img src={pinterestIcon} width="100%" alt="Twitter" />
+      </PinterestShareButton>
+    )}
   </div>
 )
 
