@@ -121,12 +121,21 @@ module.exports = {
               return allMdx.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.description,
+                  image_url: `https://${
+                    site.siteMetadata.title
+                  }/images/icon.png`,
                   url: `https://${site.siteMetadata.title}/${
                     edge.node.frontmatter.slug
                   }`,
                   guid: `https://${site.siteMetadata.title}/${
                     edge.node.frontmatter.slug
                   }`,
+                  enclosure: {
+                    url: `${site.siteMetadata.title}${
+                      edge.node.frontmatter.thumbnail.childImageSharp.original
+                        .src
+                    }`,
+                  },
                   custom_elements: [{ 'content:encoded': edge.node.html }],
                 })
               })
@@ -148,6 +157,13 @@ module.exports = {
                         slug
                         title
                         description
+                        thumbnail {
+                          childImageSharp {
+                            original {
+                              src
+                            }
+                          }
+                        }
                       }
                     }
                   }
