@@ -39,6 +39,7 @@
     "react-live": "^1.12.0",
     "react-masonry-component": "^6.2.1",
     "react-responsive-embed": "^2.1.0",
+    "react-share": "^2.4.0",
     "react-twitter-embed": "^2.0.4",
     "react-typography": "^0.16.18",
     "yup": "^0.26.10"

@@ -9,13 +9,14 @@ import Container from '../components/container'
 import { bpMinMD, bpMinSM } from '../utils/breakpoints'
 import SEO from '../components/seo'
 import get from 'lodash/get'
+import Share from '../components/share'
 
 class WhatTheForkTemplate extends React.Component {
   render() {
     const wtf = this.props.data.mdx
+    const site = this.props.data.site
     const { next, previous } = this.props.pageContext
     const image = get(wtf, 'frontmatter.thumbnail.childImageSharp.fluid')
-
     return (
       <>
         <SEO
@@ -63,12 +64,28 @@ class WhatTheForkTemplate extends React.Component {
                 <MDXRenderer components={mdxComponents}>
                   {wtf.code.body}
                 </MDXRenderer>
+                <Share
+                  socialConfig={{
+                    twitterHandle: site.siteMetadata.author,
+                    config: {
+                      url: `https://illustrated.dev/${wtf.frontmatter.slug}`,
+                      title: wtf.frontmatter.title,
+                      media:
+                        wtf.frontmatter.thumbnail.childImageSharp.original.src,
+                    },
+                  }}
+                  tags={wtf.frontmatter.tags}
+                />
               </div>
             </div>
             <div
               css={css({
-                display: 'grid',
-                gridTemplateColumns: previous && '1fr 2fr',
+                [bpMinSM]: {
+                  display: 'grid',
+                  gridTemplateColumns: previous && '1fr 2fr',
+                },
+                display: 'flex',
+                flexDirection: 'column-reverse',
               })}>
               {previous && (
                 <div
@@ -156,16 +173,25 @@ class WhatTheForkTemplate extends React.Component {
 
 export const pageQuery = graphql`
   query wtfQuery($id: String) {
+    site {
+      siteMetadata {
+        author
+      }
+    }
     mdx(id: { eq: $id }) {
       id
       frontmatter {
         title
         tags
+        slug
         description
         thumbnail {
           childImageSharp {
             fluid(maxWidth: 500) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+            original {
+              src
             }
           }
         }
