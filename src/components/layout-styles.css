@@ -89,7 +89,7 @@ h1 {
   margin: 0.67em 0;
 }
 mark {
-  background-color: #3FCCDC;
+  background-color: #3fccdc;
   color: rgb(48, 49, 51);
 }
 small {
@@ -351,13 +351,13 @@ ul {
   margin-bottom: 1.45rem;
   list-style: none;
 }
-  li {
+li {
   list-style-position: outside;
   list-style-image: url(./bullet.svg);
   line-height: 1.8rem;
   font-size: 1.2rem;
   font-family: 'ff-tisa-web-pro', serif;
-  }
+}
 
 ol {
   margin-left: 1.45rem;
@@ -400,7 +400,6 @@ p {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  
 }
 figure {
   margin-left: 0;
@@ -641,7 +640,6 @@ pre tt:after {
     font-size: 100%;
   }
 }
-
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {

@@ -14,7 +14,7 @@ import Layout from '../components/layout'
 import Container from '../components/container'
 import Card from '../components/card'
 import Bio from '../components/bio'
-import eggheadpwrd from "../images/egghead-powered.svg";
+import eggheadpwrd from '../images/egghead-powered.svg'
 
 export default function Index({ data: { site, wtf } }) {
   return (
@@ -23,50 +23,36 @@ export default function Index({ data: { site, wtf } }) {
       <Layout>
         <Container
           css={css({
-            [bpMinMD]: { paddingTop: "auto", paddingBottom: 0 },
-            paddingTop: "auto"
-          })}
-        >
+            [bpMinMD]: { paddingTop: '50px', paddingBottom: 0 },
+            paddingTop: 'auto',
+          })}>
           <h1
             css={css({
-              textAlign: "left",
-              paddingBottom: "40px",
-              marginTop: "60px",
-              fontWeight: "600",
-              clear: "both",
+              textAlign: 'left',
+              fontWeight: '600',
+              clear: 'both',
               [bpMinMD]: {
-                fontSize: "4.4em",
-                marginTop: "0px"
+                paddingBottom: '40px',
+                fontSize: '4.4em',
               },
-              fontSize: "3em",
-              letterSpacing: "-0.02em"
-            })}
-          >
+              fontSize: '2em',
+              letterSpacing: '-0.02em',
+            })}>
             Web development,
             <br />
             illustrated.
           </h1>
           <div
             css={css({
-              display: "grid",
-              [bpMaxMD]: {
-                gridTemplateColumns: "33% 33% 33%"
-              },
-              [bpMinMD]: {
-                gridTemplateColumns: "33% 33% 33%"
-              },
-              [bpMinLG]: {
-                gridTemplateColumns: "33% 33% 33%"
-              },
-              [bpMaxLG]: {
-                gridTemplateColumns: "33% 33% 33%"
-              },
-              gridGap: "25px",
+              display: 'grid',
+              gridGap: '25px',
+
+              gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr) )',
+
               a: {
-                color: "inherit"
-              }
-            })}
-          >
+                color: 'inherit',
+              },
+            })}>
             {wtf.edges.map(({ node: data }) => (
               <Link
                 to={`/${data.frontmatter.slug}`}
@@ -75,13 +61,11 @@ export default function Index({ data: { site, wtf } }) {
                   data.frontmatter.featured &&
                   css({
                     [bpMinSM]: {
-                      gridColumnStart: "1",
-                      gridColumnEnd: "3"
+                      gridColumnStart: '1',
+                      gridColumnEnd: '3',
                     },
-                    borderTop: "4px solid #3FCCDC"
                   })
-                }
-              >
+                }>
                 <Card
                   title={data.frontmatter.title}
                   image={data.frontmatter.thumbnail.childImageSharp.fluid}
@@ -95,23 +79,22 @@ export default function Index({ data: { site, wtf } }) {
         </Container>
         <Container
           noVerticalPadding
+          maxWidth={900}
           css={css({
             [bpMinMD]: {
-              padding: "auto",
-              paddingBottom: "30px"
+              padding: 'auto',
+              paddingBottom: '30px',
             },
-            padding: 0
-          })}
-        >
+            padding: 0,
+          })}>
           <Bio />
           <Link
             to="https://egghead.io/"
-            aria-label="Browse development courses on egghead.io"
-          >
+            aria-label="Browse development courses on egghead.io">
             <img
               css={css({
-                margin: "80px auto 60px",
-                display: "flex"
+                margin: '80px auto 60px',
+                display: 'flex',
               })}
               src={eggheadpwrd}
               alt="Powered by egghead.io"
@@ -120,7 +103,7 @@ export default function Index({ data: { site, wtf } }) {
         </Container>
       </Layout>
     </>
-  );
+  )
 }
 
 export const pageQuery = graphql`
