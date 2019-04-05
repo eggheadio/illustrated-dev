@@ -70,8 +70,7 @@ class WhatTheForkTemplate extends React.Component {
                     config: {
                       url: `https://illustrated.dev/${wtf.frontmatter.slug}`,
                       title: wtf.frontmatter.title,
-                      media:
-                        wtf.frontmatter.thumbnail.childImageSharp.original.src,
+                      media: image.src,
                     },
                   }}
                   tags={wtf.frontmatter.tags}
