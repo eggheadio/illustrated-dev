@@ -1,0 +1,49 @@
+---
+date: 2018-01-01
+title: Proxy Magicians and Metaprogramming in JavaScript
+thumbnail: ./thumb@2x.png
+slug: proxies
+tags: ['Proxies', 'JavaScript', 'Metaprogramming']
+description: ""
+featured: false
+---
+
+We pass the proxy magician two things:
+A target object - which is the thing they'll perform their magic trick on
+A handler – which is the instructions for which magic trick to perform
+
+(Image)
+
+We of course have to write the handler instructions before we call the proxy to perform its magic.
+
+Handlers are made up of a series of traps.
+Each trap is a particular step in the magic trick.
+We can have multiple traps in each handler.
+There are thirteen total types of traps we can setup:
+
+```
+getPrototypeOf()
+setPrototypeOf()
+isExtensible()
+preventExtensions()
+getOwnPropertyDescriptor()
+defineProperty()
+has()
+get()
+set()
+deleteProperty()
+ownKeys()
+apply()
+construct()
+
+```
+
+But there are two main ones that the vast majority of proxies use:
+Get and Set
+These are the classics - like the card trick and the ball shuffle.
+
+Every trap comes with an if/else conditional that decides if the magician should "trap" the object and do its magic.
+
+For example xxx
+
+
