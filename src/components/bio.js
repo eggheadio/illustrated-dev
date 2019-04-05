@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
-import { bpMinMD } from '../utils/breakpoints'
+import { bpMinMD, bpMinSM, bpMinLG } from '../utils/breakpoints'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import mdx from './mdx'
 
@@ -24,46 +24,72 @@ const Bio = () => {
     }
   `)
   return (
-    <div css={css({ maxWidth: '80%', alignItems: "center", margin: 'auto', marginTop: "160px", marginBottom: "120px" })}>
-      <div css={css({ display: "flex", alignItems: "center" })}>
+    <div
+      css={css({
+        [bpMinSM]: {
+          marginTop: '160px',
+        },
+        alignItems: 'center',
+        margin: '0 auto',
+        marginTop: '50px',
+        marginBottom: '120px',
+      })}>
+      <div css={css({ display: 'flex', alignItems: 'center' })}>
         <Img
           css={css({
             marginLeft: 0,
-            maxWidth: "165px",
-            width: "100%"
+            maxWidth: '165px',
+            width: '100%',
           })}
           fluid={data.profilePic.childImageSharp.fluid}
         />
-        <div css={css({ padding: "0 40px 40px 40px" })}>
+        <div
+          css={css({
+            [bpMinSM]: { padding: '0 40px 40px 40px' },
+            padding: '0 40px 0 40px',
+            h3: {
+              [bpMinSM]: {
+                fontSize: '1.4rem',
+              },
+              fontSize: '1rem',
+            },
+            h2: {
+              [bpMinSM]: {
+                marginBottom: '30px',
+                fontSize: '2.1rem',
+              },
+              marginBottom: '70px',
+              fontSize: '1.8rem',
+            },
+          })}>
           <h3>Made by</h3>
           <h2>Maggie Appleton</h2>
         </div>
       </div>
       <div
         css={css({
-          background: "white",
-          [bpMinMD]: {
-            padding: "50px 150px"
+          background: 'white',
+          [bpMinLG]: {
+            padding: '50px 120px',
           },
-          marginTop: "-35px",
-          padding: "30px"
-        })}
-      >
+          marginTop: '-35px',
+          //margin: 0,
+          padding: '30px',
+        })}>
         <MDXRenderer
           components={mdx}
           css={css({
             p: {
               [bpMinMD]: {
-                fontSize: "20px"
+                fontSize: '20px',
               },
-              fontSize: "15px"
-            }
-          })}
-        >
+              fontSize: '15px',
+            },
+          })}>
           {data.about.code.body}
         </MDXRenderer>
       </div>
     </div>
-  );
+  )
 }
 export default Bio

@@ -14,6 +14,7 @@
     "gatsby-image": "^2.0.29",
     "gatsby-mdx": "^0.4.3",
     "gatsby-plugin-emotion": "^4.0.3",
+    "gatsby-plugin-feed": "^2.1.0",
     "gatsby-plugin-google-analytics": "^2.0.14",
     "gatsby-plugin-manifest": "^2.0.13",
     "gatsby-plugin-meta-redirect": "^1.1.1",
@@ -27,6 +28,7 @@
     "gatsby-transformer-sharp": "^2.1.10",
     "lodash": "^4.17.11",
     "mdx-utils": "^0.0.2",
+    "polished": "^3.2.0",
     "prism-react-renderer": "^0.1.5",
     "process-env": "^1.1.0",
     "prop-types": "^15.6.2",
@@ -37,6 +39,7 @@
     "react-live": "^1.12.0",
     "react-masonry-component": "^6.2.1",
     "react-responsive-embed": "^2.1.0",
+    "react-share": "^2.4.0",
     "react-twitter-embed": "^2.0.4",
     "react-typography": "^0.16.18",
     "yup": "^0.26.10"
