@@ -37,7 +37,7 @@ const Bio = () => {
       <div css={css({ display: 'flex', alignItems: 'center' })}>
         <Img
           css={css({
-            marginLeft: 0,
+            marginLeft: -30,
             maxWidth: '165px',
             width: '100%',
           })}
@@ -72,7 +72,7 @@ const Bio = () => {
           [bpMinLG]: {
             padding: '50px 120px',
           },
-          marginTop: '-35px',
+          marginTop: '-40px',
           //margin: 0,
           padding: '30px',
         })}>
