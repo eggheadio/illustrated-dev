@@ -28,7 +28,6 @@ class Subbutton extends React.Component {
             padding: '15px 20px',
           },
           padding: '10px 10px',
-          fontWeight: '700',
           cursor: 'pointer',
         })}
         onClick={this.props.onClick}>

@@ -1,5 +1,6 @@
 const path = require('path')
 const here = (...p) => path.join(__dirname, ...p)
+const _ = require('lodash')
 
 module.exports = {
   siteMetadata: {
@@ -99,6 +100,64 @@ module.exports = {
             'Freight Sans Pro:300,400,600',
           ],
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        // this base query will be merged with any queries in each feed
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.description,
+                  url: `https://${site.siteMetadata.title}/${
+                    edge.node.frontmatter.slug
+                  }`,
+                  guid: `https://${site.siteMetadata.title}/${
+                    edge.node.frontmatter.slug
+                  }`,
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMdx(
+                  sort: { order: ASC, fields: [fields___slug, frontmatter___featured] }
+                  filter: { fields: { collection: { eq: "wtf" } } }
+                ) {
+                  edges {
+                    node {
+                      id
+                      html
+                      fields {
+                        slug
+                      }
+                      frontmatter {
+                        slug
+                        title
+                        description
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: 'Illustrated.dev',
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
