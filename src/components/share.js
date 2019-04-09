@@ -36,7 +36,7 @@ const Share = ({ socialConfig, tags }) => (
       title={socialConfig.config.title}
       via={socialConfig.twitterHandle.split('@').join('')}
       hashtags={tags}>
-      <img src={twitterIcon} width='100%' alt='Twitter' />
+      <img src={twitterIcon} width="100%" alt="Twitter" />
     </TwitterShareButton>
     {socialConfig.config.media && (
       <PinterestShareButton
@@ -44,18 +44,17 @@ const Share = ({ socialConfig, tags }) => (
         media={socialConfig.config.media}
         url={socialConfig.config.url}
         title={socialConfig.config.title}>
-        <img src={pinterestIcon} width='100%' alt='Pinterest' />
+        <img src={pinterestIcon} width="100%" alt="Pinterest" />
       </PinterestShareButton>
     )}
-    {socialConfig.config.media && (
-      <EmailShareButton
-        css={ShareButton}
-        media={socialConfig.config.media}
-        url={socialConfig.config.url}
-        title={socialConfig.config.title}>
-        <img src={emailIcon} width='100%' alt='email' />
-      </EmailShareButton>
-    )}
+    <EmailShareButton
+      css={ShareButton}
+      url={socialConfig.config.url}
+      title={socialConfig.config.title}
+      subject={socialConfig.config.title}
+      body={`Check out ${socialConfig.config.url}`}>
+      <img src={emailIcon} width="100%" alt="email" />
+    </EmailShareButton>
   </div>
 )
 
