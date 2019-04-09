@@ -39,7 +39,7 @@ npm manifest:
       "@mdx-js/tag": "^0.16.6",
       "gatsby": "^2.1.0",
       "gatsby-image": "^2.0.29",
-      "gatsby-mdx": "^0.3.2",
+      "gatsby-mdx": "^0.4.5",
       "gatsby-plugin-emotion": "^4.0.3",
       "gatsby-plugin-manifest": "^2.0.13",
       "gatsby-plugin-meta-redirect": "^1.1.1",
@@ -4539,9 +4539,9 @@ Lockfile:
       "@types/reach__router" "^1.0.0"
       prop-types "^15.6.1"
   
-  gatsby-mdx@^0.3.2:
+  gatsby-mdx@^0.4.5:
     version "0.3.6"
-    resolved "https://registry.yarnpkg.com/gatsby-mdx/-/gatsby-mdx-0.3.6.tgz#8c25c30bdefe01d57d18a459954ccf21fc67ad2e"
+    resolved "https://registry.yarnpkg.com/gatsby-mdx/-/gatsby-mdx-0.4.5.tgz#8c25c30bdefe01d57d18a459954ccf21fc67ad2e"
     dependencies:
       "@babel/plugin-proposal-object-rest-spread" "^7.0.0"
       debug "^4.0.1"
