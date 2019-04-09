@@ -2,15 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import twitterIcon from '../images/twitter.svg'
 import pinterestIcon from '../images/pinterest.svg'
+import emailIcon from '../images/emailicon.svg'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import {
-  FacebookShareButton,
-  LinkedinShareButton,
   TwitterShareButton,
-  WhatsappShareButton,
   RedditShareButton,
   PinterestShareButton,
+  EmailShareButton,
 } from 'react-share'
 
 const ShareButton = css({
@@ -37,7 +36,7 @@ const Share = ({ socialConfig, tags }) => (
       title={socialConfig.config.title}
       via={socialConfig.twitterHandle.split('@').join('')}
       hashtags={tags}>
-      <img src={twitterIcon} width="100%" alt="Twitter" />
+      <img src={twitterIcon} width='100%' alt='Twitter' />
     </TwitterShareButton>
     {socialConfig.config.media && (
       <PinterestShareButton
@@ -45,8 +44,17 @@ const Share = ({ socialConfig, tags }) => (
         media={socialConfig.config.media}
         url={socialConfig.config.url}
         title={socialConfig.config.title}>
-        <img src={pinterestIcon} width="100%" alt="Twitter" />
+        <img src={pinterestIcon} width='100%' alt='Pinterest' />
       </PinterestShareButton>
+    )}
+    {socialConfig.config.media && (
+      <EmailShareButton
+        css={ShareButton}
+        media={socialConfig.config.media}
+        url={socialConfig.config.url}
+        title={socialConfig.config.title}>
+        <img src={emailIcon} width='100%' alt='email' />
+      </EmailShareButton>
     )}
   </div>
 )
