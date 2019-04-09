@@ -46,7 +46,7 @@ class WhatTheForkTemplate extends React.Component {
               })}>
               <div
                 css={css({
-                  maxWidth: '700px',
+                  maxWidth: '740px',
                   margin: '0 auto',
                 })}>
                 <h1
@@ -103,7 +103,7 @@ class WhatTheForkTemplate extends React.Component {
                       color: 'hsla(200, 10%, 30%, 0.7)',
                     },
                   })}>
-                  <Link to={`/${previous.frontmatter.slug}`} rel="previous">
+                  <Link to={`/${previous.frontmatter.slug}`} rel='previous'>
                     <h4
                       css={css({
                         opacity: '0.6',
@@ -119,11 +119,11 @@ class WhatTheForkTemplate extends React.Component {
                         fontStyle: 'italic',
                       })}>
                       <svg
-                        width="20px"
-                        height="20.9px"
-                        viewBox="0 0 12.3 20.9"
+                        width='20px'
+                        height='20.9px'
+                        viewBox='0 0 12.3 20.9'
                         style={{ fill: '#40C4D4', paddingTop: '3px' }}>
-                        <polygon points="9.3,15.1 5,10.5 9.3,5.8 12.3,2.7 9.8,0 4.3,5.8 0,10.5 4.3,15.1 9.8,20.9 12.3,18.3 " />
+                        <polygon points='9.3,15.1 5,10.5 9.3,5.8 12.3,2.7 9.8,0 4.3,5.8 0,10.5 4.3,15.1 9.8,20.9 12.3,18.3 ' />
                       </svg>{' '}
                       {previous.frontmatter.title}
                     </h2>
@@ -143,7 +143,7 @@ class WhatTheForkTemplate extends React.Component {
                       color: 'hsla(0, 0%, 0%, 0.5)',
                     },
                   })}>
-                  <Link to={`/${next.frontmatter.slug}`} rel="next">
+                  <Link to={`/${next.frontmatter.slug}`} rel='next'>
                     <h4>next</h4>
                     <h2
                       css={css({
@@ -154,11 +154,11 @@ class WhatTheForkTemplate extends React.Component {
                       })}>
                       {next.frontmatter.title}{' '}
                       <svg
-                        width="20.1px"
-                        height="40px"
-                        viewBox="0 0 20.1 40"
+                        width='20.1px'
+                        height='40px'
+                        viewBox='0 0 20.1 40'
                         style={{ fill: '#40C4D4', paddingTop: '18px' }}>
-                        <polygon points="12.7,9.9 3.4,0 0,3.6 5.9,9.9 13.3,17.7 5.9,25.6 0,31.9 3.4,35.5 12.7,25.6 20.1,17.7 " />
+                        <polygon points='12.7,9.9 3.4,0 0,3.6 5.9,9.9 13.3,17.7 5.9,25.6 0,31.9 3.4,35.5 12.7,25.6 20.1,17.7 ' />
                       </svg>
                     </h2>
                   </Link>
