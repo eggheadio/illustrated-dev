@@ -26,12 +26,12 @@ const Card = ({
       justifyContent: 'space-between',
       '.gatsby-image-wrapper': {
         [bpMinLG]: {
-          width: featured ? '330px' : '100%',
-          height: featured ? '330px' : '100%',
+          width: featured ? '400px' : '100%',
+          height: featured ? '400px' : '100%',
         },
         [bpMinSM]: {
-          width: featured ? '280px' : '100%',
-          height: featured ? '280px' : '100%',
+          width: featured ? '360px' : '100%',
+          height: featured ? '360px' : '100%',
         },
         width: '100%',
         height: '100%',
@@ -84,7 +84,7 @@ const Card = ({
         justifyContent: 'space-between',
       })}>
       <h1>{title}</h1>
-      {featured && <p className="description">{description}</p>}
+      {featured && <p className='description'>{description}</p>}
       {/* {tags && (
         <div className="tags">
           {tags.map(tag => (

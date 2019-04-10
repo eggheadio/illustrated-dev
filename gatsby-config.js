@@ -86,7 +86,7 @@ module.exports = {
         background_color: '#3FCCDC',
         theme_color: '#3FCCDC',
         display: 'minimal-ui',
-        icon: 'src/images/icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/id_favicon.svg', // This path is relative to the root of the site.
       },
     },
     {
@@ -123,7 +123,7 @@ module.exports = {
                   description: edge.node.frontmatter.description,
                   image_url: `https://${
                     site.siteMetadata.title
-                  }/images/icon.png`,
+                  }/images/id_favicon.svg`,
                   url: `https://${site.siteMetadata.title}/${
                     edge.node.frontmatter.slug
                   }`,
