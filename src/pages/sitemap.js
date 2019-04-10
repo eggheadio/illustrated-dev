@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import Link from '../components/link'
 import Layout from '../components/layout'
 
-export default function SiteMap({ data: { wtf, articles } }) {
+export default function SiteMap({ data: { wtf, meta } }) {
   return (
     <Layout>
       <Main>
@@ -20,7 +20,7 @@ export default function SiteMap({ data: { wtf, articles } }) {
           </div>
         ))}
         <h2>Blog</h2>
-        {articles.edges.map(({ node: data }) => (
+        {meta.edges.map(({ node: data }) => (
           <div>
             <h3>
               <Link to={`/${data.fields.slug}`}>{data.frontmatter.title}</Link>
@@ -84,9 +84,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    articles: allMdx(
+    meta: allMdx(
       sort: { order: ASC, fields: fields___slug }
-      filter: { fields: { collection: { eq: "articles" } } }
+      filter: { fields: { collection: { eq: "meta" } } }
     ) {
       edges {
         node {

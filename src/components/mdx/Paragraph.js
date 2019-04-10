@@ -10,4 +10,4 @@ export default styled.p`
   line-height: 1.5;
   font-size: 20px;
   font-family: 'ff-tisa-web-pro', serif;
-`;
+`

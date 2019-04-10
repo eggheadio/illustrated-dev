@@ -33,9 +33,9 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            articles: allMdx(
+            meta: allMdx(
               sort: { order: ASC, fields: fields___slug }
-              filter: { fields: { collection: { eq: "articles" } } }
+              filter: { fields: { collection: { eq: "meta" } } }
             ) {
               edges {
                 node {
@@ -120,8 +120,8 @@ exports.createPages = ({ graphql, actions }) => {
           return e.node.parent.sourceInstanceName === 'pages'
         })
 
-        const articles = result.data.articles.edges.filter(e => {
-          return e.node.parent.sourceInstanceName === 'articles'
+        const meta = result.data.meta.edges.filter(e => {
+          return e.node.parent.sourceInstanceName === 'meta'
         })
 
         const wtf = result.data.wtf.edges.filter(e => {
@@ -140,10 +140,10 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        articles.forEach(({ node }) => {
+        meta.forEach(({ node }) => {
           createPage({
             path: node.fields.slug,
-            component: path.resolve(`./src/templates/wtf.js`),
+            component: path.resolve(`./src/templates/meta.js`),
             context: { id: node.id },
           })
         })
