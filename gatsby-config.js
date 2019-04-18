@@ -35,6 +35,14 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /content/,
+        },
+      },
+    },
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     {
