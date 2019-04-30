@@ -143,8 +143,7 @@ class SignUp extends React.Component {
                 fontSize: "1.1em"
               })}
             >
-              A fresh set of programming illustrations delivered every
-              week.
+              A fresh set of programming illustrations delivered right to your inbox.
             </p>
           </div>
         )}
