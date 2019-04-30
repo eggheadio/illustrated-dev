@@ -1,0 +1,37 @@
+.tooltip {
+  position: relative;
+  font-family: 'freight-sans-pro', -apple-system, sans-serif;
+}
+
+.tooltip-trigger {
+  display: inline-block;
+  cursor: pointer;
+  background: #d7ecee;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.tooltip-bubble {
+  color: #4a4a4a;
+  background: #d7ecee;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  margin: 1em 0;
+  padding: 0 1em;
+  border-radius: 5px;
+  line-height: 1em;
+}
+
+.tooltip-bubble::after {
+  content: '';
+  position: absolute;
+}
+
+.tooltip-top {
+  bottom: 100%;
+  left: 50%;
+  padding-bottom: 9px;
+  padding-top: 9px;
+  transform: translateX(-50%);
+}

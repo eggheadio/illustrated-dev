@@ -49,9 +49,9 @@ const Bio = () => {
             padding: '0 40px 0 40px',
             h3: {
               [bpMinSM]: {
-                fontSize: '1.4rem',
+                fontSize: '1rem',
               },
-              fontSize: '1rem',
+              fontSize: '0.8rem',
             },
             h2: {
               [bpMinSM]: {
