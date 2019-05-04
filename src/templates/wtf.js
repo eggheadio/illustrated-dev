@@ -117,6 +117,7 @@ class WhatTheForkTemplate extends React.Component {
                         fontFamily: 'ff-tisa-web-pro, serif',
                         fontSize: '1.5em',
                         fontStyle: 'italic',
+                        marginBottom: '40px',
                       })}>
                       <svg
                         width='20px'
@@ -151,6 +152,7 @@ class WhatTheForkTemplate extends React.Component {
                         fontFamily: 'ff-tisa-web-pro, serif',
                         fontSize: '2.2em',
                         fontStyle: 'italic',
+                        marginBottom: '80px',
                       })}>
                       {next.frontmatter.title}{' '}
                       <svg

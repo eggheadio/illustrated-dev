@@ -23,6 +23,7 @@ const Share = ({ socialConfig, tags }) => (
   <div
     css={css({
       width: '100%',
+      marginTop: '80px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
