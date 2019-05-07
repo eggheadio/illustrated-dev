@@ -70,11 +70,11 @@ const Bio = () => {
         css={css({
           background: 'white',
           [bpMinLG]: {
-            padding: '50px 120px',
+            padding: '80px 120px',
           },
           marginTop: '-40px',
           //margin: 0,
-          padding: '30px',
+          padding: '80px 60px',
         })}>
         <MDXRenderer
           components={mdx}
