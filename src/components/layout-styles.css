@@ -114,9 +114,7 @@ img {
 svg:not(:root) {
   overflow: hidden;
 }
-code,
 kbd,
-pre,
 samp {
   font-family: monospace, monospace;
   font-size: 1em;
@@ -128,6 +126,10 @@ hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
+  text-align: center;
+  max-width: 200px;
+  margin: 60px auto;
+  background: #eec57c;
 }
 button,
 input,
@@ -231,17 +233,6 @@ body {
   -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-}
-img {
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.25rem;
 }
 
 h1 {
@@ -391,16 +382,7 @@ dd {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
-p {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
+
 figure {
   margin-left: 0;
   margin-right: 0;
@@ -412,21 +394,13 @@ figure {
   margin-bottom: 1.45rem;
 }
 pre {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
   margin-bottom: 1.45rem;
   font-size: 0.85rem;
   line-height: 1.42;
-  background: hsla(0, 0%, 0%, 0.04);
-  border-radius: 3px;
+  border: 1px solid #3fccdc;
   overflow: auto;
-  word-wrap: normal;
-  padding: 1.45rem;
+  border-radius: 3px;
+  word-wrap: break-word;
 }
 table {
   margin-left: 0;
@@ -493,19 +467,6 @@ iframe {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
-hr {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: calc(1.45rem - 1px);
-  background: #474751;
-  border: none;
-  height: 1px;
-}
 address {
   margin-left: 0;
   margin-right: 0;
@@ -559,10 +520,6 @@ p *:last-child {
 li > p {
   margin-bottom: calc(1.45rem / 2);
 }
-code {
-  font-size: 0.85rem;
-  line-height: 1.45rem;
-}
 kbd {
   font-size: 0.85rem;
   line-height: 1.45rem;
@@ -610,16 +567,10 @@ td:last-child {
 }
 tt,
 code {
-  background-color: #474751;
   border-radius: 3px;
-  font-family: 'Operator Ssm', 'Inconsolata', 'SFMono-Regular', monospace;
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-}
-pre code {
-  background: none;
-  line-height: 1.42;
+  line-height: 1.45rem;
+  font-family: 'IBM Plex Mono', 'Inconsolata', 'SFMono-Regular', monospace;
+  padding: 0.4em;
 }
 code:before,
 code:after,
