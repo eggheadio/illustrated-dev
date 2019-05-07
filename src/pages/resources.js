@@ -4,7 +4,6 @@ import Link from '../components/link'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import Layout from '../components/layout'
-import ResourceCard from '../components/resourceCard'
 
 export default function ResourcesPage() {
   return (

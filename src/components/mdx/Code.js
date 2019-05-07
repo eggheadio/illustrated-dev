@@ -31,8 +31,7 @@ const Code = ({ codeString, language, ...props }) => {
                     user-select: none;
                     opacity: 0.3;
 
-                    font-family: 'Operator SSm', 'Dank Mono', source-code-pro,
-                      monospace;
+                    font-family: 'Dank Mono', source-code-pro, monospace;
                   `}>
                   {i + 1}
                 </span>
