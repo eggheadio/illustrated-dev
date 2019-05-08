@@ -5,6 +5,16 @@ import Link from '../../../src/components/link'
 import mainImage from './interactive_illo/mainImage'
 
 const DB6 = () => {
+  const floatKeyframes = keyframes`
+    from, 0% {
+      transform: translateY(-1px);
+      opacity: 0.8;
+    }
+    to, 100% {
+      transform: translateY(-6px);
+      opacity: 1;
+    }
+  `
   const hoverBlue = css`
     :hover {
       path {
@@ -12,6 +22,8 @@ const DB6 = () => {
         transition: all 400ms ease-in-out;
       }
     }
+
+    animation: ${floatKeyframes} 2.2s alternate infinite ease-in-out;
   `
 
   return (
@@ -33,10 +45,7 @@ const DB6 = () => {
           height='891.64'
           xlinkHref={mainImage}
         />
-        <Link
-          target='_blank'
-          to='https://db-engines.com/en/ranking'
-          css={hoverBlue}>
+        <Link target='_blank' to='https://db-engines.com/en/ranking'>
           <circle
             id='ast-circle'
             cx='587.61'
@@ -44,9 +53,11 @@ const DB6 = () => {
             r='15.24'
             fill='#4799e8'
             css={css`
+              transition: all 400ms alternate ease;
+              transform: scale(1.1);
               transform-origin: 587.61px 44.59px;
               :hover {
-                transform: scale(1.2);
+                transform: scale(1.3);
                 transition: all 400ms ease;
               }
             `}

@@ -26,7 +26,7 @@ module.exports = {
             options: {
               maxWidth: 900,
               sizeByPixelDensity: false,
-              linkImagesToOriginal: true,
+              linkImagesToOriginal: false,
               wrapperStyle: {
                 float: 'left',
               },
