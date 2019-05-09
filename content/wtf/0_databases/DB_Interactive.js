@@ -7,12 +7,12 @@ import mainImage from './interactive_illo/mainImage'
 const DB6 = () => {
   const floatKeyframes = keyframes`
     from, 0% {
-      transform: translateY(-1px);
-      opacity: 0.8;
+      transform: translateY(0px);
+      opacity: 1;
     }
     to, 100% {
       transform: translateY(-6px);
-      opacity: 1;
+      opacity: 0.7;
     }
   `
   const hoverBlue = css`
@@ -23,14 +23,14 @@ const DB6 = () => {
       }
     }
 
-    animation: ${floatKeyframes} 2.2s alternate infinite ease-in-out;
+    animation: ${floatKeyframes} 1.8s alternate infinite ease-in-out;
   `
 
   return (
     <>
       <svg
         css={css({
-          margin: '2vh auto',
+          margin: '8% auto 5%',
         })}
         xmlns='http://www.w3.org/2000/svg'
         xmlnsXlink='http://www.w3.org/1999/xlink'

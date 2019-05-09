@@ -9,6 +9,9 @@ featured: false
 ---
 
 import ConditionCode from './ConditionCode.svg'
+import ThreeColumn from './ThreeColumn'
+// // Note to self - styled components in the MDX folder automatically import like this:
+// import Divider from 'Divider'
 
 <div style="display: grid;
   grid-gap: 40px;
@@ -48,14 +51,11 @@ In code it looks like this:
 
 </div>
 
-----
+<hr />
 
 Aside from refilling the milk, it’s commonly used for X, Y, and Z
 
-<div style="display: grid;
-  grid-gap: 30px;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  align-items: center; margin: 0 auto;">
+<ThreeColumn>
 
 <p>Use One</p>
 
@@ -63,4 +63,4 @@ Aside from refilling the milk, it’s commonly used for X, Y, and Z
 
 <p>Use Three</p>
 
-</div>
+</ThreeColumn>

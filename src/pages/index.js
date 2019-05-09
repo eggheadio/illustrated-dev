@@ -89,15 +89,15 @@ export default function Index({ data: { site, wtf } }) {
           })}>
           <Bio />
           <Link
-            to="https://egghead.io/"
-            aria-label="Browse development courses on egghead.io">
+            to='https://egghead.io/'
+            aria-label='Browse development courses on egghead.io'>
             <img
               css={css({
                 margin: '80px auto 60px',
                 display: 'flex',
               })}
               src={eggheadpwrd}
-              alt="Powered by egghead.io"
+              alt='Powered by egghead.io'
             />
           </Link>
         </Container>

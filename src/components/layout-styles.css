@@ -123,13 +123,10 @@ figure {
   margin: 1em 40px;
 }
 hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
   text-align: center;
   max-width: 200px;
   margin: 60px auto;
-  background: #eec57c;
+  border: 0.5px solid #eec57c;
 }
 button,
 input,
