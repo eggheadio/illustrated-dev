@@ -46,7 +46,7 @@ class WhatTheForkTemplate extends React.Component {
               })}>
               <div
                 css={css({
-                  maxWidth: '740px',
+                  maxWidth: '780px',
                   margin: '0 auto',
                 })}>
                 <h1

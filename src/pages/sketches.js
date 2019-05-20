@@ -2,8 +2,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
 import SEO from '../components/seo'
-import { bpMinSM, bpMinMD } from '../utils/breakpoints'
-import Img from 'gatsby-image'
+import { bpMinMD } from '../utils/breakpoints'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Card from '../components/card'
@@ -49,7 +48,7 @@ const SketchesPage = ({ data: { site, sketches } }) => {
 
   return (
     <>
-      <SEO title='Sketchbook' />
+      <SEO title='Sketches' />
       <Layout>
         <Container>
           <h1
