@@ -13,7 +13,6 @@ import {
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Card from '../components/card'
-import Bio from '../components/bio'
 import eggheadpwrd from '../images/egghead-powered.svg'
 
 export default function Index({ data: { site, wtf } }) {
@@ -32,10 +31,10 @@ export default function Index({ data: { site, wtf } }) {
               fontWeight: '600',
               clear: 'both',
               [bpMinMD]: {
-                paddingBottom: '40px',
+                padding: '30px 0',
                 fontSize: '4.4em',
               },
-              fontSize: '2em',
+              fontSize: '3em',
               letterSpacing: '-0.02em',
             })}>
             Web development,
@@ -87,7 +86,6 @@ export default function Index({ data: { site, wtf } }) {
             },
             padding: 0,
           })}>
-          <Bio />
           <Link
             to='https://egghead.io/'
             aria-label='Browse development courses on egghead.io'>

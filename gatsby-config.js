@@ -64,6 +64,14 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        path: `${__dirname}/content/sketches/`,
+        name: 'sketches',
+        ignore: [`**/\.*`], // ignore files starting with a dot,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         path: `${__dirname}/content/wtf/`,
         name: 'wtf',
         ignore: [`**/\.*`], // ignore files starting with a dot,
@@ -151,7 +159,7 @@ module.exports = {
             query: `
               {
                 allMdx(
-                  sort: { order: ASC, fields: [fields___slug, frontmatter___featured] }
+                  sort: { order: ASC, fields: [date, frontmatter___featured] }
                   filter: { fields: { collection: { eq: "wtf" } } }
                 ) {
                   edges {

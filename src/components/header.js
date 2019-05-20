@@ -3,7 +3,7 @@ import Link from './link'
 import Subbutton from './subbutton'
 import { css } from '@emotion/core'
 import Container from './container'
-import { bpMinSM } from '../utils/breakpoints'
+import { bpMinMD, bpMinSM } from '../utils/breakpoints'
 
 const Header = ({ background, scrollToFooter }) => (
   <header
@@ -41,10 +41,67 @@ const Header = ({ background, scrollToFooter }) => (
             padding: '0px',
             fontWeight: '700',
           })}
-          to="/">
+          to='/'>
           Illustrated.dev
         </Link>
       </h1>
+
+      {/* Nav Grid Layout */}
+      <div
+        css={css({
+          gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr',
+          [bpMinMD]: { display: 'grid' },
+          display: 'none',
+        })}>
+        <Link
+          to='/'
+          css={css({
+            gridColumn: '4',
+            boxSizing: 'border-box',
+            borderRadius: '4px',
+            color: 'rgb(79, 88, 95)',
+            [bpMinSM]: {
+              padding: '15px 20px',
+            },
+            padding: '0px',
+            fontWeight: '700',
+            justifySelf: 'center',
+          })}>
+          Articles
+        </Link>
+        <Link
+          to='/sketches'
+          css={css({
+            gridColumn: '',
+            boxSizing: 'border-box',
+            borderRadius: '4px',
+            color: 'rgb(79, 88, 95)',
+            [bpMinSM]: {
+              padding: '15px 20px',
+            },
+            padding: '0px',
+            fontWeight: '700',
+            justifySelf: 'center',
+          })}>
+          Sketches
+        </Link>
+        <Link
+          to='/about'
+          css={css({
+            boxSizing: 'border-box',
+            borderRadius: '4px',
+            color: 'rgb(79, 88, 95)',
+            [bpMinSM]: {
+              padding: '15px 20px',
+            },
+            padding: '0px',
+            fontWeight: '700',
+            justifySelf: 'center',
+          })}>
+          About
+        </Link>
+      </div>
+
       <Subbutton onClick={scrollToFooter} />
     </Container>
   </header>

@@ -58,6 +58,31 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+            sketches: allMdx(
+              sort: { order: ASC, fields: fields___slug }
+              filter: { fields: { collection: { eq: "sketches" } } }
+            ) {
+              edges {
+                node {
+                  id
+                  parent {
+                    ... on File {
+                      name
+                      sourceInstanceName
+                    }
+                  }
+                  excerpt(pruneLength: 250)
+                  fields {
+                    collection
+                    slug
+                  }
+                  frontmatter {
+                    title
+                    slug
+                  }
+                }
+              }
+            }
             wtf: allMdx(
               sort: { order: ASC, fields: fields___slug }
               filter: { fields: { collection: { eq: "wtf" } } }
@@ -124,6 +149,10 @@ exports.createPages = ({ graphql, actions }) => {
           return e.node.parent.sourceInstanceName === 'meta'
         })
 
+        const sketches = result.data.sketches.edges.filter(e => {
+          return e.node.parent.sourceInstanceName === 'sketches'
+        })
+
         const wtf = result.data.wtf.edges.filter(e => {
           return e.node.parent.sourceInstanceName === 'wtf'
         })
@@ -144,6 +173,14 @@ exports.createPages = ({ graphql, actions }) => {
           createPage({
             path: node.fields.slug,
             component: path.resolve(`./src/templates/meta.js`),
+            context: { id: node.id },
+          })
+        })
+
+        sketches.forEach(({ node }) => {
+          createPage({
+            path: node.fields.slug,
+            component: path.resolve(`./src/templates/sketches.js`),
             context: { id: node.id },
           })
         })
