@@ -10,7 +10,7 @@ export default function SiteMap({ data: { wtf, meta } }) {
       <Main>
         <h1>Table of Contents</h1>
 
-        <h2>What The Fork Series</h2>
+        <h2>Illustrated Articles</h2>
         {wtf.edges.map(({ node: data }) => (
           <div>
             <h3>
@@ -19,7 +19,7 @@ export default function SiteMap({ data: { wtf, meta } }) {
             <p>{data.excerpt}</p>
           </div>
         ))}
-        <h2>Blog</h2>
+        <h2>The Metalayer</h2>
         {meta.edges.map(({ node: data }) => (
           <div>
             <h3>

@@ -126,7 +126,7 @@ hr {
   text-align: center;
   max-width: 200px;
   margin: 60px auto;
-  border: 0.5px solid #eec57c;
+  border: 1px solid #f7c061;
 }
 button,
 input,
@@ -286,7 +286,7 @@ h4 {
   margin-bottom: 1.45rem;
   font-weight: 600;
   color: inherit;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   line-height: 1.1;
 }
 h5 {

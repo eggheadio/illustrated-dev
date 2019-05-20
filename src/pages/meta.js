@@ -2,24 +2,23 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
 import SEO from '../components/seo'
-import { bpMinSM, bpMinMD } from '../utils/breakpoints'
-import Img from 'gatsby-image'
+import { bpMinMD } from '../utils/breakpoints'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Card from '../components/card'
 import Link from '../components/link'
 
-const SketchesPage = ({ data: { site, sketches } }) => {
+const MetaPage = ({ data: { site, meta } }) => {
   const data = useStaticQuery(graphql`
-    query SketchesQuery {
+    query MetaQuery {
       site {
         siteMetadata {
           title
         }
       }
-      sketches: allMdx(
+      meta: allMdx(
         sort: { order: ASC, fields: [frontmatter___date, fields___slug] }
-        filter: { fields: { collection: { eq: "sketches" } } }
+        filter: { fields: { collection: { eq: "meta" } } }
       ) {
         edges {
           node {
@@ -49,7 +48,7 @@ const SketchesPage = ({ data: { site, sketches } }) => {
 
   return (
     <>
-      <SEO title='Sketchbook' />
+      <SEO title='Meta' />
       <Layout>
         <Container>
           <h1
@@ -64,30 +63,27 @@ const SketchesPage = ({ data: { site, sketches } }) => {
               margin: '20px auto 20px',
               fontFamily: 'ff-tisa-web-pro, serif',
             })}>
-            Sketches
+            The Metalayer
           </h1>
           <h3
             css={css({
               textAlign: 'center',
               marginBottom: '2em',
             })}>
-            Rough bits and pieces, works in progress & random sketchnotes.
+            Insights into the process & craft behind the articles
           </h3>
           <hr />
-
           <div
             css={css({
               display: 'grid',
               gridGap: '25px',
-
               gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr) )',
-
               a: {
                 color: 'inherit',
               },
             })}>
-            {sketches.edges.map(({ node: data }) => (
-              <Link to={`/sketches/${data.frontmatter.slug}`} key={data.id}>
+            {meta.edges.map(({ node: data }) => (
+              <Link to={`/meta/${data.frontmatter.slug}`} key={data.id}>
                 <Card
                   title={data.frontmatter.title}
                   image={data.frontmatter.thumbnail.childImageSharp.fluid}
@@ -103,4 +99,4 @@ const SketchesPage = ({ data: { site, sketches } }) => {
   )
 }
 
-export default SketchesPage
+export default MetaPage

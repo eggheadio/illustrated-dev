@@ -9,6 +9,7 @@ const Header = ({ background, scrollToFooter }) => (
   <header
     css={css({
       background: background,
+
       [bpMinSM]: {
         paddingTop: '40px',
       },
@@ -49,60 +50,79 @@ const Header = ({ background, scrollToFooter }) => (
       {/* Nav Grid Layout */}
       <div
         css={css({
-          gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr',
-          [bpMinMD]: { display: 'grid' },
-          display: 'none',
+          [bpMinMD]: { display: 'flex' },
         })}>
         <Link
           to='/'
           css={css({
-            gridColumn: '4',
+            float: 'right',
             boxSizing: 'border-box',
             borderRadius: '4px',
             color: 'rgb(79, 88, 95)',
-            [bpMinSM]: {
+            [bpMinMD]: {
               padding: '15px 20px',
+              display: 'block',
             },
             padding: '0px',
+            display: 'none',
             fontWeight: '700',
-            justifySelf: 'center',
           })}>
           Articles
         </Link>
         <Link
           to='/sketches'
           css={css({
-            gridColumn: '',
+            float: 'right',
             boxSizing: 'border-box',
             borderRadius: '4px',
             color: 'rgb(79, 88, 95)',
-            [bpMinSM]: {
+            [bpMinMD]: {
               padding: '15px 20px',
+              display: 'block',
             },
             padding: '0px',
+            display: 'none',
             fontWeight: '700',
-            justifySelf: 'center',
           })}>
           Sketches
         </Link>
+        {/* <Link
+          to='/meta'
+          css={css({
+            float: 'right',
+            boxSizing: 'border-box',
+            borderRadius: '4px',
+            color: 'rgb(79, 88, 95)',
+            [bpMinMD]: {
+              padding: '15px 20px',
+              display: 'block',
+            },
+            display: 'none',
+            padding: '0px',
+            fontWeight: '700',
+          })}>
+          Meta
+        </Link> */}
         <Link
           to='/about'
           css={css({
             boxSizing: 'border-box',
             borderRadius: '4px',
             color: 'rgb(79, 88, 95)',
-            [bpMinSM]: {
-              padding: '15px 20px',
+            [bpMinMD]: {
+              padding: '15px 25px',
+              display: 'block',
             },
             padding: '0px',
+            display: 'none',
             fontWeight: '700',
             justifySelf: 'center',
           })}>
           About
         </Link>
-      </div>
 
-      <Subbutton onClick={scrollToFooter} />
+        <Subbutton onClick={scrollToFooter} />
+      </div>
     </Container>
   </header>
 )

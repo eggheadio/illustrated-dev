@@ -40,6 +40,7 @@ const AboutPage = () => {
             })}>
             About
           </h1>
+          <hr />
           <div
             css={css({
               background: 'white',
@@ -55,31 +56,34 @@ const AboutPage = () => {
                 margin: '0 auto',
                 maxWidth: '700px',
               })}>
-              <h1>
+              <h1
+                css={css({
+                  marginTop: '0.4em',
+                  lineHeight: '1.2em',
+                })}>
                 Illustrated.dev explains web development through illustration.
               </h1>
               <div
                 css={css({
                   maxWidth: '540px',
                   margin: '0 auto',
-                  marginTop: '60px',
+                  marginTop: '40px',
                 })}>
                 <p>
-                  Most of these explainers are about JavaScript fundamentals.
-                  Because those never go out of style. But I've also made a few
-                  on newer tools like React, Babel, and D3.
+                  Most of these illustrated articles are on JavaScript
+                  fundamentals. Because those never go out of style. But you'll
+                  also find a few on newer tools like React, Babel, and D3.
                 </p>
                 <p>
                   I make these because the front-end world is overflowing with
                   confounding things to learn (and JavaScript in particular is
-                  <span> 🔥❗🍌🌟☠</span> ridiculous sometimes).
+                  <span> 🔥🍌🌟☠ </span> ridiculous sometimes).
                 </p>
                 <p>
-                  Looking at the programming world through visual metaphors
-                  turns out to be a really effective learning tool. All the
-                  abstract jargon & syntax is much easier to understand when you
-                  can <i>see</i> what's happening through diagrams and
-                  analogies.
+                  Visual metaphors are a wonderfully effective learning tool for
+                  the world of programming. All the abstract jargon & syntax is
+                  much easier to understand when you can <i>see</i> what's
+                  happening through diagrams and analogies.
                 </p>
                 <p>
                   Not to mention it's a hell of a lot more interesting than
@@ -125,8 +129,10 @@ const AboutPage = () => {
                   <h2>Maggie Appleton</h2>
                   <p>
                     Mostly illustrating & art directing for{' '}
-                    <Link to=''>@egghead</Link>. Accidentally became a web
-                    developer in the process.
+                    <Link target='_blank' to='https://egghead.io/'>
+                      @egghead
+                    </Link>
+                    . Accidentally became a web developer in the process.
                   </p>
                 </div>
               </div>
