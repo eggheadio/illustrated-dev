@@ -58,26 +58,34 @@ const AboutPage = () => {
               <h1>
                 Illustrated.dev explains web development through illustration.
               </h1>
-              <p>
-                Most of these explainers are about JavaScript fundamentals.
-                Because those never go out of style. But I've also made a few on
-                newer tools like React, Babel, and D3.
-              </p>
-              <p>
-                I make these because the front-end world is overflowing with
-                confounding things to learn (and JavaScript in particular is
-                <span> 🔥❗🍌🌟☠</span> ridiculous sometimes).
-              </p>
-              <p>
-                Looking at the programming world through visual metaphors turns
-                out to be a really effective learning tool. All the abstract
-                jargon & syntax is much easier to understand when you can{' '}
-                <i>see</i> what's happening through diagrams and analogies.
-              </p>
-              <p>
-                Not to mention it's a hell of a lot more interesting than
-                slogging through some fat textbook.
-              </p>
+              <div
+                css={css({
+                  maxWidth: '540px',
+                  margin: '0 auto',
+                  marginTop: '60px',
+                })}>
+                <p>
+                  Most of these explainers are about JavaScript fundamentals.
+                  Because those never go out of style. But I've also made a few
+                  on newer tools like React, Babel, and D3.
+                </p>
+                <p>
+                  I make these because the front-end world is overflowing with
+                  confounding things to learn (and JavaScript in particular is
+                  <span> 🔥❗🍌🌟☠</span> ridiculous sometimes).
+                </p>
+                <p>
+                  Looking at the programming world through visual metaphors
+                  turns out to be a really effective learning tool. All the
+                  abstract jargon & syntax is much easier to understand when you
+                  can <i>see</i> what's happening through diagrams and
+                  analogies.
+                </p>
+                <p>
+                  Not to mention it's a hell of a lot more interesting than
+                  slogging through some fat textbook.
+                </p>
+              </div>
               <div css={css({ display: 'flex', alignItems: 'center' })}>
                 <Img
                   css={css({
