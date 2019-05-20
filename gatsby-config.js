@@ -159,7 +159,7 @@ module.exports = {
             query: `
               {
                 allMdx(
-                  sort: { order: ASC, fields: [date, frontmatter___featured] }
+                  sort: { order: ASC, fields: [frontmatter___date, frontmatter___featured] }
                   filter: { fields: { collection: { eq: "wtf" } } }
                 ) {
                   edges {
