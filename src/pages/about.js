@@ -7,7 +7,6 @@ import SEO from '../components/seo'
 import { bpMinSM, bpMinMD } from '../utils/breakpoints'
 import Layout from '../components/layout'
 import Container from '../components/container'
-import GraphicThing from '../components/GraphicThing'
 
 const AboutPage = () => {
   const data = useStaticQuery(graphql`

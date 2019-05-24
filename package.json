@@ -9,6 +9,7 @@
     "@mdx-js/mdx": "^1.0.10",
     "@mdx-js/react": "^1.0.6",
     "@sindresorhus/slugify": "^0.9.1",
+    "@tippy.js/react": "^2.2.0",
     "add": "^2.0.6",
     "formik": "^1.5.2",
     "gatsby": "^2.3.24",
@@ -46,6 +47,7 @@
     "react-share": "^2.4.0",
     "react-twitter-embed": "^2.0.4",
     "react-typography": "^0.16.18",
+    "scrollama": "^2.0.0",
     "yarn": "^1.15.2",
     "yup": "^0.27.0"
   },
