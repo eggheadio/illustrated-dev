@@ -1,42 +1,37 @@
-import React from 'react'
-import { useInView } from 'react-intersection-observer'
-import ConditionCode from './ConditionCode.js'
-// import { css, keyframes } from '@emotion/core'
+// import React from 'react'
+// import { useInView } from 'react-intersection-observer'
+// import ConditionCode from './ConditionCode.js'
+// // import { css, keyframes } from '@emotion/core'
 
-const visible = {
-  opacity: '1',
-  transition: 'all 0.5s ease-in-out',
-}
+// // Scrollytelling component implemented with react-intersection-observer
+// // https://github.com/thebuilder/react-intersection-observer
 
-const invisible = {
-  opacity: '0',
-  transition: 'all 0.5s ease-in-out',
-}
+// // The useInView hook accepts root, rootMargin, and threshold.
 
-// Scrollytelling component implemented with react-intersection-observer
-// https://github.com/thebuilder/react-intersection-observer
+// const TernaryScroll = () => {
+//   const [ref, inView] = useInView({
+//     /* Optional options */
+//     threshold: 0.5,
+//     rootMargin: '-150px 0px -150px 0px',
+//   })
 
-// The useInView hook accepts root, rootMargin, and threshold.
+//   console.log(inView)
 
-const TernaryScroll = () => {
-  const [ref, inView] = useInView({
-    /* Optional options */
-    threshold: 0.5,
-    rootMargin: '-150px 0px -150px 0px',
-  })
+//   return (
 
-  console.log(inView)
+//     <div ref={ref}>
 
-  return (
-    <div ref={ref}>
-      {/* Use the ternary operator to conditionally render elements in view or out */}
-      {inView ? (
-        <ConditionCode visibility1={visible} />
-      ) : (
-        <ConditionCode visibility1={invisible} />
-      )}
-    </div>
-  )
-}
+//     </div>
 
-export default TernaryScroll
+//     <div ref={ref}>
+//       {/* Use the ternary operator to conditionally render elements in view or out */}
+//       {inView ? (
+//         <ConditionCode visibility1={visible} />
+//       ) : (
+//         <ConditionCode visibility1={invisible} />
+//       )}
+//     </div>
+//   )
+// }
+
+// export default TernaryScroll

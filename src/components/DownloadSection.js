@@ -2,6 +2,11 @@ import React from 'react'
 import { css } from '@emotion/core'
 import downloadicon from '../../../src/images/downloadicon.svg'
 
+//  Inline downloads component for MDX posts
+
+// To make the <DownloadSection /> component work, you have to put the image as an inline MDX component. Renders through {props.children}.
+// Leaving empty lines between the component tags and the inline image is also necessary
+
 const StyledDiv = css({
   display: 'grid',
   gridTemplateColumns: '65% 35%',

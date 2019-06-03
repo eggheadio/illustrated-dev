@@ -11,7 +11,7 @@ const ConditionCode = props => {
         />
       </g>
 
-      <g style={props.visibility1} id='cc2'>
+      <g style={props.visibility2} id='cc2'>
         <rect
           width={243}
           height={48}
@@ -26,7 +26,7 @@ const ConditionCode = props => {
         />
       </g>
 
-      <g style={props.visibility1} id='cc2'>
+      <g style={props.visibility3} id='cc3'>
         <rect
           width={257.985}
           height={47.985}
