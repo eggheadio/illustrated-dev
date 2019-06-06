@@ -67,7 +67,7 @@ const Header = ({ background, scrollToFooter }) => (
             display: 'none',
             fontWeight: '700',
           })}>
-          Articles
+          Explainers
         </Link>
         <Link
           to='/sketches'
