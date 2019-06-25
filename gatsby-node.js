@@ -171,7 +171,11 @@ exports.createPages = ({ graphql, actions }) => {
 
         meta.forEach(({ node }) => {
           createPage({
-            path: node.fields.slug,
+            path: `${
+              node.frontmatter.title
+                ? slugify(node.frontmatter.title)
+                : node.fields.slug
+            }`,
             component: path.resolve(`./src/templates/meta.js`),
             context: { id: node.id },
           })
