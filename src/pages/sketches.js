@@ -17,7 +17,7 @@ const SketchesPage = ({ data: { site, sketches } }) => {
         }
       }
       sketches: allMdx(
-        sort: { order: ASC, fields: [frontmatter___date, fields___slug] }
+        sort: { order: DESC, fields: [frontmatter___date, fields___slug] }
         filter: { fields: { collection: { eq: "sketches" } } }
       ) {
         edges {

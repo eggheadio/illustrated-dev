@@ -106,7 +106,10 @@ export const pageQuery = graphql`
       }
     }
     wtf: allMdx(
-      sort: { order: ASC, fields: [fields___slug, frontmatter___featured] }
+      sort: {
+        order: DESC
+        fields: [frontmatter___date, frontmatter___featured]
+      }
       filter: { fields: { collection: { eq: "wtf" } } }
     ) {
       edges {

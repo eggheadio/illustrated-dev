@@ -17,7 +17,7 @@ const MetaPage = ({ data: { site, meta } }) => {
         }
       }
       meta: allMdx(
-        sort: { order: ASC, fields: [frontmatter___date, fields___slug] }
+        sort: { order: DESC, fields: [frontmatter___date, fields___slug] }
         filter: { fields: { collection: { eq: "meta" } } }
       ) {
         edges {
