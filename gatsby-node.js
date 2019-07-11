@@ -34,7 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
         `
           {
             meta: allMdx(
-              sort: { order: ASC, fields: fields___slug }
+              sort: { order: DESC, fields: [frontmatter___date] }
               filter: { fields: { collection: { eq: "meta" } } }
             ) {
               edges {
@@ -59,7 +59,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
             sketches: allMdx(
-              sort: { order: ASC, fields: fields___slug }
+              sort: { order: DESC, fields: [frontmatter___date] }
               filter: { fields: { collection: { eq: "sketches" } } }
             ) {
               edges {
@@ -79,12 +79,13 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     title
                     slug
+                    date
                   }
                 }
               }
             }
             wtf: allMdx(
-              sort: { order: ASC, fields: fields___slug }
+              sort: { order: DESC, fields: [frontmatter___date] }
               filter: { fields: { collection: { eq: "wtf" } } }
             ) {
               edges {
@@ -109,7 +110,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
             pages: allMdx(
-              sort: { order: ASC, fields: fields___slug }
+              sort: { order: DESC, fields: [frontmatter___date] }
               filter: { fields: { collection: { eq: "pages" } } }
             ) {
               edges {
@@ -171,11 +172,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         meta.forEach(({ node }) => {
           createPage({
-            path: `${
-              node.frontmatter.title
-                ? slugify(node.frontmatter.title)
-                : node.fields.slug
-            }`,
+            path: `meta/${node.frontmatter.slug}`,
             component: path.resolve(`./src/templates/meta.js`),
             context: { id: node.id },
           })
@@ -183,7 +180,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         sketches.forEach(({ node }) => {
           createPage({
-            path: node.fields.slug,
+            path: `sketches/${node.frontmatter.slug}`,
             component: path.resolve(`./src/templates/sketches.js`),
             context: { id: node.id },
           })
