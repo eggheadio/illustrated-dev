@@ -40,7 +40,6 @@ const Card = ({
       h1: {
         [bpMinSM]: { fontSize: featured ? '40px' : '23px' },
         fontSize: '1.4rem',
-
         fontWeight: '300',
         height: featured ? 'auto' : '60px',
         lineHeight: '1.2',
@@ -52,6 +51,7 @@ const Card = ({
         fontFamily: 'ff-tisa-web-pro, serif',
         fontWeight: '100',
         fontSize: '20px',
+        zIndex: 1,
         lineHeight: 1.4,
         opacity: 0.9,
         display: 'none',
@@ -105,7 +105,7 @@ const Card = ({
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
       })}>
-      <Img fluid={image} />
+      <Img css={css({ img: { zIndex: 0 } })} fluid={image} />
       {children}
     </div>
   </div>
