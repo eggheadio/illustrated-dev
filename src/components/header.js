@@ -1,92 +1,165 @@
 import React from 'react'
 import Link from './link'
 import Subbutton from './subbutton'
-import { css } from '@emotion/core'
+import {css} from '@emotion/core'
 import Container from './container'
-import { bpMinMD, bpMinSM } from '../utils/breakpoints'
+import {bpMinMD, bpMinSM, bpMaxMD} from '../utils/breakpoints'
+import VisuallyHidden from '@reach/visually-hidden'
+import Hamburger from './hamburger'
 
-const Header = ({ background, scrollToFooter }) => (
-  <header
-    css={css({
-      background: background,
+const Header = ({background, scrollToFooter}) => {
+  const [menuOpen, setMenuOpen] = React.useState(false)
+  const toggleMenu = () => setMenuOpen(value => !value)
+  return (
+    <header
+      css={css({
+        background: background,
 
-      [bpMinSM]: {
-        paddingTop: '40px',
-      },
-      paddingTop: '10px',
-      a: {
-        fontFamily: 'brandon-grotesque, sans-serif',
-        fontSize: '14px',
-        letterSpacing: '0.1em',
-        fontWeight: '700',
-        textTransform: 'uppercase',
-        margin: 0,
-      },
-    })}>
-    <Container
-      noVerticalPadding
+        [bpMinSM]: {
+          paddingTop: '40px',
+        },
+        paddingTop: '10px',
+        a: {
+          fontFamily: 'brandon-grotesque, sans-serif',
+          fontSize: '14px',
+          letterSpacing: '0.1em',
+          fontWeight: '700',
+          textTransform: 'uppercase',
+          margin: 0,
+        },
+      })}
+    >
+      <Container
+        noVerticalPadding
+        css={css({
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        })}
+      >
+        <h1>
+          <Link
+            css={css({
+              borderRadius: '4px',
+              color: 'rgb(79, 88, 95)',
+              [bpMinSM]: {
+                border: '2px solid #FFFFFF',
+                padding: '15px 20px',
+              },
+              padding: '0px',
+              fontWeight: '700',
+            })}
+            to="/"
+          >
+            Illustrated.dev
+          </Link>
+        </h1>
+
+        {/* Nav Grid Layout */}
+        <div
+          tabIndex="0"
+          onClick={toggleMenu}
+          onKeyPress={event => {
+            const ENTER_KEY = 13
+            const code = event.keyCode || event.which
+            if (code === ENTER_KEY) {
+              toggleMenu()
+            }
+          }}
+          css={css({
+            [bpMinMD]: {display: 'none'},
+            [bpMaxMD]: {display: 'block'},
+          })}
+        >
+          <div
+            aria-hidden="true"
+            css={css({
+              width: 50,
+              height: 'auto',
+              opacity: '.8',
+            })}
+          >
+            <Hamburger />
+          </div>
+          <VisuallyHidden>Toggle Nav</VisuallyHidden>
+        </div>
+        <div
+          css={css({
+            display: 'none',
+            [bpMinMD]: {display: 'block'},
+          })}
+        >
+          <NavLinks scrollToFooter={scrollToFooter} />
+        </div>
+      </Container>
+      {menuOpen && (
+        <Container
+          css={css({
+            [bpMinMD]: {display: 'none'},
+            [bpMaxMD]: {display: 'block'},
+          })}
+        >
+          <NavLinks scrollToFooter={scrollToFooter} focusFirstLink />
+        </Container>
+      )}
+    </header>
+  )
+}
+
+const NavLinks = ({scrollToFooter = () => {}, focusFirstLink = false}) => {
+  const firstNavRef = React.useRef(null)
+  React.useEffect(() => {
+    console.log({focusFirstLink})
+    if (focusFirstLink) {
+      firstNavRef.current.focus()
+    }
+  }, [focusFirstLink])
+  return (
+    <div
       css={css({
         display: 'flex',
+        justifyContent: 'space-around',
         alignItems: 'center',
-        justifyContent: 'space-between',
-      })}>
-      <h1>
-        <Link
-          css={css({
-            borderRadius: '4px',
-            color: 'rgb(79, 88, 95)',
-            [bpMinSM]: {
-              border: '2px solid #FFFFFF',
-              padding: '15px 20px',
-            },
-            padding: '0px',
-            fontWeight: '700',
-          })}
-          to='/'>
-          Illustrated.dev
-        </Link>
-      </h1>
-
-      {/* Nav Grid Layout */}
-      <div
+      })}
+    >
+      <Link
+        to="/"
+        innerRef={el => {
+          firstNavRef.current = el
+        }}
         css={css({
-          [bpMinMD]: { display: 'flex' },
-        })}>
-        <Link
-          to='/'
-          css={css({
-            float: 'right',
-            boxSizing: 'border-box',
-            borderRadius: '4px',
-            color: 'rgb(79, 88, 95)',
-            [bpMinMD]: {
-              padding: '15px 20px',
-              display: 'block',
-            },
-            padding: '0px',
-            display: 'none',
-            fontWeight: '700',
-          })}>
-          Explainers
-        </Link>
-        <Link
-          to='/sketches'
-          css={css({
-            float: 'right',
-            boxSizing: 'border-box',
-            borderRadius: '4px',
-            color: 'rgb(79, 88, 95)',
-            [bpMinMD]: {
-              padding: '15px 20px',
-              display: 'block',
-            },
-            padding: '0px',
-            display: 'none',
-            fontWeight: '700',
-          })}>
-          Sketches
-        </Link>
-        {/* <Link
+          float: 'right',
+          boxSizing: 'border-box',
+          borderRadius: '4px',
+          color: 'rgb(79, 88, 95)',
+          [bpMinMD]: {
+            padding: '15px 20px',
+            display: 'block',
+          },
+          padding: '0px',
+          fontWeight: '700',
+        })}
+      >
+        Explainers
+      </Link>
+      <Link
+        to="/sketches"
+        css={css({
+          float: 'right',
+          boxSizing: 'border-box',
+          borderRadius: '4px',
+          color: 'rgb(79, 88, 95)',
+          [bpMinMD]: {
+            padding: '15px 20px',
+            display: 'block',
+          },
+          padding: '0px',
+          fontWeight: '700',
+        })}
+      >
+        Sketches
+      </Link>
+      {/* <Link
           to='/meta'
           css={css({
             float: 'right',
@@ -97,33 +170,31 @@ const Header = ({ background, scrollToFooter }) => (
               padding: '15px 20px',
               display: 'block',
             },
-            display: 'none',
             padding: '0px',
             fontWeight: '700',
           })}>
           Meta
         </Link> */}
-        <Link
-          to='/about'
-          css={css({
-            boxSizing: 'border-box',
-            borderRadius: '4px',
-            color: 'rgb(79, 88, 95)',
-            [bpMinMD]: {
-              padding: '15px 25px',
-              display: 'block',
-            },
-            padding: '0px',
-            display: 'none',
-            fontWeight: '700',
-            justifySelf: 'center',
-          })}>
-          About
-        </Link>
+      <Link
+        to="/about"
+        css={css({
+          boxSizing: 'border-box',
+          borderRadius: '4px',
+          color: 'rgb(79, 88, 95)',
+          [bpMinMD]: {
+            padding: '15px 25px',
+            display: 'block',
+          },
+          padding: '0px',
+          fontWeight: '700',
+          justifySelf: 'center',
+        })}
+      >
+        About
+      </Link>
+      <Subbutton onClick={scrollToFooter} />
+    </div>
+  )
+}
 
-        <Subbutton onClick={scrollToFooter} />
-      </div>
-    </Container>
-  </header>
-)
 export default Header
