@@ -85,7 +85,10 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
             wtf: allMdx(
-              sort: { order: DESC, fields: [frontmatter___date] }
+              sort: {
+                order: DESC
+                fields: [frontmatter___featured, frontmatter___date]
+              }
               filter: { fields: { collection: { eq: "wtf" } } }
             ) {
               edges {
@@ -105,6 +108,7 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     title
                     slug
+                    type
                   }
                 }
               }

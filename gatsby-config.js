@@ -159,7 +159,7 @@ module.exports = {
             query: `
               {
                 allMdx(
-                  sort: { order: ASC, fields: [frontmatter___date, frontmatter___featured] }
+                  sort: { order: ASC, fields: [frontmatter___featured, frontmatter___date] }
                   filter: { fields: { collection: { eq: "wtf" } } }
                 ) {
                   edges {
@@ -173,6 +173,8 @@ module.exports = {
                         slug
                         title
                         description
+                        type
+                        featured
                         thumbnail {
                           childImageSharp {
                             original {

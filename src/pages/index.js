@@ -64,7 +64,6 @@ export default function Index({ data: { site, wtf } }) {
                   image={data.frontmatter.thumbnail.childImageSharp.fluid}
                   featured={data.frontmatter.featured}
                   description={data.frontmatter.description}
-                  tags={data.frontmatter.tags}
                 />
               </Link>
             ))}
@@ -122,7 +121,9 @@ export const pageQuery = graphql`
             slug
             title
             featured
+            type
             description
+            date
             tags
             thumbnail {
               childImageSharp {

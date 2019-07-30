@@ -90,7 +90,6 @@ const SketchesPage = ({ data: { site, sketches } }) => {
                 <Card
                   title={data.frontmatter.title}
                   image={data.frontmatter.thumbnail.childImageSharp.fluid}
-                  description={data.frontmatter.description}
                   tags={data.frontmatter.tags}
                 />
               </Link>
