@@ -4,8 +4,8 @@ export default () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     viewBox='0 0 70 88'
-    width='40'
-    height='40'>
+    width='30'
+    height='30'>
     <path
       d='M38.64,0C19.24,0,3.16,9.29.26,21.43a3.2,3.2,0,0,0,3.11,3.94H73.9A3.2,3.2,0,0,0,77,21.43C74.11,9.29,58,0,38.64,0Z'
       style={{ fill: '#39394a' }}

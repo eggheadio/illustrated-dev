@@ -1,7 +1,6 @@
 import React from 'react'
-import Link from './link'
 import { css } from '@emotion/core'
-import { bpMinSM } from '../utils/breakpoints'
+import { bpMinSM, bpMinMD, bpMaxMD } from '../utils/breakpoints'
 import { darken } from 'polished'
 
 class Subbutton extends React.Component {
@@ -9,27 +8,27 @@ class Subbutton extends React.Component {
     return (
       <button
         css={css({
-          fontFamily: 'brandon-grotesque, sans-serif',
-          fontSize: '14px',
-          letterSpacing: '0.1em',
-          fontWeight: '700',
-          textTransform: 'uppercase',
-          boxSizing: 'border-box',
-          borderRadius: '4px',
-          backgroundColor: '#3FCCDC',
-          border: 0,
-          color: '#fff',
-          ':hover': {
-            backgroundColor: darken(0.1, '#3FCCDC'),
-            transition: 'background 250ms',
-          },
-          transition: 'background 250ms',
+          display: 'none',
           [bpMinSM]: {
-            padding: '15px 20px',
+            display: 'block',
+            fontFamily: 'brandon-grotesque, sans-serif',
+            fontSize: '14px',
+            letterSpacing: '0.1em',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            boxSizing: 'border-box',
+            borderRadius: '4px',
+            backgroundColor: '#3FCCDC',
+            border: 0,
+            color: '#fff',
+            padding: '10px 15px',
+            cursor: 'pointer',
+            transition: 'background 250ms',
+            ':hover': {
+              backgroundColor: darken(0.1, '#3FCCDC'),
+              transition: 'background 250ms',
+            },
           },
-          padding: '15px',
-          cursor: 'pointer',
-          flost: 'right',
         })}
         onClick={this.props.onClick}>
         Subscribe
