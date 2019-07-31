@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMinMD } from '../../../src/utils/breakpoints'
+import { bpMinMD } from '../../utils/breakpoints'
 
 const SmallCenter = props => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMinMD } from '../../../src/utils/breakpoints'
+import { bpMinMD } from '../../utils/breakpoints'
 
-const TwoGrid = props => {
+const TwoCol = props => {
   return (
     <div
       css={css({
@@ -16,4 +16,4 @@ const TwoGrid = props => {
   )
 }
 
-export default TwoGrid
+export default TwoCol
