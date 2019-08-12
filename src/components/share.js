@@ -35,8 +35,7 @@ const Share = ({ socialConfig, tags }) => (
       css={ShareButton}
       url={socialConfig.config.url}
       title={socialConfig.config.title}
-      via={socialConfig.twitterHandle.split('@').join('')}
-      hashtags={tags}>
+      via={socialConfig.twitterHandle.split('@').join('')}>
       <img src={twitterIcon} width='100%' alt='Twitter' />
     </TwitterShareButton>
     {/* {socialConfig.config.media && (
