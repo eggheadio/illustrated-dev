@@ -35,6 +35,8 @@ export default function Index({ data: { site, wtf } }) {
             <br />
             illustrated.
           </h1>
+
+          {/* Article Grid Section */}
           <div
             css={css({
               display: 'grid',
@@ -121,9 +123,8 @@ export const pageQuery = graphql`
             slug
             title
             featured
-            type
             description
-            date
+            date(formatString: "MMMM DD, YYYY")
             tags
             thumbnail {
               childImageSharp {

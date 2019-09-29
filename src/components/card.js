@@ -8,6 +8,7 @@ const Card = ({
   type,
   image = [],
   description,
+  category,
   date,
   tags = [],
   featured,
@@ -32,6 +33,7 @@ const Card = ({
         padding: '5px',
         borderTop: featured ? `4px solid ${typeColor}` : 'none',
         background: 'white',
+        position: 'relative',
         boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.05)',
         display: 'flex',
         flexDirection: 'column',
@@ -48,7 +50,6 @@ const Card = ({
           width: '100%',
           height: '100%',
         },
-
         h1: {
           [bpMinSM]: { fontSize: featured ? '40px' : '23px' },
           fontSize: '1.4rem',
@@ -88,19 +89,6 @@ const Card = ({
           display: featured ? 'block' : 'none',
         },
       })}>
-      {/* 
-      // ! Adding in content type labels
-      <div
-        css={css({
-          padding: '1em',
-          color: typeColor,
-          maxHeight: '2.5em',
-          maxWidth: '8em',
-          order: 1,
-        })}>
-        <p>{type}</p>
-      </div> */}
-
       <div
         css={css({
           [bpMinSM]: {
@@ -120,15 +108,7 @@ const Card = ({
           justifyContent: 'flex-end',
           alignItems: 'flex-end',
         })}>
-        <Img
-          css={css({
-            img: {
-              display: 'block',
-              maxWidth: '100%',
-            },
-          })}
-          fluid={image}
-        />
+        <Img fluid={image} />
         {children}
       </div>
     </div>
