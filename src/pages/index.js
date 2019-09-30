@@ -9,7 +9,7 @@ import Container from '../components/container'
 import Card from '../components/card'
 import eggheadpwrd from '../images/egghead-powered.svg'
 
-export default function Index({ data: { site, wtf } }) {
+export default function Index({ data: { site, wtf, sketches } }) {
   return (
     <>
       <SEO title={site.siteMetadata.title} />
@@ -66,6 +66,8 @@ export default function Index({ data: { site, wtf } }) {
                   image={data.frontmatter.thumbnail.childImageSharp.fluid}
                   featured={data.frontmatter.featured}
                   description={data.frontmatter.description}
+                  date={data.frontmatter.date}
+                  category={data.frontmatter.category}
                 />
               </Link>
             ))}
@@ -125,6 +127,39 @@ export const pageQuery = graphql`
             featured
             description
             date(formatString: "MMMM DD, YYYY")
+            category
+            tags
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    sketches: allMdx(
+      sort: {
+        order: DESC
+        fields: [frontmatter___date, frontmatter___featured]
+      }
+      filter: { fields: { collection: { eq: "sketches" } } }
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            slug
+            title
+            featured
+            description
+            date(formatString: "MMMM DD, YYYY")
+            category
             tags
             thumbnail {
               childImageSharp {
