@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const TableOfContents = () => {
-    return (  );
+  return null
 }
- 
-export default TableOfContents;
+
+export default TableOfContents
