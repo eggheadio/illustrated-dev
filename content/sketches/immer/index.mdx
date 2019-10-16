@@ -1,0 +1,71 @@
+---
+date: 2019-10-10
+title: Immutable State with Immer
+thumbnail: ./thumb@2x.png
+slug: immer
+published: true
+---
+
+import FullSketchnote from '../../../src/components/mdx/FullSketchnote.js'
+import SketchesContainer from '../../../src/components/mdx/SketchesContainer.js'
+import Link from '../../../src/components/link.js'
+
+<SketchesContainer>
+
+ ### **Immutability** and **state **are two developer buzzwords it took me forever to "get."
+
+Their underlying meanings aren't necessarily that complex.  
+But it's tough to fully comprehend what they mean, and why they're important, until you see them in action.
+
+**Immutability** simply means making a second copy of things before you change them.  
+It's the same as copying and pasting a new _ImportantThing_Version2_Draft.md_ document before attempting to fix your terribly written blog post.
+
+Writing [immutable code](https://en.wikipedia.org/wiki/Immutable_object) is a [wildly](https://medium.com/tribalscale/understanding-immutability-fdd627b66e58) [popular](https://itnext.io/why-concept-of-immutability-is-so-damn-important-for-a-beginner-front-end-developer-8da85b565c8e) concept. And generally a good idea when you don't want to muck everything up.  
+
+---
+
+[**State**](https://en.wikipedia.org/wiki/State_(computer_science)) just means the way an application is at a single point in time.
+
+For example, if we've typed _"how does CSS grid work"_ into the search bar, and there are three checkboxes ticked, and we have a dropdown menu open that's the current "state" of things.  
+If we close the menu that's a state change. 
+
+Behind the scenes in apps we have to account for every state an app could be in (which gets expontential very quicky).  
+This is usually called "[managing state](https://codeburst.io/state-management-in-javascript-15d0d98837e1)" and [appears to be a neverending problem](https://medium.com/razroo/the-history-of-javascript-state-management-in-2019-161491d588ed).
+
+---
+
+Michel Weststrate just came up with an elegant new solution though.
+
+We now have a fancy new tool called [Immer](https://immerjs.github.io/immer/docs/introduction) that helps manage immutable state in Javascript apps.
+
+On top of builing this nifty new tool, Michel has also recorded and released [a new egghead course](https://egghead.io/courses/immutable-javascript-data-structures-with-immer) that explains how to use it.
+
+<Link to="https://egghead.io/courses/immutable-javascript-data-structures-with-immer">
+
+![](./immutable-javascript-data-structures-with-immer.jpg)
+
+</Link>
+
+Despite my allegic intolerance towards thinking about _state_ and _immutability_, this course turned out to be a delight.  
+ 
+ Michel walks us through building a gifting app with React & Immer that seamlessly handles all the messy state work.
+
+![](./immer-1.png)
+
+Visually drawing out how all the functions and drafts and edits fit together was essential for this one. I wouldn't have grokked it otherwise.
+
+![](./immer-2.png)
+
+![](./immer-3.png)
+
+If you're currently allergic to state & immutability as well, this might be the time to re-test your tolerances and see if Immer can help cure it. 
+
+---
+
+<FullSketchnote coursename="Immutable JavaScript Data Structures with Immer" courselink="https://egghead.io/courses/immutable-javascript-data-structures-with-immer">
+
+![](./immer-mini.png)
+
+</FullSketchnote>
+
+</SketchesContainer>
