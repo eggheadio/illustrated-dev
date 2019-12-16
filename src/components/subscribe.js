@@ -210,9 +210,7 @@ class SignUp extends React.Component {
                   </button>
                 </Form>
               )}
-              {submitted && !isSubmitting && (
-                <PostSubmissionMessage response={response} />
-              )}
+              {submitted && <PostSubmissionMessage response={response} />}
               {errorMessage && <div>{errorMessage}</div>}
             </>
           )}

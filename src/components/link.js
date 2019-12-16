@@ -13,7 +13,7 @@ const Link = ({ children, to, ...other }) => {
   }
 
   return (
-    <a target='_blank' href={to} {...other}>
+    <a target='_blank' rel='noopener noreferrer' href={to} {...other}>
       {children}
     </a>
   )

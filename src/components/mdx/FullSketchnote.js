@@ -13,6 +13,7 @@ const FullSketchnote = props => {
           boxSizing: 'border-box',
           borderRadius: '4px',
           boxShadow: '0px 8px 16px -12px rgba(120, 134, 138, 0.75)',
+          maxHeight: '100%',
         }}>
         {props.children}
       </div>
@@ -33,7 +34,7 @@ const FullSketchnote = props => {
         }}>
         A high-res & printable version of the sketchnote, plus the full course
         is avaliable here on the{' '}
-        <a href={props.courselink} target='_blank'>
+        <a href={props.courselink} rel='noopener noreferrer' target='_blank'>
           {props.coursename}
         </a>{' '}
         page.

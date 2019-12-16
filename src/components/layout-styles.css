@@ -19,7 +19,7 @@ h4 {
   font-family: 'ff-tisa-web-pro', Georgia, 'Times New Roman', Times, serif;
   font-weight: 700;
   text-rendering: optimizeLegibility;
-  line-height: 1.2em;
+  line-height: 1em;
 }
 
 h3,
@@ -245,7 +245,6 @@ h1 {
   color: inherit;
   text-rendering: optimizeLegibility;
   font-size: 2.6rem;
-  line-height: 1.3;
 }
 h2 {
   margin-left: 0;

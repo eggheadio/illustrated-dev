@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import mdxComponents from '../components/mdx'
 import Layout from '../components/layout'
 import Container from '../components/container'
@@ -12,7 +13,9 @@ class PageTemplate extends React.Component {
       <Layout>
         <Container>
           <h1>{page.frontmatter.title}</h1>
-          <MDXRenderer components={mdxComponents}>{page.code.body}</MDXRenderer>
+          <MDXProvider components={mdxComponents}>
+            <MDXRenderer>{page.body}</MDXRenderer>
+          </MDXProvider>
         </Container>
       </Layout>
     )
@@ -30,9 +33,8 @@ export const pageQuery = graphql`
       fields {
         collection
       }
-      code {
-        body
-      }
+
+      body
     }
   }
 `

@@ -5,7 +5,6 @@ import { bpMinSM, bpMinMD, bpMinLG } from '../utils/breakpoints'
 
 const Card = ({
   title,
-  type,
   image = [],
   description,
   category,
@@ -14,24 +13,24 @@ const Card = ({
   featured,
   children,
 }) => {
-  let typeColor
-  if (type === 'explainer') {
-    typeColor = '#7053AE'
-  } else if (type === 'nugget') {
-    typeColor = '#B8CB44'
-  } else if (type === 'sketchnotes') {
-    typeColor = '#3FCCDC'
+  let categoryColor
+  if (category === 'explainers') {
+    categoryColor = '#7053AE'
+  } else if (category === 'meta') {
+    categoryColor = '#B8CB44'
+  } else if (category === 'sketchnotes') {
+    categoryColor = '#3FCCDC'
   }
 
   return (
     <div
       css={css({
         [bpMinSM]: {
-          height: '480px',
+          height: '450px',
           flexDirection: featured ? 'row' : 'column',
         },
         padding: '5px',
-        borderTop: featured ? `4px solid ${typeColor}` : 'none',
+        borderTop: featured ? `4px solid ${categoryColor}` : 'none',
         background: 'white',
         position: 'relative',
         boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.05)',
@@ -40,22 +39,24 @@ const Card = ({
         justifyContent: 'space-between',
         '.gatsby-image-wrapper': {
           [bpMinLG]: {
-            width: featured ? '400px' : '100%',
-            height: featured ? '400px' : '100%',
+            width: featured ? '500px' : '100%',
+            height: featured ? '500px' : '100%',
           },
           [bpMinSM]: {
-            width: featured ? '360px' : '100%',
-            height: featured ? '360px' : '100%',
+            width: featured ? '380px' : '100%',
+            height: featured ? '380px' : '100%',
           },
           width: '100%',
           height: '100%',
         },
         h1: {
-          [bpMinSM]: { fontSize: featured ? '40px' : '23px' },
-          fontSize: '1.4rem',
+          [bpMinSM]: { fontSize: featured ? '42px' : '26px' },
+          fontSize: '1.3rem',
           fontWeight: '300',
-          height: featured ? 'auto' : '60px',
+          height: featured ? 'auto' : '20px',
           lineHeight: '1.2',
+          marginBottom: '0',
+          display: 'inline-block',
         },
         p: {
           fontSize: '1em',
@@ -63,11 +64,11 @@ const Card = ({
         },
         '.description': {
           [bpMinMD]: {
-            display: 'block',
+            display: 'inline-block',
           },
           fontFamily: 'ff-tisa-web-pro, serif',
           fontWeight: '100',
-          fontSize: '20px',
+          fontSize: '28px',
           zIndex: 1,
           lineHeight: 1.2,
           opacity: 0.9,
@@ -92,7 +93,7 @@ const Card = ({
       <div
         css={css({
           [bpMinSM]: {
-            padding: featured ? '50px 40px 50px 50px' : '50px 50px 0 50px',
+            padding: featured ? '40px 40px 40px 40px' : '40px 40px 0 40px',
           },
           paddingBottom: 0,
           display: featured && 'flex',

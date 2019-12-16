@@ -3,7 +3,8 @@ import { css } from '@emotion/core'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import { bpMinMD, bpMinSM, bpMinLG } from '../utils/breakpoints'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import mdx from './mdx'
 
 const Bio = () => {
@@ -17,9 +18,7 @@ const Bio = () => {
         }
       }
       about: mdx(fields: { slug: { regex: "//about//" } }) {
-        code {
-          body
-        }
+        body
       }
     }
   `)
@@ -76,7 +75,7 @@ const Bio = () => {
           //margin: 0,
           padding: '80px 60px',
         })}>
-        <MDXRenderer
+        <MDXProvider
           components={mdx}
           css={css({
             p: {
@@ -86,8 +85,8 @@ const Bio = () => {
               fontSize: '15px',
             },
           })}>
-          {data.about.code.body}
-        </MDXRenderer>
+          <MDXRenderer> {data.about.body}</MDXRenderer>
+        </MDXProvider>
       </div>
     </div>
   )

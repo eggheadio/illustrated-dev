@@ -1,7 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import mdxComponents from '../components/mdx'
 import Layout from '../components/layout'
 import Link from '../components/link'
@@ -62,9 +63,9 @@ class MetaTemplate extends React.Component {
                   })}>
                   {meta.frontmatter.title}
                 </h1>
-                <MDXRenderer components={mdxComponents}>
-                  {meta.code.body}
-                </MDXRenderer>
+                <MDXProvider components={mdxComponents}>
+                  <MDXRenderer>{meta.body}</MDXRenderer>
+                </MDXProvider>
                 <Share
                   socialConfig={{
                     twitterHandle: site.siteMetadata.author,
@@ -211,9 +212,8 @@ export const pageQuery = graphql`
       fields {
         collection
       }
-      code {
-        body
-      }
+
+      body
     }
   }
 `

@@ -7,10 +7,15 @@ module.exports = {
     title: `Illustrated.dev`,
     description: `Illustrated web development & javascript tutorials`,
     author: '@mappletons',
+    twitterUsername: '@mappletons',
+    image: '/static/images/id_opengraph.png',
   },
   plugins: [
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-remark-images',
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
         globalScope: `
           import ResponsiveEmbed from "react-responsive-embed";
@@ -25,7 +30,6 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 900,
-              sizeByPixelDensity: true,
               linkImagesToOriginal: false,
               wrapperStyle: {
                 float: 'left',
@@ -46,7 +50,7 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`,
@@ -56,24 +60,16 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/meta/`,
-        name: 'meta',
+        path: `${__dirname}/content/sketchnotes/`,
+        name: 'sketchnotes',
         ignore: [`**/\.*`], // ignore files starting with a dot,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/sketches/`,
-        name: 'sketches',
-        ignore: [`**/\.*`], // ignore files starting with a dot,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content/wtf/`,
-        name: 'wtf',
+        path: `${__dirname}/content/explainers/`,
+        name: 'explainers',
         ignore: [`**/\.*`], // ignore files starting with a dot,
       },
     },
@@ -91,8 +87,6 @@ module.exports = {
         head: true,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     'gatsby-plugin-emotion',
     {
       resolve: `gatsby-plugin-manifest`,
@@ -133,26 +127,17 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMdx } }) => {
+            serialize: ({query: {site, allMdx}}) => {
               return allMdx.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.description,
-                  image_url: `https://${
-                    site.siteMetadata.title
-                  }/images/id_favicon.svg`,
-                  url: `https://${site.siteMetadata.title}/${
-                    edge.node.frontmatter.slug
-                  }`,
-                  guid: `https://${site.siteMetadata.title}/${
-                    edge.node.frontmatter.slug
-                  }`,
+                  image_url: `https://${site.siteMetadata.title}/images/id_favicon.svg`,
+                  url: `https://${site.siteMetadata.title}/${edge.node.frontmatter.slug}`,
+                  guid: `https://${site.siteMetadata.title}/${edge.node.frontmatter.slug}`,
                   enclosure: {
-                    url: `${site.siteMetadata.title}${
-                      edge.node.frontmatter.thumbnail.childImageSharp.original
-                        .src
-                    }`,
+                    url: `${site.siteMetadata.title}${edge.node.frontmatter.thumbnail.childImageSharp.original.src}`,
                   },
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                  custom_elements: [{'content:encoded': edge.node.html}],
                 })
               })
             },

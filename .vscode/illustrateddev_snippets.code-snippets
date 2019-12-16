@@ -9,7 +9,7 @@
 			"description: '${Description}'",
 			"thumbnail: ./thumb@2x.png",
 			"slug: ${Slug}",
-			"categories: ['${Tags}']",
+			"category: '${Category}'",
 			"published: false",
 			"---",
 		]

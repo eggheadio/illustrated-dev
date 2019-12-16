@@ -1,13 +1,13 @@
 import React from 'react'
 import Link from './link'
 import Subbutton from './subbutton'
-import { css } from '@emotion/core'
+import {css} from '@emotion/core'
 import Container from './container'
-import { bpMinMD, bpMinSM, bpMaxMD } from '../utils/breakpoints'
+import {bpMinMD, bpMinSM, bpMaxMD} from '../utils/breakpoints'
 import VisuallyHidden from '@reach/visually-hidden'
 import Hamburger from './hamburger'
 
-const Header = ({ background, scrollToFooter }) => {
+const Header = ({background, scrollToFooter}) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
   const toggleMenu = () => setMenuOpen(value => !value)
   return (
@@ -15,7 +15,7 @@ const Header = ({ background, scrollToFooter }) => {
       css={css({
         background: background,
         [bpMinSM]: {
-          paddingTop: '40px',
+          paddingTop: '20px',
         },
         paddingTop: '10px',
         a: {
@@ -26,14 +26,16 @@ const Header = ({ background, scrollToFooter }) => {
           textTransform: 'uppercase',
           margin: 0,
         },
-      })}>
+      })}
+    >
       <Container
         noVerticalPadding
         css={css({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-        })}>
+        })}
+      >
         <h1>
           <Link
             css={css({
@@ -46,14 +48,15 @@ const Header = ({ background, scrollToFooter }) => {
               padding: '0px',
               fontWeight: '700',
             })}
-            to='/'>
+            to="/"
+          >
             Illustrated.dev
           </Link>
         </h1>
 
         {/* Nav Grid Layout */}
         <div
-          tabIndex='0'
+          tabIndex="0"
           onClick={toggleMenu}
           onKeyPress={event => {
             const ENTER_KEY = 13
@@ -63,16 +66,18 @@ const Header = ({ background, scrollToFooter }) => {
             }
           }}
           css={css({
-            [bpMinMD]: { display: 'none' },
-            [bpMaxMD]: { display: 'block' },
-          })}>
+            [bpMinMD]: {display: 'none'},
+            [bpMaxMD]: {display: 'block'},
+          })}
+        >
           <div
-            aria-hidden='true'
+            aria-hidden="true"
             css={css({
               width: 50,
               height: 'auto',
               opacity: '.8',
-            })}>
+            })}
+          >
             <Hamburger />
           </div>
           <VisuallyHidden>Toggle Nav</VisuallyHidden>
@@ -80,17 +85,19 @@ const Header = ({ background, scrollToFooter }) => {
         <div
           css={css({
             display: 'none',
-            [bpMinMD]: { display: 'block' },
-          })}>
+            [bpMinMD]: {display: 'block'},
+          })}
+        >
           <NavLinks scrollToFooter={scrollToFooter} />
         </div>
       </Container>
       {menuOpen && (
         <Container
           css={css({
-            [bpMinMD]: { display: 'none' },
-            [bpMaxMD]: { display: 'block' },
-          })}>
+            [bpMinMD]: {display: 'none'},
+            [bpMaxMD]: {display: 'block'},
+          })}
+        >
           <NavLinks scrollToFooter={scrollToFooter} focusFirstLink />
         </Container>
       )}
@@ -98,7 +105,7 @@ const Header = ({ background, scrollToFooter }) => {
   )
 }
 
-const NavLinks = ({ scrollToFooter = () => {}, focusFirstLink = false }) => {
+const NavLinks = ({scrollToFooter = () => {}, focusFirstLink = false}) => {
   const linkStyle = css({
     float: 'right',
     boxSizing: 'border-box',
@@ -114,7 +121,6 @@ const NavLinks = ({ scrollToFooter = () => {}, focusFirstLink = false }) => {
 
   const firstNavRef = React.useRef(null)
   React.useEffect(() => {
-    console.log({ focusFirstLink })
     if (focusFirstLink) {
       firstNavRef.current.focus()
     }
@@ -126,25 +132,15 @@ const NavLinks = ({ scrollToFooter = () => {}, focusFirstLink = false }) => {
         display: 'flex',
         justifyContent: 'space-around',
         alignItems: 'center',
-      })}>
-      <Link
-        to='/'
-        innerRef={el => {
-          firstNavRef.current = el
-        }}
-        css={linkStyle}>
-        Explainers
-      </Link>
-      <Link to='/sketches' css={linkStyle}>
-        Sketches
-      </Link>
-      <Link to='/about' css={linkStyle}>
+      })}
+    >
+      <Link to="/about" css={linkStyle}>
         About
       </Link>
       <Subbutton
         css={css({
-          [bpMinMD]: { display: 'block' },
-          [bpMaxMD]: { display: 'none' },
+          [bpMinMD]: {display: 'block'},
+          [bpMaxMD]: {display: 'none'},
         })}
         onClick={scrollToFooter}
       />

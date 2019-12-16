@@ -29,11 +29,10 @@ const AboutPage = () => {
           <h1
             css={css({
               [bpMinSM]: {
-                fontSize: '3.2rem',
+                fontSize: '3.4rem',
               },
-              fontSize: '2.2rem',
               textAlign: 'center',
-              fontWeight: '100',
+              // fontWeight: '100',
               marginBottom: '40px',
               fontFamily: 'ff-tisa-web-pro, serif',
             })}>
@@ -55,13 +54,14 @@ const AboutPage = () => {
                 margin: '0 auto',
                 maxWidth: '700px',
               })}>
-              <h1
+              <h2
                 css={css({
                   marginTop: '0.4em',
                   lineHeight: '1.2em',
+                  textAlign: 'center',
                 })}>
                 Illustrated.dev explains web development through illustration.
-              </h1>
+              </h2>
               <div
                 css={css({
                   maxWidth: '540px',
@@ -76,7 +76,13 @@ const AboutPage = () => {
                 <p>
                   I make these because the front-end world is overflowing with
                   confounding things to learn (and JavaScript in particular is
-                  <span> 🔥🍌🌟☠ </span> ridiculous sometimes).
+                  <span
+                    aria-label='fire, banana, star, and crossbones emojis'
+                    role='img'>
+                    {' '}
+                    🔥🍌🌟☠{' '}
+                  </span>{' '}
+                  ridiculous sometimes).
                 </p>
                 <p>
                   Visual metaphors are a wonderfully effective learning tool for
@@ -95,39 +101,27 @@ const AboutPage = () => {
                     maxWidth: '200px',
                     width: '100%',
                     [bpMinMD]: {
-                      marginTop: '60px',
+                      marginTop: '40px',
                     },
-                    marginTop: '40px',
+                    marginTop: '20px',
                   })}
                   fluid={data.profilePic.childImageSharp.fluid}
                 />
                 <div
                   css={css({
                     padding: '0 40px 0 40px',
-                    h3: {
-                      [bpMinSM]: {
-                        fontSize: '1rem',
-                      },
-                      fontSize: '0.8rem',
-                    },
-                    h2: {
-                      [bpMinSM]: {
-                        marginBottom: '30px',
-                        fontSize: '2.1rem',
-                      },
-                      marginBottom: '70px',
-                      fontSize: '1.8rem',
-                    },
                     [bpMinMD]: {
                       marginTop: '60px',
                     },
                     marginTop: '40px',
-                    fontSize: '1.8rem',
+                    h3: {
+                      margin: '0',
+                    },
                   })}>
-                  <h3>Made by</h3>
-                  <h2>Maggie Appleton</h2>
+                  <h5>Made by</h5>
+                  <h3>Maggie Appleton</h3>
                   <p>
-                    Mostly illustrating & art directing for{' '}
+                    Art director & lead illustrator at{' '}
                     <Link target='_blank' to='https://egghead.io/'>
                       @egghead
                     </Link>
