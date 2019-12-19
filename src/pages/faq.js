@@ -1,8 +1,12 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import Layout from '../components/layout'
+import { useStaticQuery, graphql } from 'gatsby'
 
 export default function FAQPage() {
+  // const FAQPage = () => {
+  //   const data = useStaticQuery(graphql``)
+  // }
   return (
     <Layout
       css={css({
