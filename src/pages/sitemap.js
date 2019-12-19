@@ -4,14 +4,14 @@ import styled from '@emotion/styled'
 import Link from '../components/link'
 import Layout from '../components/layout'
 
-export default function SiteMap({ data: { wtf, meta } }) {
+export default function SiteMap({ data: { explainers, meta } }) {
   return (
     <Layout>
       <Main>
         <h1>Table of Contents</h1>
 
         <h2>Illustrated Articles</h2>
-        {wtf.edges.map(({ node: data }) => (
+        {explainers.edges.map(({ node: data }) => (
           <div>
             <h3>
               <Link to={`/${data.fields.slug}`}>{data.frontmatter.title}</Link>
