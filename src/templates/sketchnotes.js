@@ -74,9 +74,7 @@ class SketchesTemplate extends React.Component {
                   socialConfig={{
                     twitterHandle: site.siteMetadata.author,
                     config: {
-                      url: `https://illustrated.dev/${
-                        sketches.frontmatter.slug
-                      }`,
+                      url: `https://illustrated.dev/${sketches.frontmatter.slug}`,
                       title: sketches.frontmatter.title,
                       media: `${image &&
                         `https://illustrated.dev${image.src}`}`,
@@ -94,7 +92,6 @@ class SketchesTemplate extends React.Component {
                 },
                 display: 'flex',
                 flexDirection: 'column-reverse',
-                marginTop: '100px',
               })}>
               {previous && (
                 <div
@@ -125,6 +122,7 @@ class SketchesTemplate extends React.Component {
                         fontFamily: 'ff-tisa-web-pro, serif',
                         fontSize: '1.5em',
                         fontStyle: 'italic',
+                        marginBottom: '80px',
                       })}>
                       <svg
                         width='20px'

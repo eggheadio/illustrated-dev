@@ -61,9 +61,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    wtf: allMdx(
+    explainers: allMdx(
       sort: { order: ASC, fields: fields___slug }
-      filter: { fields: { collection: { eq: "wtf" } } }
+      filter: { fields: { collection: { eq: "explainers" } } }
     ) {
       edges {
         node {

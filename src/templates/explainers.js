@@ -14,17 +14,20 @@ import Share from '../components/share'
 
 class ExplainerTemplate extends React.Component {
   render() {
-    const wtf = this.props.data.mdx
+    const explainer = this.props.data.mdx
     const site = this.props.data.site
     const { next, previous } = this.props.pageContext
-    const thumbnail = get(wtf, 'frontmatter.thumbnail.childImageSharp.fluid')
-    const image = get(wtf, 'frontmatter.image.childImageSharp.fluid')
+    const thumbnail = get(
+      explainer,
+      'frontmatter.thumbnail.childImageSharp.fluid'
+    )
+    const image = get(explainer, 'frontmatter.image.childImageSharp.fluid')
     return (
       <>
         <SEO
-          description={wtf.frontmatter.description}
+          description={explainer.frontmatter.description}
           image={thumbnail && `https://illustrated.dev${thumbnail.src}`}
-          title={wtf.frontmatter.title}
+          title={explainer.frontmatter.title}
         />
         <Layout>
           <Container
@@ -61,22 +64,22 @@ class ExplainerTemplate extends React.Component {
                     marginBottom: '40px',
                     fontFamily: 'ff-tisa-web-pro, serif',
                   })}>
-                  {wtf.frontmatter.title}
+                  {explainer.frontmatter.title}
                 </h1>
                 <MDXProvider components={mdxComponents}>
-                  <MDXRenderer>{wtf.body}</MDXRenderer>
+                  <MDXRenderer>{explainer.body}</MDXRenderer>
                 </MDXProvider>
                 <Share
                   socialConfig={{
                     twitterHandle: site.siteMetadata.author,
                     config: {
-                      url: `https://illustrated.dev/${wtf.frontmatter.slug}`,
-                      title: wtf.frontmatter.title,
+                      url: `https://illustrated.dev/${explainer.frontmatter.slug}`,
+                      title: explainer.frontmatter.title,
                       media: `${image &&
                         `https://illustrated.dev${image.src}`}`,
                     },
                   }}
-                  tags={wtf.frontmatter.tags}
+                  tags={explainer.frontmatter.tags}
                 />
               </div>
             </div>
@@ -176,7 +179,7 @@ class ExplainerTemplate extends React.Component {
 }
 
 export const pageQuery = graphql`
-  query wtfQuery($id: String) {
+  query explainerQuery($id: String) {
     site {
       siteMetadata {
         author

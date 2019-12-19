@@ -170,11 +170,16 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        sketchnotes.forEach(({ node }) => {
+        sketchnotes.forEach(({ node }, index) => {
+          const next =
+            index === sketchnotes.length - 1
+              ? null
+              : sketchnotes[index + 1].node
+          const previous = index === 0 ? null : sketchnotes[index - 1].node
           createPage({
             path: `${node.frontmatter.slug}`,
             component: path.resolve(`./src/templates/sketchnotes.js`),
-            context: { id: node.id },
+            context: { id: node.id, previous, next },
           })
         })
 
