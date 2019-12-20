@@ -23,7 +23,7 @@ const AboutPage = () => {
 
   return (
     <>
-      <SEO title='Sketches' />
+      <SEO title='About' />
       <Layout>
         <Container>
           <h1
@@ -32,7 +32,6 @@ const AboutPage = () => {
                 fontSize: '3.4rem',
               },
               textAlign: 'center',
-              // fontWeight: '100',
               marginBottom: '40px',
               fontFamily: 'ff-tisa-web-pro, serif',
             })}>
