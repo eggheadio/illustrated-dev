@@ -6,6 +6,7 @@ import Container from './container'
 import { bpMinMD, bpMinSM, bpMaxMD } from '../utils/breakpoints'
 import VisuallyHidden from '@reach/visually-hidden'
 import Hamburger from './hamburger'
+import logo from '../images/id_logo.svg'
 
 const Header = ({ background, scrollToFooter }) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
@@ -34,22 +35,9 @@ const Header = ({ background, scrollToFooter }) => {
           alignItems: 'center',
           justifyContent: 'space-between',
         })}>
-        <h1>
-          <Link
-            css={css({
-              borderRadius: '4px',
-              color: 'rgb(79, 88, 95)',
-              [bpMinSM]: {
-                border: '2px solid #FFFFFF',
-                padding: '15px 20px',
-              },
-              padding: '0px',
-              fontWeight: '700',
-            })}
-            to='/'>
-            Illustrated.dev
-          </Link>
-        </h1>
+        <Link to='/'>
+          <img src={logo} alt='Illustrated.dev logo' />
+        </Link>
 
         {/* Nav Grid Layout */}
         <div
