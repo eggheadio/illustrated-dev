@@ -63,7 +63,7 @@ export const pageQuery = graphql`
     }
     explainers: allMdx(
       sort: { order: ASC, fields: fields___slug }
-      filter: { fields: { collection: { eq: "explainers" } } }
+      filter: { fields: { category: { eq: "explainers" } } }
     ) {
       edges {
         node {
@@ -74,7 +74,7 @@ export const pageQuery = graphql`
             }
           }
           fields {
-            collection
+            category
             slug
           }
           excerpt(pruneLength: 50)
@@ -86,7 +86,7 @@ export const pageQuery = graphql`
     }
     meta: allMdx(
       sort: { order: ASC, fields: fields___slug }
-      filter: { fields: { collection: { eq: "meta" } } }
+      filter: { fields: { category: { eq: "meta" } } }
     ) {
       edges {
         node {
@@ -97,7 +97,7 @@ export const pageQuery = graphql`
             }
           }
           fields {
-            collection
+            category
             slug
           }
           excerpt(pruneLength: 50)

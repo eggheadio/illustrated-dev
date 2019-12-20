@@ -127,7 +127,7 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({query: {site, allMdx}}) => {
+            serialize: ({ query: { site, allMdx } }) => {
               return allMdx.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.description,
@@ -137,7 +137,7 @@ module.exports = {
                   enclosure: {
                     url: `${site.siteMetadata.title}${edge.node.frontmatter.thumbnail.childImageSharp.original.src}`,
                   },
-                  custom_elements: [{'content:encoded': edge.node.html}],
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
                 })
               })
             },
@@ -145,7 +145,7 @@ module.exports = {
               {
                 allMdx(
                   sort: { order: ASC, fields: [frontmatter___featured, frontmatter___date] }
-                  filter: { fields: { collection: { eq: "wtf" } } }
+                  filter: { fields: { category: { eq: "explainers" } } }
                 ) {
                   edges {
                     node {

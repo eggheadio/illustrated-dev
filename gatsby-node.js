@@ -18,7 +18,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       )}`,
     })
     createNodeField({
-      name: 'collection',
+      name: 'category',
       node,
       value: _.get(parent, 'sourceInstanceName'),
     })
@@ -48,7 +48,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   excerpt(pruneLength: 250)
                   fields {
-                    collection
+                    category
                   }
                   frontmatter {
                     title
@@ -72,7 +72,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   excerpt(pruneLength: 250)
                   fields {
-                    collection
+                    category
                   }
                   frontmatter {
                     title
@@ -100,7 +100,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   excerpt(pruneLength: 250)
                   fields {
-                    collection
+                    category
                   }
                   frontmatter {
                     title
@@ -125,7 +125,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   excerpt(pruneLength: 250)
                   fields {
-                    collection
+                    category
                   }
                   frontmatter {
                     title

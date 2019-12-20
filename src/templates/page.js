@@ -31,7 +31,7 @@ export const pageQuery = graphql`
         description
       }
       fields {
-        collection
+        category
       }
 
       body

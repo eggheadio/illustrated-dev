@@ -210,7 +210,7 @@ export const pageQuery = graphql`
         }
       }
       fields {
-        collection
+        category
       }
 
       body
