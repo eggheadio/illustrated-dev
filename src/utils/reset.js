@@ -23,7 +23,7 @@ p {
   padding: 10px 0 30px;
 }
 .active {
-  color: #3FCCDC;
+  color: #7A44BB;
 }
   form {
     margin: 0;
@@ -60,15 +60,18 @@ p {
   ::selection {
   }
   a {
-    color: #28C7D9;
+    color: #7A44BB;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
+  }
+  a:hover {
+    color: #25B6D5;
   }
   a:not([href]):not([tabindex]) {
     text-decoration: none;
     &:hover,
     &:focus {
-      color: inherit;
+      color: #inherit;
       text-decoration: none;
     }
     &:focus {
@@ -76,8 +79,8 @@ p {
     }
   }
   blockquote {
-    border-bottom: 1px solid #3FCCDC;
-    border-top: 1px solid #3FCCDC;
+    border-bottom: 1px solid #7A44BB;
+    border-top: 1px solid #7A44BB;
     padding-left: 1rem !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -180,6 +183,6 @@ p {
   [hidden] {
     display: none !important;
   }
-`;
+`
 
 export default reset

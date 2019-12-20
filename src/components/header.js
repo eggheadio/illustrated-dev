@@ -91,7 +91,7 @@ const NavLinks = ({ scrollToFooter = () => {}, focusFirstLink = false }) => {
     float: 'right',
     boxSizing: 'border-box',
     borderRadius: '4px',
-    color: 'rgb(79, 88, 95)',
+    color: '#62749C',
     [bpMinMD]: {
       padding: '15px 20px',
       display: 'block',

@@ -15,11 +15,11 @@ const Card = ({
 }) => {
   let categoryColor
   if (category === 'explainers') {
-    categoryColor = '#7053AE'
+    categoryColor = '#7A44BB'
   } else if (category === 'meta') {
     categoryColor = '#B8CB44'
   } else if (category === 'sketchnotes') {
-    categoryColor = '#3FCCDC'
+    categoryColor = '#2EAED0'
   }
 
   return (

@@ -88,7 +88,7 @@ h1 {
   margin: 0.67em 0;
 }
 mark {
-  background-color: #3fccdc;
+  background-color: #7a44bb;
   color: rgb(48, 49, 51);
 }
 small {
@@ -393,7 +393,7 @@ pre {
   margin-bottom: 1.45rem;
   font-size: 0.85rem;
   line-height: 1.42;
-  border: 1px solid #3fccdc;
+  border: 1px solid #7a44bb;
   overflow: auto;
   border-radius: 3px;
   word-wrap: break-word;

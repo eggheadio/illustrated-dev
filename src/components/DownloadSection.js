@@ -36,7 +36,7 @@ const StyledImg = css({
 
 const hoverEffect = css({
   transform: 'translateY(3px)',
-  color: '#3FCCDB',
+  color: '#7A44BB',
 })
 
 const hoverDownload = css({

@@ -93,8 +93,8 @@ module.exports = {
       options: {
         name: 'Illustrated.dev',
         short_name: 'Illustrated.dev',
-        background_color: '#3FCCDC',
-        theme_color: '#3FCCDC',
+        background_color: '#7A44BB',
+        theme_color: '#7A44BB',
         display: 'minimal-ui',
         icon: 'src/images/id_favicon.svg', // This path is relative to the root of the site.
       },

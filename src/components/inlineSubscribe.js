@@ -83,7 +83,7 @@ class InlineSignUp extends React.Component {
             fontWeight: '700',
             textTransform: 'uppercase',
             letterSpacing: '0.05em',
-            backgroundColor: '#5BC5CF',
+            backgroundColor: '#7A44BB',
             borderRadius: '5px',
             border: 'none',
             marginBottom: '8px',

@@ -57,14 +57,14 @@ const MainCardGrid = ({ posts }) => {
                   padding: '8px 20px',
                   margin: '4px',
                   border: 'none',
-                  background: 'rgba(255, 255, 255, 0.7)',
+                  background: '#fff',
                   borderRadius: '24px',
                   fontFamily: 'brandon-grotesque, sans-serif',
                   fontSize: '14px',
                   letterSpacing: '0.1em',
                   fontWeight: '700',
                   textTransform: 'uppercase',
-                  color: '#A6BFC8',
+                  color: '#6284A3',
                 })}
                 key={c}
                 onClick={() => handleCategoryClick(c)}>
