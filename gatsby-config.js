@@ -158,7 +158,7 @@ module.exports = {
                         slug
                         title
                         description
-                        type
+                        category
                         featured
                         thumbnail {
                           childImageSharp {

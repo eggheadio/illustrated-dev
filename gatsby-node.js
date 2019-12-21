@@ -78,6 +78,7 @@ exports.createPages = ({ graphql, actions }) => {
                     title
                     slug
                     date
+                    category
                   }
                 }
               }
@@ -105,7 +106,7 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     title
                     slug
-                    type
+                    category
                   }
                 }
               }
