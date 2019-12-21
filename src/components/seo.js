@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 function SEO({ description, lang, meta, keywords, title, image }) {
-  const metaImage = image || 'https://illustrated.dev/images/id_favicon.svg'
+  const metaImage = image || 'https://illustrated.dev/images/id_opengraph.png'
   return (
     <StaticQuery
       query={detailsQuery}
