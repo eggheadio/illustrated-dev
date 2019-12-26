@@ -3,16 +3,7 @@ import { css } from '@emotion/core'
 import Img from 'gatsby-image'
 import { bpMinSM, bpMinMD, bpMinLG } from '../utils/breakpoints'
 
-const Card = ({
-  title,
-  image = [],
-  description,
-  category,
-  date,
-  tags = [],
-  featured,
-  children,
-}) => {
+const Card = ({ title, image = [], description, category, date, featured }) => {
   let categoryColor
   if (category === 'explainers') {
     categoryColor = '#7A44BB'
@@ -120,7 +111,6 @@ const Card = ({
           alignItems: 'flex-start',
         })}>
         <Img fluid={image} />
-        {/* {children} */}
       </div>
     </div>
   )
