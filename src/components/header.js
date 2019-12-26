@@ -53,6 +53,10 @@ const Header = ({ background, scrollToFooter }) => {
           css={css({
             [bpMinMD]: { display: 'none' },
             [bpMaxMD]: { display: 'block' },
+            ':focus, :active': {
+              outline: 'none',
+              border: 'none',
+            },
           })}>
           <div
             aria-hidden='true'

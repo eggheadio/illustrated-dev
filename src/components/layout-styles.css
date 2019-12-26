@@ -147,6 +147,10 @@ button,
 select {
   text-transform: none;
 }
+button:focus {
+  outline: none;
+  border: none;
+}
 [type='reset'],
 [type='submit'],
 button,

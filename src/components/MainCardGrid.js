@@ -65,6 +65,11 @@ const MainCardGrid = ({ posts }) => {
                   fontWeight: '700',
                   textTransform: 'uppercase',
                   color: '#6284A3',
+                  transition: 'all 0.5s ease',
+                  ':hover': {
+                    background: '#20B5D5',
+                    color: '#fff',
+                  },
                 })}
                 key={c}
                 onClick={() => handleCategoryClick(c)}>
@@ -85,9 +90,7 @@ function Grid({ posts, currentCategory }) {
       css={css({
         display: 'grid',
         gridGap: '25px',
-
         gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr) )',
-
         a: {
           color: 'inherit',
         },
