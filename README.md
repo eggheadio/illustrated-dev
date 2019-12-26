@@ -1,6 +1,6 @@
 # Illustrated.dev
 
-## Illustrated.dev explains web development through illustration.
+### Illustrated.dev explains web development through illustration.
 
 [⟶ Visit](https://illustrated.dev/)
 
