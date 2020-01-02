@@ -110,19 +110,21 @@ class SketchesTemplate extends React.Component {
                     color: 'hsla(200, 10%, 30%, 0.7)',
                   },
                 })}>
-                <p
-                  css={css({
-                    color: '#7D8EB0',
-                    textAlign: 'center',
-                    fontSize: '1em',
-                  })}>
-                  {sketches.frontmatter.date}
-                </p>
-                <h1
-                  css={css({
-                    [bpMinMD]: {
-                      fontSize: '3rem',
-                      marginBottom: '80px',
+                <Link to={`/${previous.frontmatter.slug}`} rel='previous'>
+                  <h4
+                    css={css({
+                      opacity: '0.6',
+                    })}>
+                    previous
+                  </h4>
+                  <h2
+                    css={css({
+                      opacity: '0.8',
+                      fontWeight: '100',
+                      fontFamily: 'ff-tisa-web-pro, serif',
+                      fontSize: '1.5em',
+                      fontStyle: 'italic',
+                      marginBottom: '40px',
                     })}>
                     <svg
                       width='20px'
@@ -157,6 +159,7 @@ class SketchesTemplate extends React.Component {
                       fontFamily: 'ff-tisa-web-pro, serif',
                       fontSize: '2.2em',
                       fontStyle: 'italic',
+                      marginBottom: '80px',
                     })}>
                     {next.frontmatter.title}{' '}
                     <svg
