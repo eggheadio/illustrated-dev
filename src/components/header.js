@@ -42,6 +42,7 @@ const Header = ({ background, scrollToFooter }) => {
         {/* Nav Grid Layout */}
         <div
           tabIndex='0'
+          role='button'
           onClick={toggleMenu}
           onKeyPress={event => {
             const ENTER_KEY = 13
@@ -127,9 +128,6 @@ const NavLinks = ({ scrollToFooter = () => {}, focusFirstLink = false }) => {
       {/* <Link to='/resources' css={linkStyle}>
         Resources
       </Link> */}
-      <Link to='/about' css={linkStyle}>
-        About
-      </Link>
       <Subbutton
         css={css({
           [bpMinMD]: { display: 'block' },

@@ -33,16 +33,16 @@ function RecCourses(props) {
         aria-label='Click to view recommended courses'
         onClick={toggleDropdown}>
         <img alt='down arrow' src={downArrow} />
+        <h5
+          css={css({
+            display: 'inline-block',
+            fontSize: '0.9em',
+            margin: '0',
+            paddingLeft: '6px',
+          })}>
+          Recommended Courses
+        </h5>
       </button>
-      <h5
-        css={css({
-          display: 'inline-block',
-          fontSize: '0.9em',
-          margin: '0',
-        })}
-        onClick={toggleDropdown}>
-        Recommended Courses
-      </h5>
 
       {isDowndownOpen
         ? props.props.map((rc, index) => (
