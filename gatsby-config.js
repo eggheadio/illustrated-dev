@@ -15,6 +15,12 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-remark-images',
     {
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        component: require.resolve(`./src/layouts/layout.js`),
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         globalScope: `
@@ -22,9 +28,9 @@ module.exports = {
           import { TwitterTweetEmbed } from "react-twitter-embed";
           export default { ResponsiveEmbed, TwitterTweetEmbed };
         `,
-        defaultLayouts: {
-          default: here('./src/components/layout.js'),
-        },
+        // defaultLayouts: {
+        //   default: here('./src/layouts/layout.js'),
+        // },
         gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-images',

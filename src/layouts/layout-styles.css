@@ -135,6 +135,7 @@ select,
 textarea {
   font: inherit;
   margin: 0;
+  border: none;
 }
 optgroup {
   font-weight: 700;
@@ -344,7 +345,7 @@ ul {
 }
 li {
   list-style-position: outside;
-  list-style-image: url(./bullet.svg);
+  list-style-image: url(../components/bullet.svg);
   line-height: 1.8rem;
   font-size: 1.2rem;
   font-family: 'ff-tisa-web-pro', serif;

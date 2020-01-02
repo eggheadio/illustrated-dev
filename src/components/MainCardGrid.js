@@ -90,7 +90,7 @@ function Grid({ posts, currentCategory }) {
       css={css({
         display: 'grid',
         gridGap: '25px',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr) )',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr) )',
         a: {
           color: 'inherit',
         },

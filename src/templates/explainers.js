@@ -4,7 +4,6 @@ import { css } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import mdxComponents from '../components/mdx'
-import Layout from '../components/layout'
 import Link from '../components/link'
 import Container from '../components/container'
 import { bpMinMD, bpMinSM } from '../utils/breakpoints'
@@ -29,7 +28,6 @@ class ExplainerTemplate extends React.Component {
           image={thumbnail && `https://illustrated.dev${thumbnail.src}`}
           title={explainer.frontmatter.title}
         />
-        <Layout>
           <Container
             noVerticalPadding
             css={css({
@@ -182,7 +180,6 @@ class ExplainerTemplate extends React.Component {
               )}
             </div>
           </Container>
-        </Layout>
       </>
     )
   }

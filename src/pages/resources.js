@@ -1,47 +1,86 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import Layout from '../components/layout'
+import Container from '../components/container'
+import SEO from '../components/seo'
+import { bpMinSM } from '../utils/breakpoints'
+import ResourceCard from '../components/resourceCard.js'
+import ResourceBook from '../components/resourceBook.js'
+import {
+  resourceCourses,
+  resourceBooks,
+} from '../../content/static_content/resourceData'
 
 export default function ResourcesPage() {
   return (
-    <Layout
-      css={css({
-        display: 'grid',
-        gridGap: '25px',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr) )',
-      })}>
-      <main
-        css={css({
-          margin: '0 auto',
-          maxWidth: '500px',
-          padding: '50px 10px',
-        })}>
-        <h1>Resources</h1>
-        <h2>On Drawing</h2>
-        <div>
-          <p>
-            - Schoolism - Drawing Fundamentals - Pictorial Composition -
-            Essentials of Realism - Fundamentals of Lighting - SVSLearn - How to
-            Draw Everything - Creative Composition - Concept Design Academy -
-            How to Think When You Draw by Lorenzo Etherington - Will Weston -
-            How to Draw & How to Render by Scott Robertson - Koos Eissen on
-            Sketching - Dynamic Sketching with Peter Han and Patrick - New
-            Masters Academy - Composition with Bill Perkins
-          </p>
+    <>
+      <SEO title='Resources' />
+      <Container>
+        <h1
+          css={css({
+            [bpMinSM]: {
+              fontSize: '3.4rem',
+            },
+            textAlign: 'center',
+            marginBottom: '40px',
+            fontFamily: 'ff-tisa-web-pro, serif',
+          })}>
+          Resources
+        </h1>
+        <hr />
+        <h2
+          css={css({
+            textAlign: 'center',
+          })}>
+          Learning Platforms & Courses
+        </h2>
+        <div
+          css={css({
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr) )',
+            alignItems: 'center',
+          })}>
+          {resourceCourses.map((d, i) => {
+            console.log(d.recCourses)
+            return (
+              <ResourceCard
+                key={i}
+                title={d.title}
+                description={d.description}
+                img={d.img}
+                cost={d.cost}
+                url={d.url}
+                recCourses={d.recCourses}
+              />
+            )
+          })}
         </div>
-        <h2>On Metaphors & Visual Thinking</h2>
-        <div>
-          <p>
-            - Lateral Thinking by Edward de Bono - The Thinking Illustrator by
-            Craig Frazier - Metaphors We Live by - Art Synectics - Design
-            Synectics - Applied Imagination by Alex Osborn - Thinkertoys
-          </p>
+        <hr />
+
+        <h2
+          css={css({
+            textAlign: 'center',
+          })}>
+          Books
+        </h2>
+        <div
+          css={css({
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr) )',
+          })}>
+          {resourceBooks.map((d, i) => {
+            return (
+              <ResourceBook
+                key={i}
+                title={d.title}
+                description={d.description}
+                img={d.img}
+                url={d.url}
+                author={d.author}
+              />
+            )
+          })}
         </div>
-        <h2>On Programming</h2>
-        <div>
-          <p>- Egghead ;) - You Don't Know JS - Eloquent JavaScript</p>
-        </div>
-      </main>
-    </Layout>
+      </Container>
+    </>
   )
 }
