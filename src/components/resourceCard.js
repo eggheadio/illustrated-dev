@@ -63,7 +63,7 @@ export default function ResourceCard(props) {
             },
           })}>
           <Link to={props.url}>
-            <img alt='{props.title}' src={props.img} />
+            <img alt={props.title} src={props.img} />
           </Link>
 
           <div class='dataBlock'>
