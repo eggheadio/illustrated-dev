@@ -15,17 +15,17 @@ export default function ResourceCard(props) {
           borderRadius: '6px',
           background: 'rgba(253,252,252,1)',
           border: '1px solid rgba(255,255,255,0.7)',
-          boxShadow: '5px 5px 20px 0 rgba(218,224,228,0.6)',
+          boxShadow: '5px 5px 20px 0 rgba(218,224,228,0.8)',
           justifyContent: 'space-between',
           '.gatsby-image-wrapper': {
             width: '100%',
             height: '100%',
           },
           ':hover': {
-            boxShadow: '1px 2px 4px 0 rgba(190,198,206,0.7)',
+            boxShadow: '0px 2px 2px 0 rgba(190,198,206,0.9)',
             transition: 'all 0.4s ease',
             transform: 'scale(0.99)',
-            border: '1px solid rgba(228,234,238,1)',
+            border: '1px solid rgba(218,224,228,1)',
           },
           transition: 'all 0.4s ease',
         })}>

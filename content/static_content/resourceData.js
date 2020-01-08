@@ -34,7 +34,7 @@ export const resourceCourses = [
   {
     title: 'New Masters Academy',
     description:
-      "While a bit old school and slow-paced, the instructors on here are true veterans. Mostly from the visual development and film world, they're strong on anatomy, traditional painting, and compositional layout theory.",
+      "While a bit old school and slow-paced, the instructors on here are true veterans. Many are classical painters and sculpters, or come from the visual development and film world. They're strong on anatomy, traditional painting yechniques, and compositional layout theory.",
     url: 'https://nma.art',
     img: 'https://illustrated.dev/images/resources/nma.png',
     cost: '$35 Monthly',
@@ -94,7 +94,8 @@ export const resourceCourses = [
   },
   {
     title: 'Art of Aaron Blaise',
-    description: '-',
+    description:
+      'Animation, animals, and character design are the focus here. Ex-Disney artist Aaron Blaise leads most of the courses – his teaching style is friendly and laid-back. These courses assume basic drawing skills and cover more advanced topics.',
     url: 'https://creatureartteacher.com/',
     img: 'https://illustrated.dev/images/resources/aaronblaise.png',
     cost: '$25 Monthly',
@@ -124,15 +125,29 @@ export const resourceCourses = [
   {
     title: 'Will Weston',
     description:
-      'Will is xyz. His instagram is a treasure trove of notes, blackboard lectures, and demos. He runs workshops a few times a year in Paris, LA, and NYC.',
+      "Will is one of the instagram stars of the art education world. His profile is a treasure trove of lecture notes teaching fundamental drawing skills. He's also  started offering online video courses, and runs in-person workshops in Paris, LA, and NYC.",
     url: [
       'https://www.instagram.com/willwestonstudio',
       'https://drawingamerica.com/weston/',
     ],
     img: 'https://illustrated.dev/images/resources/willweston.png',
-    cost: '$65-95 videos / $600 IRL Courses',
+    cost: '$65-95 videos / $600 In-Person',
     category: 'website',
     recommended: true,
+    recCourses: [
+      {
+        title: 'Figure Drawing & Anatomy',
+        instructor: null,
+        url:
+          'https://drawingamerica.com/courses/will-weston-figure-drawing-lecture/',
+      },
+      {
+        title: 'Composition & Layout',
+        instructor: null,
+        url:
+          'https://drawingamerica.com/courses/will-weston-composition-lecture/',
+      },
+    ],
   },
   {
     title: 'Draw a Box',
@@ -147,7 +162,7 @@ export const resourceCourses = [
   {
     title: 'Modern Day James',
     description:
-      'James is an independent creator running a patreon and selling individual gumroad courses. Focuses on concept design for games',
+      'James is an independent creator running a patreon and selling individual gumroad courses. Their style is more directed at game design and concept art for films.',
     url: [
       'https://www.patreon.com/moderndayjames',
       'https://gumroad.com/moderndayjames',
@@ -170,10 +185,11 @@ export const resourceCourses = [
 
   {
     title: 'Concept Design Academy',
-    description: '-',
+    description:
+      'An in-person training school in Pasadena, California that offers a full curriculum of foundational illustration and design skills. The instructors are all working professionals in the concept art industry, and teaching courses on evenings and weekends.',
     url: 'https://conceptdesignacad.com/',
     img: 'https://illustrated.dev/images/resources/cda.png',
-    cost: '$750-800 IRL Courses',
+    cost: '$750-800 In-Person',
     category: 'IRL',
     recommended: false,
   },
@@ -206,7 +222,7 @@ export const resourceCourses = [
       'https://www.twitch.tv/peterhanstyle',
     ],
     img: 'https://illustrated.dev/images/resources/peterhan.png',
-    cost: '$750-900 IRL Courses',
+    cost: '$750-900 In-Person',
     category: 'person',
     recommended: false,
   },

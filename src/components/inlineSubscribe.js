@@ -14,7 +14,7 @@ const SubscribeSchema = Yup.object().shape({
 })
 
 const PostSubmissionMessage = ({ response }) => {
-  return <div>Great, one last thing...</div>
+  return <div>Please check your inbox</div>
 }
 
 class InlineSignUp extends React.Component {
@@ -187,9 +187,7 @@ class InlineSignUp extends React.Component {
                   </button>
                 </Form>
               )}
-              {submitted && !isSubmitting && (
-                <PostSubmissionMessage response={response} />
-              )}
+              {successful && <PostSubmissionMessage response={response} />}
               {errorMessage && <div>{errorMessage}</div>}
             </>
           )}
