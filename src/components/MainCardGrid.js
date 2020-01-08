@@ -50,6 +50,29 @@ const MainCardGrid = ({ posts }) => {
         })}>
         <p>Illustrated Explainers & Sketchnotes</p>
         <span css={css({ justifySelf: 'end' })}>
+          <button
+            css={css({
+              padding: '8px 20px',
+              margin: '4px',
+              border: 'none',
+              background: currentCategory === ALL_CATEGORY ? '#20B5D5' : '#fff',
+              borderRadius: '24px',
+              fontFamily: 'brandon-grotesque, sans-serif',
+              fontSize: '14px',
+              letterSpacing: '0.1em',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              color: '#6284A3',
+              transition: 'all 0.5s ease',
+              ':hover': {
+                background: '#20B5D5',
+                color: '#fff',
+              },
+            })}
+            key={ALL_CATEGORY}
+            onClick={() => handleCategoryClick(ALL_CATEGORY)}>
+            All Posts
+          </button>
           {categories.map(c => {
             return (
               <button
@@ -57,7 +80,7 @@ const MainCardGrid = ({ posts }) => {
                   padding: '8px 20px',
                   margin: '4px',
                   border: 'none',
-                  background: '#fff',
+                  background: currentCategory === c ? '#20B5D5' : '#fff',
                   borderRadius: '24px',
                   fontFamily: 'brandon-grotesque, sans-serif',
                   fontSize: '14px',
