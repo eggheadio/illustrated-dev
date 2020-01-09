@@ -52,17 +52,18 @@ const MainCardGrid = ({ posts }) => {
         <span css={css({ justifySelf: 'end' })}>
           <button
             css={css({
+              alignSelf: 'end',
               padding: '8px 20px',
               margin: '4px',
               border: 'none',
-              background: currentCategory === ALL_CATEGORY ? '#20B5D5' : '#fff',
+              background: currentCategory === ALL_CATEGORY ? '#A1B7CB' : '#fff',
               borderRadius: '24px',
               fontFamily: 'brandon-grotesque, sans-serif',
               fontSize: '14px',
               letterSpacing: '0.1em',
               fontWeight: '700',
               textTransform: 'uppercase',
-              color: '#6284A3',
+              color: currentCategory === ALL_CATEGORY ? '#fff' : '#6284A3',
               transition: 'all 0.5s ease',
               ':hover': {
                 background: '#20B5D5',
@@ -77,6 +78,7 @@ const MainCardGrid = ({ posts }) => {
             return (
               <button
                 css={css({
+                  alignSelf: 'end',
                   padding: '8px 20px',
                   margin: '4px',
                   border: 'none',
@@ -87,7 +89,7 @@ const MainCardGrid = ({ posts }) => {
                   letterSpacing: '0.1em',
                   fontWeight: '700',
                   textTransform: 'uppercase',
-                  color: '#6284A3',
+                  color: currentCategory === c ? '#fff' : '#6284A3',
                   transition: 'all 0.5s ease',
                   ':hover': {
                     background: '#20B5D5',

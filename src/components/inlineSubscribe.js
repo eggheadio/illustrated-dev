@@ -4,6 +4,21 @@ import * as Yup from 'yup'
 import { css } from '@emotion/core'
 import { bpMinMD } from '../utils/breakpoints'
 
+const InlineEmailSuccess = () => {
+  return (
+    <div
+      css={css({
+        textAlign: 'center',
+        padding: '0.3em',
+        borderTop: '1px solid #8147C2',
+        margin: '20px auto',
+      })}>
+      <h3>Thanks for joining!</h3>
+      <p>Please check your inbox for a confirmation email</p>
+    </div>
+  )
+}
+
 const FORM_ID = process.env.CONVERTKIT_SIGNUP_FORM
 
 const SubscribeSchema = Yup.object().shape({
@@ -14,7 +29,7 @@ const SubscribeSchema = Yup.object().shape({
 })
 
 const PostSubmissionMessage = ({ response }) => {
-  return <div>Please check your inbox</div>
+  return <InlineEmailSuccess />
 }
 
 class InlineSignUp extends React.Component {
