@@ -17,10 +17,20 @@ const SubscribeSchema = Yup.object().shape({
 
 const PostSubmissionMessage = ({ response }) => {
   return (
-    <div>
+    <div
+      css={css({
+        padding: '2em 0 1em',
+        h3: {
+          color: '#fff',
+        },
+        p: {
+          color: '#9FB3C7',
+        },
+      })}>
+      <h3>Thanks for joining!</h3>
       <p>
-        I just sent you an email with the confirmation link. Please check your
-        inbox to confirm.
+        I just sent you an email with the confirmation link – please check your
+        inbox.
       </p>
     </div>
   )
