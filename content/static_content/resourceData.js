@@ -292,7 +292,7 @@ export const resourceBooks = [
     author: 'Peter Han',
     url: 'https://www.gallerynucleus.com/detail/21089/',
     img:
-      'https://70f186a60af817fe0731-09dac41207c435675bfd529a14211b5c.ssl.cf1.rackcdn.com/assets/attachments_p/000/059/556/size500_han_dynamicbible_detail2_500.jpg',
+      'https://70f186a60af817fe0731-09dac41207c435675bfd529a14211b5c.ssl.cf1.rackcdn.com/assets/attachments_p/000/059/082/size500_peterhan_dynamicbible_detail1_500.jpg',
     topic: 'drawing',
     recommended: false,
   },
@@ -315,6 +315,16 @@ export const resourceBooks = [
     recommended: true,
   },
   {
+    title: 'The Animators Survival Kit',
+    author: 'Richard Williams',
+    url:
+      'https://www.goodreads.com/book/show/136091.The_Animator_s_Survival_Kit',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1311991805l/136091.jpg',
+    topic: 'drawing',
+    recommended: true,
+  },
+  {
     title: 'Force: Dynamic Life Drawing for Animators',
     author: 'Michael D. Mattesi',
     url: 'https://www.goodreads.com/book/show/899923.Force',
@@ -323,15 +333,26 @@ export const resourceBooks = [
     topic: 'drawing',
     recommended: true,
   },
-  // {
-  //   title: 'Metaphors We Live By',
-  //   author: 'George Lakoff, Mark Johnson',
-  //   url: 'https://www.goodreads.com/book/show/34459.Metaphors_We_Live_By',
-  //   img:
-  //     'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388194058l/34459._SX318_.jpg',
-  //   topic: 'visual thinking',
-  //   recommended: false,
-  // },
+  {
+    title: 'Understanding Comics',
+    author: 'Scott McCloud',
+    url: 'https://www.goodreads.com/book/show/102920.Understanding_Comics',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328408101l/102920.jpg',
+    topic: 'visual thinking',
+    recommended: true,
+  },
+  {
+    title: 'Graphic Storytelling and Visual Narrative',
+    author: 'Will Eisner',
+    url:
+      'https://www.goodreads.com/book/show/2393396.Graphic_Storytelling_and_Visual_Narrative',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1390715421l/2393396.jpg',
+    topic: 'visual thinking',
+    recommended: true,
+  },
+
   {
     title: 'Thinkertoys',
     author: 'Michael Michalko',
