@@ -26,6 +26,15 @@ export default function ResourcesPage() {
           })}>
           Resources
         </h1>
+        <p
+          css={css({
+            textAlign: 'center',
+          })}>
+          Want to improve your drawing and visual thinking skills?
+          <br />
+          This is a collection of my personal recommendations for online courses
+          and books.
+        </p>
         <hr />
         <h2
           css={css({
