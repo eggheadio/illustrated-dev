@@ -122,12 +122,12 @@ const NavLinks = ({ scrollToFooter = () => {}, focusFirstLink = false }) => {
       <Link to='/about' innerRef={firstNavRef} css={linkStyle}>
         About
       </Link>
+      <Link to='/resources' css={linkStyle}>
+        Resources
+      </Link>
       <Link to='/faq' css={linkStyle}>
         FAQ
       </Link>
-      {/* <Link to='/resources' css={linkStyle}>
-        Resources
-      </Link> */}
       <Subbutton
         css={css({
           [bpMinMD]: { display: 'block' },
