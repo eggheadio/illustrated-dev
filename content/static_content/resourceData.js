@@ -204,7 +204,7 @@ export const resourceCourses = [
       'An impressivly high-quality and sizeable collection of video tutorials by Matt Kohr. The videos focus on fundamental painting techniques, specifically around building skills for concept art and digital work. A great spot for beginners – Matt covers all the basics in a well organised sequence.',
     url: 'https://www.ctrlpaint.com/',
     img: 'https://illustrated.dev/images/resources/ctrlpaint.png',
-    cost: 'Free',
+    cost: 'Free!',
     category: 'website',
     recommended: false,
   },
