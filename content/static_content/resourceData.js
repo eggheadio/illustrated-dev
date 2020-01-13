@@ -126,33 +126,40 @@ export const resourceCourses = [
     title: 'Will Weston',
     description:
       "Will is one of the instagram stars of the art education world. His profile is a treasure trove of lecture notes teaching fundamental drawing skills. He's also  started offering online video courses, and runs in-person workshops in Paris, LA, and NYC.",
-    url: [
-      'https://www.instagram.com/willwestonstudio',
-      'https://drawingamerica.com/weston/',
-    ],
+    url: 'https://www.instagram.com/willwestonstudio',
     img: 'https://illustrated.dev/images/resources/willweston.png',
-    cost: '$65-95 videos / $600 In-Person',
+    cost: '$65-95 videos / $600-800 In-Person',
     category: 'website',
     recommended: true,
     recCourses: [
       {
         title: 'Figure Drawing & Anatomy',
-        instructor: null,
+        instructor: 'Will Weston',
         url:
           'https://drawingamerica.com/courses/will-weston-figure-drawing-lecture/',
       },
       {
         title: 'Composition & Layout',
-        instructor: null,
+        instructor: 'Will Weston',
         url:
           'https://drawingamerica.com/courses/will-weston-composition-lecture/',
       },
     ],
   },
   {
+    title: 'Peter Han',
+    description:
+      "Infamous for his pen and ink techniques, Peter is a master of the Dynamic Sketching style that has spread throughout the art education world. He's a seasoned instructor who knows how to break down concepts into simple, understandable principals. He runs online courses and individual metntorships a few times a year, as well as in-person workshops in LA and Europe.",
+    url: 'https://www.instagram.com/peterhanstyle/',
+    img: 'https://illustrated.dev/images/resources/peterhan.png',
+    cost: '$800 online course',
+    category: 'person',
+    recommended: false,
+  },
+  {
     title: 'Draw a Box',
     description:
-      'A community favourite, this site walks you through the core concepts of Dynamic Sketching',
+      'A community favourite, this site walks you through the core concepts of Dynamic Sketching in a well-organised set of lessons. Covers the essentials of drawing smooth lines, creating textures, and (obviously) drawing good boxes! You can even get feedback on the homework assignments through their group discord or subreddit.',
     url: 'https://drawabox.com/',
     img: 'https://illustrated.dev/images/resources/drawabox.png',
     cost: 'Free!',
@@ -162,11 +169,8 @@ export const resourceCourses = [
   {
     title: 'Modern Day James',
     description:
-      'James is an independent creator running a patreon and selling individual gumroad courses. Their style is more directed at game design and concept art for films.',
-    url: [
-      'https://www.patreon.com/moderndayjames',
-      'https://gumroad.com/moderndayjames',
-    ],
+      "James is an independent creator running a patreon and selling individual gumroad courses. The style is more directed at game design and concept art for films, but builds on top of classic drawing techniques that are valuable no matter what kind of medium you're interested in.",
+    url: 'https://gumroad.com/moderndayjames',
     img: 'https://illustrated.dev/images/resources/moddayjames.png',
     cost: '$5-30 Monthly / $8-20 Videos',
     category: 'website',
@@ -176,7 +180,7 @@ export const resourceCourses = [
     title: 'Ty Carter',
     description:
       'Another independent teacher, Ty is a background designer from the animation world creating tutorials on Patreon and Gumroad. Strong on lighting & colour theory, stylised illustration techniques, and visual design principals',
-    url: ['https://gumroad.com/tycarter', 'https://www.patreon.com/tycarter'],
+    url: 'https://gumroad.com/tycarter',
     img: 'https://illustrated.dev/images/resources/tycarter.png',
     cost: '$10-200 Monthly / $25 Videos',
     category: 'website',
@@ -193,13 +197,22 @@ export const resourceCourses = [
     category: 'IRL',
     recommended: false,
   },
+
+  {
+    title: 'Ctrl+Paint',
+    description:
+      'An impressivly high-quality and sizeable collection of video tutorials by Matt Kohr. The videos focus on fundamental painting techniques, specifically around building skills for concept art and digital work. A great spot for beginners – Matt covers all the basics in a well organised sequence.',
+    url: 'https://www.ctrlpaint.com/',
+    img: 'https://illustrated.dev/images/resources/ctrlpaint.png',
+    cost: 'Free',
+    category: 'website',
+    recommended: false,
+  },
   {
     title: 'Foundation Art Group',
-    description: '-',
-    url: [
-      'https://www.foundationartgroup.com/',
-      'https://www.patreon.com/Foundation',
-    ],
+    description:
+      "An active learning community and Patreon group that hosts monthly challenges led by guest instructors. Very beginner friendly and welcoming – a great spot to find social motivation and get feedback when you're just starting out.",
+    url: 'https://www.foundationartgroup.com/',
     img: 'https://illustrated.dev/images/resources/foundation.png',
     cost: '$5 Monthly',
     category: 'website',
@@ -207,23 +220,12 @@ export const resourceCourses = [
   },
   {
     title: 'CGMA 2D Academy',
-    description: '-',
+    description:
+      'Offers semester-long mentorship courses in all the primary skills of concept art and digital illustration. All the instructors are industry professionals who give personalised feedback on weekly assignments.',
     url: 'https://www.cgmasteracademy.com/',
     img: 'https://illustrated.dev/images/resources/cgma.png',
     cost: '$600-800 Online Courses',
     category: 'website',
-    recommended: false,
-  },
-  {
-    title: 'Peter Han',
-    description: '-',
-    url: [
-      'https://www.instagram.com/peterhanstyle/',
-      'https://www.twitch.tv/peterhanstyle',
-    ],
-    img: 'https://illustrated.dev/images/resources/peterhan.png',
-    cost: '$750-900 In-Person',
-    category: 'person',
     recommended: false,
   },
 ]
