@@ -323,15 +323,15 @@ export const resourceBooks = [
     topic: 'drawing',
     recommended: true,
   },
-  {
-    title: 'Metaphors We Live By',
-    author: 'George Lakoff, Mark Johnson',
-    url: 'https://www.goodreads.com/book/show/34459.Metaphors_We_Live_By',
-    img:
-      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388194058l/34459._SX318_.jpg',
-    topic: 'visual thinking',
-    recommended: false,
-  },
+  // {
+  //   title: 'Metaphors We Live By',
+  //   author: 'George Lakoff, Mark Johnson',
+  //   url: 'https://www.goodreads.com/book/show/34459.Metaphors_We_Live_By',
+  //   img:
+  //     'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388194058l/34459._SX318_.jpg',
+  //   topic: 'visual thinking',
+  //   recommended: false,
+  // },
   {
     title: 'Thinkertoys',
     author: 'Michael Michalko',
