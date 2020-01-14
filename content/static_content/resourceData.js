@@ -149,7 +149,7 @@ export const resourceCourses = [
   {
     title: 'Peter Han',
     description:
-      "Infamous for his pen and ink techniques, Peter is a master of the Dynamic Sketching style that has spread throughout the art education world. He's a seasoned instructor who knows how to break down concepts into simple, understandable principals. He runs online courses and individual metntorships a few times a year, as well as in-person workshops in LA and Europe.",
+      "Infamous for his pen and ink techniques, Peter is a master of the Dynamic Sketching style that has spread throughout the art education world. He's a seasoned instructor who knows how to break down concepts into simple, understandable principals. He runs online courses and individual mentorships a few times a year, as well as in-person workshops in LA and Europe.",
     url: 'http://bit.ly/34O5F1K',
     img: 'https://illustrated.dev/images/resources/peterhan.png',
     cost: '$800 online course',
