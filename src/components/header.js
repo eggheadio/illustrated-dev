@@ -40,36 +40,25 @@ const Header = ({ background, scrollToFooter }) => {
         </Link>
 
         {/* Nav Grid Layout */}
-        <div
-          tabIndex='0'
-          role='button'
+        <button
           onClick={toggleMenu}
-          onKeyPress={event => {
-            const ENTER_KEY = 13
-            const code = event.keyCode || event.which
-            if (code === ENTER_KEY) {
-              toggleMenu()
-            }
-          }}
+          aria-haspopup='true'
+          aria-expanded={menuOpen}
           css={css({
+            padding: 0,
+            width: 50,
+            height: 50,
+            opacity: '.8',
+            background: 'none',
+            border: 'none',
             [bpMinMD]: { display: 'none' },
             [bpMaxMD]: { display: 'block' },
-            ':focus, :active': {
-              outline: 'none',
-              border: 'none',
-            },
           })}>
-          <div
-            aria-hidden='true'
-            css={css({
-              width: 50,
-              height: 'auto',
-              opacity: '.8',
-            })}>
+          <div aria-hidden='true'>
             <Hamburger />
           </div>
           <VisuallyHidden>Toggle Nav</VisuallyHidden>
-        </div>
+        </button>
         <div
           css={css({
             display: 'none',
