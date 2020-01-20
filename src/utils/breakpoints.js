@@ -14,3 +14,6 @@ export const bpMaxXS = `'@media (min-width: ${minSM - 1}px)'`
 export const bpMaxSM = `'@media (min-width: ${minMD - 1}px)'`
 export const bpMaxMD = `'@media (min-width: ${minLG - 1}px)'`
 export const bpMaxLG = `'@media (min-width: ${minXL - 1}px)'`
+
+export const bpBtnFlexSM = '@media (max-width: 603px)'
+export const bpBtnFlexMD = '@media (max-width: 1004px)'
