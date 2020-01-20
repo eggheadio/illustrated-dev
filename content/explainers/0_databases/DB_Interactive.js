@@ -39,6 +39,7 @@ const DB6 = () => {
         viewBox='0 0 850 891.64'>
         <title>Most popular databases</title>
         <image
+          alt='Of the top five most popular DBMS services, four are relational and one is NoSQL.'
           id='mainimage'
           width='850'
           height='891.64'
