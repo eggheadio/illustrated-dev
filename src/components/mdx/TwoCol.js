@@ -10,6 +10,9 @@ const TwoCol = props => {
         gridTemplateColumns: '1fr',
         display: 'grid',
         gridGap: '20px',
+        img: {
+          maxWidth: '100%',
+        },
       })}>
       {props.children}
     </div>
