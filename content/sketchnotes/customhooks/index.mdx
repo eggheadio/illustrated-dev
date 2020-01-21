@@ -1,0 +1,82 @@
+---
+date: 2019-11-02
+title: Building Custom React Hooks
+thumbnail: ./thumb@2x.png
+description: "Trying to get hooked on building your own custom React Hooks?"
+slug: customhooks
+category: sketchnotes
+published: true
+---
+
+import FullSketchnote from '../../../src/components/mdx/FullSketchnote.js'
+import SketchesContainer from '../../../src/components/mdx/SketchesContainer.js'
+import Link from '../../../src/components/link.js'
+import TwoCol from '../../../src/components/mdx/TwoCol.js'
+
+
+<SketchesContainer>
+
+<TwoCol>
+
+<span>
+
+![Objects hanging off a series of hooks](./thumb@2x.png)
+
+</span>
+
+<span>
+
+You probably haven't heard, but [React](https://reactjs.org/docs/hooks-intro.html) released a minor feature last year called "hooks".
+
+It mostly flew under the radar, but I think it's pretty a useful addition and wanted to visually explain how it works.
+
+</span>
+
+</TwoCol>
+
+Luckily [Joe Previte](https://twitter.com/jsjoeio) was on my wavelength.
+
+He's one of the instructors at [egghead](https://egghead.io/) who put together a whole course on creating your own custom React hooks (next level!)
+
+You can take a look at [Shareable Custom Hooks in React](http://bit.ly/3av6FvK) if you're curious about building and publishing your own hooks on NPM.
+
+<br />
+
+![Course illustration of a fishing hook with a react reel for Custom React Hooks](./shareable-custom-hooks-in-react.png)
+
+---
+
+The course is great in and of itself... but I know why you're here – _sketchnotes_!
+
+I diligently worked through Joe's material and turned a few of the  highlights into illustrated sketchnotes.
+
+The course doesn't cover much about the basics of hooks, so I added some explainations of what useState and useEffect do into the illustration.  
+The notes are more of a primer than a comprehensive summary of what Joe dives into.
+
+![Here's the basics of hooks - hooks let you hold state and lifecycle events inside functional components instead of class components. Hooks follow two rules. First, only call hooks at the top of your function. Second, only use them inside React functions. Not plain JavaScript ones.](./customhooks-1.png)
+
+![There are two main built-in hooks. First useState holds and updates your app's state](./customhooks-2.png)
+
+![Second, useEffect handles "side effects," which are anything that causes changes outside of rendering your functional component to the DOM](./customhooks-3.png)
+
+---
+
+For those already comfortable with hooks you'll like the sections that cover more of the publishing pipeline.
+
+![This course shows how to create useful, shareable hooks you can publish on NPM. You use the basic hooks like useState, useEffect, and useContext as the basic ingredients to cook up your own custom logic. You could create hooks like useBattery, useGeolocation, or useToggle. Making your own hooks is easier than you think.](./customhooks-4.png)
+
+![Install the CLI tool create-react-hook. This creates a github repo for you and generates a boilerplate with name, description, and licence files. We can test our hook with react-testing-library before we publish.](./customhooks-5.png)
+
+If you're tossing around ideas for what to build, I'd recommend checking out collections like [useHooks](https://usehooks.com/) and [Awesome React Hooks](https://github.com/rehooks/awesome-react-hooks) to get a sense of the possibilities.
+
+I'll make sure to let you know if React changes anything else in the codebase. These things tend to get lost while the community is busy fawning over jQuery updates...
+
+---
+
+<FullSketchnote coursename="Shareable Custom Hooks in React" courselink="http://bit.ly/3av6FvK">
+
+![The full custom React hooks sketchnote](./customhooks-mini.png)
+
+</FullSketchnote>
+
+</SketchesContainer>
