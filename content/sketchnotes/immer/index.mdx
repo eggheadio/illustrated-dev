@@ -1,6 +1,6 @@
 ---
 date: 2019-10-10
-title: Immutable State with Immer
+title: Immer's Immutable Data, Gifting Socks, and Personal Assistant Bots
 thumbnail: ./thumb@2x.png
 description: null
 slug: immer
@@ -9,12 +9,17 @@ published: true
 ---
 
 import FullSketchnote from '../../../src/components/mdx/FullSketchnote.js'
-import SketchesContainer from '../../../src/components/mdx/SketchesContainer.js'
+import SketchesContainer from '../../../src/components/mdx/TwoCol.js'
+import TwoCol from '../../../src/components/mdx/SketchesContainer.js'
 import Link from '../../../src/components/link.js'
 
 <SketchesContainer>
 
- ### **Immutability** and **state **are two developer buzzwords it took me forever to "get."
+### Today we're going to look at **immutable data**. With socks. And personal assistant bots.
+
+I know, you're already so excited.
+
+**Immutability** and **state **are two developer buzzwords it took me forever to "get."
 
 Their underlying meanings aren't necessarily that complex.  
 But it's tough to fully comprehend what they mean, and why they're important, until you see them in action.
@@ -38,17 +43,15 @@ Writing [immutable code](https://en.wikipedia.org/wiki/Immutable_object) is a [w
 
 ---
 
-You're probably already imagining the complications of this approach in a world of finite computing power.  Making copies of copies of copies of copies for every small state change leads to a boatload of code.
+Okay now you're all caught up on the jargon, lets get to some sketchnotes!
 
-Luckily, [Michel Weststrate](https://twitter.com/mweststrate) just came up with an elegant new tool that helps handle this predicament in Javascript.
+These are from a course [Michel Weststrate](https://twitter.com/mweststrate) made about their elegant new tool [Immer](https://immerjs.github.io/immer/docs/introduction) – it helps handle manage immutable state in a sane way.
 
-It's called [Immer](https://immerjs.github.io/immer/docs/introduction), and does a lot of fancy optimization work that helps manage immutable state in a sane way.
-
-On top of builing this nifty new tool, Michel has also recorded and released [a new egghead course](https://egghead.io/courses/immutable-javascript-data-structures-with-immer) that explains how to use it.
+The course is up as a **free community resource** on egghead, and is aptly named [Immutable JavaScript Data Structures with Immer](https://egghead.io/courses/immutable-javascript-data-structures-with-immer?rc=272bjb) 
 
 <Link to="https://egghead.io/courses/immutable-javascript-data-structures-with-immer">
 
-![](./immutable-javascript-data-structures-with-immer.jpg)
+![](https://og-image-egghead-course.now.sh/immutable-javascript-data-structures-with-immer)
 
 </Link>
 
@@ -64,7 +67,15 @@ Visually drawing out how all the functions and drafts and edits fit together was
 
 ![](./immer-3.png)
 
-If you're currently allergic to state & immutability as well, this might be the time to re-test your tolerances and [see if Immer can help cure it](https://egghead.io/courses/immutable-javascript-data-structures-with-immer). 
+<TwoCol>
+
+<img style="max-width: 90%;" alt="CSS is awesome cup" src="https://images-na.ssl-images-amazon.com/images/I/51graM2SdzL._SX466_.jpg" />
+
+Yes the cup in the illustration is based on this classic CSS one that I don't own, but kind of want to.
+
+</TwoCol>
+
+If you're currently allergic to state & immutability as well, it might be the time to re-test your tolerances and [see if Immer can help cure it](https://egghead.io/courses/immutable-javascript-data-structures-with-immer). 
 
 ---
 
