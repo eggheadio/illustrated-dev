@@ -85,16 +85,16 @@ const AboutPage = () => {
                 -ing ridiculous).
               </p>
               <p>
-                While I now live in the world of programmers, I originally
-                trained as an anthropologist and still see everything through
-                lens of cultural constructs, kinship structures, cosmologies,
-                and semiotics. This inevitably shows up in some of the essays I
-                publish here.
-              </p>
-              <p>
-                You'll also find plenty of JavaScript fundamentals - those never
+                You'll find plenty of JavaScript fundamentals here - those never
                 go out of style. As well as posts on a whole range of
                 web-related technologies like API's, React, and GraphQL.
+              </p>
+              <p>
+                There's also a slight anthropological bent to some of these
+                posts. While I now live in the world of programmers, I
+                originally trained as an anthropologist and still see everything
+                through lens of cultural constructs, kinship structures,
+                cosmologies, and semiotics.
               </p>
               <p>It's a weird mix - take it as you will.</p>
             </div>
