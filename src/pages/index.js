@@ -24,15 +24,16 @@ export default function Index({ data: { site, allMdx, sketches } }) {
             clear: 'both',
             [bpMinMD]: {
               padding: '30px 0 0 0',
-              fontSize: '4.4em',
+              fontSize: '3em',
             },
-            fontSize: '3em',
-            lineHeight: '1.1em',
+            fontSize: '2em',
+            marginBottom: '1em',
+            lineHeight: '1.2em',
             letterSpacing: '-0.02em',
           })}>
-          Web development,
+          Illustrated explainations of web development, technology & a little
+          bit of anthropology.
           <br />
-          illustrated.
         </h1>
 
         {/* Article Grid Section */}
