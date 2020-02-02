@@ -31,8 +31,8 @@ export default function Index({ data: { site, allMdx, sketches } }) {
             lineHeight: '1.2em',
             letterSpacing: '-0.02em',
           })}>
-          Illustrated explainations of web development, technology & a little
-          bit of anthropology.
+          Illustrated explanations of web development, technology & a little bit
+          of anthropology.
           <br />
         </h1>
 
