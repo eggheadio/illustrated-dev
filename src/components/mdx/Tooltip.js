@@ -1,12 +1,14 @@
 import React, { forwardRef } from 'react'
 import Tippy from '@tippy.js/react'
 import 'tippy.js/dist/tippy.css'
+import './tippy-light.css'
 import 'tippy.js/animations/shift-away.css'
 
 const Tooltip = forwardRef((props, ref) => {
   return (
     <Tippy
       duration='500'
+      theme='tippylight'
       interactive='true'
       animation='shift-away'
       content={props.tiptext}>
