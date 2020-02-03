@@ -10,7 +10,17 @@ const Tooltip = forwardRef((props, ref) => {
       interactive='true'
       animation='shift-away'
       content={props.tiptext}>
-      <span ref={ref}>{props.children}</span>
+      <div
+        style={{
+          display: 'inline-block',
+          background: '#53BDC9',
+          color: 'white',
+          padding: '0 12px 6px 12px',
+          lineHeight: '1.4em',
+          borderRadius: '2px',
+        }}>
+        <span ref={ref}>{props.children}</span>
+      </div>
     </Tippy>
   )
 })
