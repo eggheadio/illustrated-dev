@@ -51,6 +51,7 @@
     "react-transition-group": "^4.3.0",
     "react-twitter-embed": "^2.0.8",
     "react-typography": "^0.16.18",
+    "tesseract.js": "^2.0.2",
     "yarn": "^1.19.1",
     "yup": "^0.27.0"
   },
