@@ -6,7 +6,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import mdxComponents from '../components/mdx'
 import Link from '../components/link'
 import Container from '../components/container'
-import { bpMinSM } from '../utils/breakpoints'
+import { bpMinSM, bpMinMD } from '../utils/breakpoints'
 import SEO from '../components/seo'
 import get from 'lodash/get'
 import Share from '../components/share'
@@ -39,8 +39,8 @@ class ExplainerTemplate extends React.Component {
           <div
             css={css({
               background: 'white',
-              [bpMinSM]: { padding: '30px 20px', margin: '0' },
-              padding: '10px 20px',
+              [bpMinMD]: { padding: '40px', margin: '0' },
+              padding: '40px 20px',
               marginTop: '40px',
               borderRadius: '2px',
               boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.1)',
@@ -48,32 +48,38 @@ class ExplainerTemplate extends React.Component {
             })}>
             <div
               css={css({
-                maxWidth: '780px',
+                maxWidth: '790px',
                 margin: '0 auto',
               })}>
-              <p
-                css={css({
-                  color: '#7D8EB0',
-                  textAlign: 'center',
-                  fontSize: '1em',
-                })}>
-                {explainer.frontmatter.date}
-              </p>
               <h1
                 css={css({
-                  [bpMinSM]: {
-                    fontSize: '2.8rem',
+                  [bpMinMD]: {
+                    fontSize: '3rem',
+                    paddingTop: '40px',
                   },
-                  fontSize: '2.1rem',
+                  fontSize: '2.2rem',
                   textAlign: 'center',
                   fontWeight: '100',
-                  marginBottom: '40px',
-                  marginTop: '20px',
                   fontFamily: 'ff-tisa-web-pro, serif',
+                  maxWidth: '770px',
+                  margin: '0 auto',
+                  paddingTop: '10px',
                 })}>
                 {explainer.frontmatter.title}
               </h1>
-
+              <p
+                css={css({
+                  [bpMinMD]: {
+                    paddingBottom: '20px',
+                  },
+                  textAlign: 'center',
+                  color: '#1AA5CB',
+                  fontSize: '1em',
+                  margin: '20px auto',
+                  paddingBottom: '0',
+                })}>
+                Published or updated on {explainer.frontmatter.date}
+              </p>
               <MDXProvider components={mdxComponents}>
                 <MDXRenderer>{explainer.body}</MDXRenderer>
               </MDXProvider>

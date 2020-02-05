@@ -39,52 +39,56 @@ class SketchesTemplate extends React.Component {
           <div
             css={css({
               background: 'white',
-              [bpMinMD]: { padding: '80px 20px', margin: '0' },
+              [bpMinMD]: { padding: '40px', margin: '0' },
               padding: '40px 20px',
               marginTop: '40px',
               borderRadius: '2px',
               boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.1)',
               clear: 'both',
             })}>
-            <div
+            <h1
               css={css({
-                background: 'white',
-                [bpMinSM]: { padding: '30px 20px', margin: '0' },
-                padding: '10px 20px',
-                marginTop: '40px',
-                borderRadius: '2px',
-                boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.1)',
-                clear: 'both',
+                [bpMinMD]: {
+                  fontSize: '3rem',
+                  paddingTop: '40px',
+                },
+                fontSize: '2.2rem',
+                textAlign: 'center',
+                fontWeight: '100',
+                fontFamily: 'ff-tisa-web-pro, serif',
+                maxWidth: '770px',
+                margin: '0 auto',
+                paddingTop: '10px',
               })}>
-              <h1
-                css={css({
-                  [bpMinMD]: {
-                    fontSize: '3rem',
-                    marginBottom: '80px',
-                  },
-                  fontSize: '2.2rem',
-                  textAlign: 'center',
-                  fontWeight: '100',
-                  marginBottom: '40px',
-                  fontFamily: 'ff-tisa-web-pro, serif',
-                })}>
-                {sketches.frontmatter.title}
-              </h1>
-              <MDXProvider components={mdxComponents}>
-                <MDXRenderer>{sketches.body}</MDXRenderer>
-              </MDXProvider>
-              <Share
-                socialConfig={{
-                  twitterHandle: site.siteMetadata.author,
-                  config: {
-                    url: `https://illustrated.dev/${sketches.frontmatter.slug}`,
-                    title: sketches.frontmatter.title,
-                    media: `${image && `https://illustrated.dev${image.src}`}`,
-                  },
-                }}
-                tags={sketches.frontmatter.tags}
-              />
-            </div>
+              {sketches.frontmatter.title}
+            </h1>
+            <p
+              css={css({
+                [bpMinMD]: {
+                  paddingBottom: '30px',
+                },
+                textAlign: 'center',
+                color: '#1AA5CB',
+                fontSize: '1em',
+                margin: '20px auto',
+                paddingBottom: '16px',
+              })}>
+              Published or updated on {sketches.frontmatter.date}
+            </p>
+            <MDXProvider components={mdxComponents}>
+              <MDXRenderer>{sketches.body}</MDXRenderer>
+            </MDXProvider>
+            <Share
+              socialConfig={{
+                twitterHandle: site.siteMetadata.author,
+                config: {
+                  url: `https://illustrated.dev/${sketches.frontmatter.slug}`,
+                  title: sketches.frontmatter.title,
+                  media: `${image && `https://illustrated.dev${image.src}`}`,
+                },
+              }}
+              tags={sketches.frontmatter.tags}
+            />
           </div>
           <div
             css={css({

@@ -101,7 +101,7 @@ const Card = ({ title, image = [], description, category, date, featured }) => {
           justifyContent: 'space-between',
         })}>
         <h1>{title}</h1>
-        <p className='date'>{date}</p>
+        <p className='date'>Updated {date}</p>
         {featured && <p className='description'>{description}</p>}
       </div>
       <div
