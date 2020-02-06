@@ -9,22 +9,24 @@ published: true
 ---
 
 import Link from '../../../src/components/link.js'
+import FullSketchnote from '../../../src/components/mdx/FullSketchnote.js'
+import SketchesContainer from '../../../src/components/mdx/SketchesContainer.js'
 
-<div style ={{ maxWidth: '660px', margin: '0 auto' }}>
+<SketchesContainer>
 
 Turns out you can build almost anything in React now... including VR and AR apps inside a web browser.
 
-There's a version of React called '[React 360](https://facebook.github.io/react-360/)' that simplifies the otherwise niche and overly-complex challenge of making things fly around in virtual 3D space.
+There's a version of React called '<Link to="https://facebook.github.io/react-360/">React 360</Link>' that simplifies the otherwise niche and overly-complex challenge of making things fly around in virtual 3D space.
 
-[Tomasz Lakomy](https://egghead.io/instructors/tomasz-lakomy) is putting together an egghead course all about it.
+<p><Link to="https://egghead.io/instructors/tomasz-lakomy">Tomasz Lakomy</Link> made an entire egghead course that walks you through building <Link to="https://egghead.io/courses/vr-applications-using-react-360?af=54fd64">VR Applications Using React 360</Link></p>
 
-<Link to="https://egghead.io/courses/vr-applications-using-react-360?rc=272bjb">
+<Link to="https://egghead.io/courses/vr-applications-using-react-360?af=54fd64">
 
-![Course illustration of objects in 3D space](./vr-applications-using-react-360.jpg)
+<img style="max-width: 100%;" src="https://og-image-egghead-course.now.sh/vr-applications-using-react-360" alt="Course illustration of objects in 3D space" />
 
 </Link>
 
-So I've been sketching out notes on some of the basic concepts while watching his lessons.
+I've been sketching out notes on some of the basic concepts while watching the lessons.
 
 ![VR apps with React 360](./react360_p1@2x.png)
 
@@ -36,17 +38,10 @@ So I've been sketching out notes on some of the basic concepts while watching hi
 
 ---
 
-<h2 style="text-align: center;">The Full Sketchnote</h2>
-
-<br />
-
-<div style="border: 1px solid #e8f3f7; box-sizing: border-box; border-radius: 4px;
-  box-shadow: 0px 8px 16px -12px rgba(120, 134, 138, 0.75);">
+<FullSketchnote coursename="VR Applications Using React360" courselink="https://egghead.io/courses/vr-applications-using-react-360?af=54fd64">
 
 ![The full React 360 sketchnote](./react360_full@2x.png)
 
-</div>
+</FullSketchnote>
 
-Want to learn more?
-A high-res version of the sketchnote plus the full [VR Applications Using React360](https://egghead.io/courses/vr-applications-using-react-360?rc=272bjb) course will be out soon. Best to keep an eye on that page if it's a topic you're into.
-</div>
+</SketchesContainer>
