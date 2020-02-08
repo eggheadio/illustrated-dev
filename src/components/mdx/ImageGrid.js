@@ -5,9 +5,6 @@ import { bpMinMD } from '../../utils/breakpoints'
 const ImageGrid = props => {
   return (
     <>
-      {/* <a href={props.url}>
-        <h3>{props.name}</h3>
-      </a> */}
       <div
         css={css({
           [bpMinMD]: { gridTemplateColumns: '1fr 1fr' },
