@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 
 const EggheadCourseCard = props => {
   return (
-    <a target='_blank' href={props.url}>
+    <a target='_blank' rel='noopener noreferrer' href={props.url}>
       <div
         css={css({
           padding: '30px 20px',
@@ -31,7 +31,7 @@ const EggheadCourseCard = props => {
             color: '#08293C',
           },
         })}>
-        <img src={props.image} />
+        <img alt={props.title} src={props.image} />
         <p>{props.title}</p>
       </div>
     </a>

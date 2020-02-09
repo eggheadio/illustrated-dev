@@ -28,9 +28,6 @@ module.exports = {
           import { TwitterTweetEmbed } from "react-twitter-embed";
           export default { ResponsiveEmbed, TwitterTweetEmbed };
         `,
-        // defaultLayouts: {
-        //   default: here('./src/layouts/layout.js'),
-        // },
         gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-images',
