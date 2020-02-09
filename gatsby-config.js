@@ -63,8 +63,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/sketchnotes/`,
-        name: 'sketchnotes',
+        path: `${__dirname}/content/illustratednotes/`,
+        name: 'illustratednotes',
         ignore: [`**/\.*`], // ignore files starting with a dot,
       },
     },

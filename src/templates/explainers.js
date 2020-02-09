@@ -48,7 +48,7 @@ class ExplainerTemplate extends React.Component {
             })}>
             <div
               css={css({
-                maxWidth: '790px',
+                maxWidth: '860px',
                 margin: '0 auto',
               })}>
               <h1

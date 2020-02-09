@@ -9,7 +9,7 @@ const Card = ({ title, image = [], description, category, date, featured }) => {
     categoryColor = '#7A44BB'
   } else if (category === 'meta') {
     categoryColor = '#B8CB44'
-  } else if (category === 'sketchnotes') {
+  } else if (category === 'illustratednotes') {
     categoryColor = '#2EAED0'
   }
 

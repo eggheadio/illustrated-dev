@@ -45,6 +45,7 @@ class SketchesTemplate extends React.Component {
               borderRadius: '2px',
               boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.1)',
               clear: 'both',
+              margin: '0 auto',
             })}>
             <h1
               css={css({

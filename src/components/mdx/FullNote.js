@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FullSketchnote = props => {
+const FullNote = props => {
   return (
     <>
       <h2 style={{ textAlign: 'center', marginBottom: '0' }}>
@@ -43,4 +43,4 @@ const FullSketchnote = props => {
   )
 }
 
-export default FullSketchnote
+export default FullNote

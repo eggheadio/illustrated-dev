@@ -11,7 +11,7 @@ const ALL_CATEGORY = 'all'
 
 const categoryOrder = {
   explainers: 1,
-  sketchnotes: 2,
+  illustratednotes: 2,
   meta: 3,
 }
 
@@ -47,16 +47,18 @@ const MainCardGrid = ({ posts }) => {
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           alignItems: 'center',
-	    [bpBtnFlexMD]: { marginBottom: '10px' },
+          [bpBtnFlexMD]: { marginBottom: '10px' },
         })}>
-        <p>Illustrated Explainers & Sketchnotes</p>
-        <span css={css({ justifySelf: 'end',
-						[bpBtnFlexMD]: {
-							display:'flex',
-							flexDirection: 'column',
-							width: '100%',
-						},
-			 })}>
+        <p>Illustrated Explainers & Notes</p>
+        <span
+          css={css({
+            justifySelf: 'end',
+            [bpBtnFlexMD]: {
+              display: 'flex',
+              flexDirection: 'column',
+              width: '100%',
+            },
+          })}>
           <button
             css={css({
               alignSelf: 'end',
@@ -75,15 +77,15 @@ const MainCardGrid = ({ posts }) => {
               ':hover': {
                 background: '#20B5D5',
                 color: '#fff',
-		   },
-		   [bpBtnFlexMD]: {
-			alignSelf: 'flex-end',
-			width: '80%',
-		   },
-		   [bpBtnFlexSM]: {
-			alignSelf: 'stretch',
-			 width: '100%',
-	         },
+              },
+              [bpBtnFlexMD]: {
+                alignSelf: 'flex-end',
+                width: '80%',
+              },
+              [bpBtnFlexSM]: {
+                alignSelf: 'stretch',
+                width: '100%',
+              },
             })}
             key={ALL_CATEGORY}
             onClick={() => handleCategoryClick(ALL_CATEGORY)}>
@@ -110,15 +112,14 @@ const MainCardGrid = ({ posts }) => {
                     background: '#20B5D5',
                     color: '#fff',
                   },
-			[bpBtnFlexMD]: {
-				alignSelf: 'flex-end',
-				width: '80%',
-			},
-			[bpBtnFlexSM]: {
-				alignSelf: 'stretch',
-			 	width: '100%',
-			},
-
+                  [bpBtnFlexMD]: {
+                    alignSelf: 'flex-end',
+                    width: '80%',
+                  },
+                  [bpBtnFlexSM]: {
+                    alignSelf: 'stretch',
+                    width: '100%',
+                  },
                 })}
                 key={c}
                 onClick={() => handleCategoryClick(c)}>

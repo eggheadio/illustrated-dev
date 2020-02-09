@@ -57,9 +57,9 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
-            sketchnotes: allMdx(
+            illustratednotes: allMdx(
               sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { frontmatter: { category: { eq: "sketchnotes" } } }
+              filter: { frontmatter: { category: { eq: "illustratednotes" } } }
             ) {
               edges {
                 node {
@@ -147,9 +147,11 @@ exports.createPages = ({ graphql, actions }) => {
 
         const meta = result.data.meta.edges
 
-        const sketchnotes = result.data.sketchnotes.edges
+        const illustratednotes = result.data.illustratednotes.edges
 
         const explainers = result.data.explainers.edges
+
+        const allPosts = illustratednotes.concat(explainers)
 
         pages.forEach(({ node }) => {
           createPage({
@@ -171,29 +173,27 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        sketchnotes.forEach(({ node }, index) => {
+        allPosts.forEach(({ node }, index) => {
           const next =
-            index === sketchnotes.length - 1
-              ? null
-              : sketchnotes[index + 1].node
-          const previous = index === 0 ? null : sketchnotes[index - 1].node
+            index === allPosts.length - 1 ? null : allPosts[index + 1].node
+          const previous = index === 0 ? null : allPosts[index - 1].node
           createPage({
             path: `${node.frontmatter.slug}`,
-            component: path.resolve(`./src/templates/sketchnotes.js`),
-            context: { id: node.id, previous, next },
-          })
-        })
-
-        explainers.forEach(({ node }, index) => {
-          const next =
-            index === explainers.length - 1 ? null : explainers[index + 1].node
-          const previous = index === 0 ? null : explainers[index - 1].node
-          createPage({
-            path: node.frontmatter.slug,
             component: path.resolve(`./src/templates/explainers.js`),
             context: { id: node.id, previous, next },
           })
         })
+
+        // explainers.forEach(({ node }, index) => {
+        //   const next =
+        //     index === allPosts.length - 1 ? null : allPosts[index + 1].node
+        //   const previous = index === 0 ? null : allPosts[index - 1].node
+        //   createPage({
+        //     path: node.frontmatter.slug,
+        //     component: path.resolve(`./src/templates/explainers.js`),
+        //     context: { id: node.id, previous, next },
+        //   })
+        // })
       })
     )
   })
