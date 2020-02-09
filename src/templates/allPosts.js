@@ -11,7 +11,7 @@ import SEO from '../components/seo'
 import get from 'lodash/get'
 import Share from '../components/share'
 
-class ExplainerTemplate extends React.Component {
+class PostsTemplate extends React.Component {
   render() {
     const explainer = this.props.data.mdx
     const site = this.props.data.site
@@ -51,11 +51,23 @@ class ExplainerTemplate extends React.Component {
                 maxWidth: '860px',
                 margin: '0 auto',
               })}>
+              <p
+                css={css({
+                  color: '#1AA5CB',
+                  textAlign: 'center',
+                  fontSize: '1.2em',
+                  margin: '20px auto 0px',
+                  paddingBottom: '0',
+                  textTransform: 'capitalize',
+                })}>
+                {explainer.fields.category}
+              </p>
               <h1
                 css={css({
                   [bpMinMD]: {
                     fontSize: '3rem',
-                    paddingTop: '40px',
+                    paddingTop: '20px',
+                    paddingBottom: '10px',
                   },
                   fontSize: '2.2rem',
                   textAlign: 'center',
@@ -70,13 +82,13 @@ class ExplainerTemplate extends React.Component {
               <p
                 css={css({
                   [bpMinMD]: {
-                    paddingBottom: '20px',
+                    paddingBottom: '60px',
                   },
                   textAlign: 'center',
-                  color: '#1AA5CB',
-                  fontSize: '1em',
+                  color: '#798B9F',
+                  fontSize: '0.9em',
                   margin: '20px auto',
-                  paddingBottom: '0',
+                  paddingBottom: '20px',
                 })}>
                 Published or updated on {explainer.frontmatter.date}
               </p>
@@ -235,4 +247,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default ExplainerTemplate
+export default PostsTemplate

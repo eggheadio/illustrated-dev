@@ -50,8 +50,10 @@ export default function Index({ data: { site, allMdx, sketches } }) {
           },
           padding: 0,
         })}>
-        <Link
-          to='https://egghead.io/'
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href='https://egghead.io/'
           aria-label='Browse development courses on egghead.io'>
           <img
             css={css({
@@ -61,7 +63,7 @@ export default function Index({ data: { site, allMdx, sketches } }) {
             src={eggheadpwrd}
             alt='Powered by egghead.io'
           />
-        </Link>
+        </a>
       </Container>
     </>
   )

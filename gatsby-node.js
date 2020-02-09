@@ -59,7 +59,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
             illustratednotes: allMdx(
               sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { frontmatter: { category: { eq: "illustratednotes" } } }
+              filter: { frontmatter: { category: { eq: "illustrated notes" } } }
             ) {
               edges {
                 node {
@@ -106,6 +106,7 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     title
                     slug
+                    date
                     category
                   }
                 }
@@ -179,21 +180,10 @@ exports.createPages = ({ graphql, actions }) => {
           const previous = index === 0 ? null : allPosts[index - 1].node
           createPage({
             path: `${node.frontmatter.slug}`,
-            component: path.resolve(`./src/templates/explainers.js`),
+            component: path.resolve(`./src/templates/allPosts.js`),
             context: { id: node.id, previous, next },
           })
         })
-
-        // explainers.forEach(({ node }, index) => {
-        //   const next =
-        //     index === allPosts.length - 1 ? null : allPosts[index + 1].node
-        //   const previous = index === 0 ? null : allPosts[index - 1].node
-        //   createPage({
-        //     path: node.frontmatter.slug,
-        //     component: path.resolve(`./src/templates/explainers.js`),
-        //     context: { id: node.id, previous, next },
-        //   })
-        // })
       })
     )
   })
