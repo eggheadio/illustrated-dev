@@ -9,8 +9,17 @@ const Card = ({ title, image = [], description, category, date, featured }) => {
     categoryColor = '#7A44BB'
   } else if (category === 'meta') {
     categoryColor = '#B8CB44'
-  } else if (category === 'illustratednotes') {
+  } else if (category === 'illustrated notes') {
     categoryColor = '#2EAED0'
+  }
+
+  let categoryLabel
+  if (category === 'explainers') {
+    categoryLabel = 'Explainer'
+  } else if (category === 'meta') {
+    categoryLabel = 'Meta Post'
+  } else if (category === 'illustrated notes') {
+    categoryLabel = 'Illustrated Notes'
   }
 
   return (
@@ -69,11 +78,12 @@ const Card = ({ title, image = [], description, category, date, featured }) => {
           display: 'none',
           margin: 0,
         },
-        '.date': {
+        '.category': {
           fontSize: '0.9em',
           display: 'flex',
           marginTop: '4px',
           color: '#7D8EB0',
+          textTransform: 'capitalize',
         },
         ':hover': {
           boxShadow: '0 10px 30px -10px rgba(0,0,0,0.15)',
@@ -101,7 +111,11 @@ const Card = ({ title, image = [], description, category, date, featured }) => {
           justifyContent: 'space-between',
         })}>
         <h1>{title}</h1>
-        <p className='date'>Updated {date}</p>
+        <p className='category'>
+          Updated {date}
+          <br />
+          {categoryLabel}
+        </p>
         {featured && <p className='description'>{description}</p>}
       </div>
       <div
