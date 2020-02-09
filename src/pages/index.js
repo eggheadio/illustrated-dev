@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Link from '../components/link'
 import { css } from '@emotion/core'
 import SEO from '../components/seo'
 import { bpMinMD } from '../utils/breakpoints'
