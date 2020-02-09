@@ -4,7 +4,7 @@ const FullNote = props => {
   return (
     <>
       <h2 style={{ textAlign: 'center', marginBottom: '0' }}>
-        The Full Sketchnote
+        The Whole Illustrated Note
       </h2>
       <br />
       <div
@@ -32,8 +32,8 @@ const FullNote = props => {
           margin: '0 auto',
           maxWidth: '500px',
         }}>
-        A high-res & printable version of the sketchnote, plus the full course
-        is avaliable here on the{' '}
+        A high-res & printable version of the notes, plus the full course is
+        avaliable here on the{' '}
         <a href={props.courselink} rel='noopener noreferrer' target='_blank'>
           {props.coursename}
         </a>{' '}
