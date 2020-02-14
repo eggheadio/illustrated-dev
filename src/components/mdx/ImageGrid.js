@@ -1,14 +1,16 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMinMD } from '../../utils/breakpoints'
+import { bpMinSM } from '../../utils/breakpoints'
 
 const ImageGrid = props => {
   return (
     <>
       <div
         css={css({
-          [bpMinMD]: { gridTemplateColumns: '1fr 1fr' },
-          gridTemplateColumns: '1fr',
+          [bpMinSM]: {
+            gridTemplateColumns: 'repeat(2, 1fr)',
+          },
+          gridTemplateColumns: 'repeat(1, 1fr)',
           display: 'grid',
           gridGap: '20px',
           img: {

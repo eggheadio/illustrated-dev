@@ -1,9 +1,10 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import { bpMinMD } from '../../utils/breakpoints'
 
 const EggheadCourseCard = props => {
   return (
-    <a target='_blank' href={props.url}>
+    <a target='_blank' rel='noopener noreferrer' href={props.url}>
       <div
         css={css({
           padding: '30px 20px',
@@ -20,7 +21,6 @@ const EggheadCourseCard = props => {
             },
           },
           img: {
-            display: 'block',
             maxWidth: '100%',
             maxHeight: '80%',
           },
