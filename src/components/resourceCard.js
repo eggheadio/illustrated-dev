@@ -62,12 +62,12 @@ export default function ResourceCard(props) {
               },
             },
           })}>
-          <Link to={props.url}>
+          <Link noToolTip={true} to={props.url}>
             <img alt={props.title} src={props.img} />
           </Link>
 
           <div class='dataBlock'>
-            <Link to={props.url}>
+            <Link noToolTip={true} to={props.url}>
               <h1>{props.title}</h1>
             </Link>
 

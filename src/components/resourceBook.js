@@ -8,7 +8,7 @@ import Link from './link'
 export default function ResourceBook(props) {
   return (
     <>
-      <Link to={props.url}>
+      <Link noToolTip={true} to={props.url}>
         <div
           css={css({
             // justifyContent: 'space-between',
