@@ -68,7 +68,7 @@ class InlineSignUp extends React.Component {
   }
 
   render() {
-    const { submitted, response, errorMessage } = this.state
+    const { response, errorMessage } = this.state
     const successful = response && response.status === 'success'
 
     return (
