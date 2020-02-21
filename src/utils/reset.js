@@ -78,18 +78,6 @@ p {
       outline: 0;
     }
   }
-  blockquote {
-    border-bottom: 1px solid #7A44BB;
-    border-top: 1px solid #7A44BB;
-    padding-left: 1rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    font-style: italic;
-    p {
-      line-height: 1.3 !important;
-      font-family: 'ff-tisa-web-pro', serif;
-    }
-  }
   [tabindex='-1']:focus {
     outline: none !important;
   }
