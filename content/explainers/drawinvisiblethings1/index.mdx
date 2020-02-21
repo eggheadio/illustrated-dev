@@ -35,10 +35,8 @@ It spans everything from <Link to="https://en.wikipedia.org/wiki/Conceptual_meta
 
 ## An Introduction
 
-If anyone is new here, hello and welcome!  
-I'm <Link to="http://maggieappleton.com/">Maggie</Link> and I make all the things on this site.
-
-For the last half decade I've also been the art director & lead illustrator over at <Link to="https://egghead.io">egghead</Link>.
+If anyone is new, here's the TLDR:
+I'm <Link to="http://maggieappleton.com/">Maggie</Link> and I make all the things on this site. For the last half decade I've also been the art director & lead illustrator over at <Link to="https://egghead.io">egghead</Link>.
 
 We're a company / website / collection of humans who teach web development through a mix of tutorial videos, articles, illustrated notes, workshops, and whatever other medium we feel like.  
 As you might expect, it's a whole lot of JavaScript, React, GraphQL, Vue, classic HTML & CSS, and other internety technologies.
@@ -118,26 +116,98 @@ So far I've made over 150 of these things and I'm almost beginning to think I wh
 
 ## Part Zero – What are we doing?
 
-The guinea pig in this walkthrough is going to be <Link to="https://twitter.com/mikesherov">Mike Sherov</Link>'s course on <Link to="https://egghead.io/courses/web-security-essentials?af=54fd64">Web Security Essentials</Link>.
+The guinea pig for this case study is going to be <Link to="https://twitter.com/mikesherov">Mike Sherov</Link>'s course on <Link to="https://egghead.io/courses/web-security-essentials?af=54fd64">Web Security Essentials</Link>.
 
-Whenever you're starting a design challenge of any kind – illustration, innovative sandwich recipe, carbon capture technology – it's a good idea to make the challenge you're facing nice and clear.  
-So let's write ourselves a challenge statement.
+The first step in starting a design task of any kind – illustration, innovative sandwich recipe, carbon capture technology – is making the challenge you're facing nice and clear.  
+<Center>So let's write ourselves a challenge statement:</Center>
 
-_**We want to create an illustration that clearly communicates the idea of "Web Security"**_
+>Create an illustration that clearly communicates the idea of "Web Security"
 
-At this point it's good to make obvious that "Web Security" is not a single, physical, made-of-atoms object in the world.
+That might seem dumb and obvious, but you'd be surprised how easy it is to get off track without stating the goal up front.
+
+At this point it's good to make clear that "Web Security" is not a single, physical, made-of-atoms object in the world.
 
 Thus begins our problem.
 
 # How do you draw a thing that's not a thing?
 
-How do you take a historically-constructed, fuzzy-edged, evolving cultural concept like "Web Security," and draw it?
-
 It's a good question.
 One I've been obsessed with for a while.
 
+How do you take a historically-constructed, fuzzy-edged, evolving cultural concept like "Web Security," and draw it?
+
 Capturing the essence of any  is a fascinating challenge.
 
+
+Drawing well is difficult in its own right. Making a dog look like a dog or hand look like a hand requires a lot of training, practice and patience. 
+There's a whole extra layer to the challenge when you don't even know what that _thing_ is yet.
+
+Good, meaningful illustration works in four layers <Tooltip tiptext='Not an official theory of any sort - just IMHO. Feel free to email this to real illustration professors and PhD students so they can burn it on the sacrificial cross of correctness'>3</Tooltip>
+* a well-chosen metaphor
+* clear visual communication
+* aesthetic design
+* making it look cool
+
+A whole lot of people ask how to make things look cool. Which is a legitimate desire. I am **very** into making shit look cool.
+
+In fact, a significant number of people will be here hoping to learn how to make shit cool by finding out what pixel size I set my #EAEFF1 brush to in order to careful render a diffuse light across a reflective metallic surface in Photoshop CC 2020 on a 15-inch Macbook Pro 2015 hooked up to a Wacom Cintiq 22HD running OS Catalina 10.15.1.
+
+<SmallCenter>
+
+![Shiny metallic illustration with an annotated sketch on top pointing to shiny render effects](./EGH_ngrxAngular_424@2x.png)
+
+</SmallCenter>
+
+This is not that blog post. <Tooltip tiptext={<span>If you would like to learn how to do the shiny lighting stuff, take <a href="">Sam Neilson's Fundamentals of Lighting</a> on Schoolism. It will drown you in the minutiae of rendering light on surfaces.<br />Also check out the <a href="https://illustrated.dev/resources">Resources</a> page.</span>}>4</Tooltip>
+
+But I feel the need to get the tool talk out of the way, so here's my tech stack:
+
+<TwoCol>
+
+![Macbook Pro 2015]()
+![A Wacom Cintiq]()
+<img style="max-width: 100px;" src="https://www.adobe.com/content/dam/cc/icons/photoshop-mobile.svg" />
+<img style="max-width: 100px;" src="https://www.adobe.com/content/dam/cc/icons/illustrator.svg" />
+
+![An iPad Pro]()
+
+</TwoCol>
+
+These magical tech objects are definitely helpful. But they're only the surface level of the Thing We're Doing. Which is learning how to draw invisible things.
+
+Good, now we can get back to talking about the meaty stuff.
+
+---
+
+## Part One - Making Metaphors
+
+This is instead about Metaphors. Specifically, **Visual Metaphors**.
+
+While much of my work does involve drawing shapes correctly and picking nice colours and rendering lighting effects, those are very much the top layer of the illustration cake. Visual metaphors are the base of the cake.
+
+![Illustration of a layered cake with metaphor on the bottom, good drawing foundations in the middle, and colours with pretty lighting effects on the top. And a cherry representing whatever photoshop brush I'm using to make these](./cake.png)
+
+## What's a Metaphor?
+
+The first step to getting good at visual metaphor is understanding what it is. Let's make sure we're all on the same page:
+
+A metaphor is when we understand one thing in terms of another. We **project** the qualities of Thing A onto Thing B.
+
+![Diagram of thing A projecting onto thing B](./metaphor.jpeg)
+
+In metaphor nerd terms we call Thing A the **source** and Thing B the **target**. The source is like a _frame_ that we look at the target object through. It "frames" how we see Thing B. 
+
+![Diagram of the source frame and the target object]()
+
+It _highlights_ certain qualities of B that A also shares. And, just as importantly, it _hides_ other qualities that aren't inside the frame.
+
+![Diagram of highlighting and hiding]()
+
+Why all this metaphor talk?
+
+Conceptual metaphor is the basis of how we draw every single non-literal object. Drawing an orange is fairly straight forward. Drawing anything non-physical abstract __thing__ – freedom, financial crashes, racial tension, teamwork, speculation, database management, capitalism, productivity – all relies on metaphor. 
+
+This is _especially_ important for programming topics.
 Programming in particular poses some unique visual challenges.  
 
 Our topics are _always_:  
@@ -148,54 +218,6 @@ Try, for a moment to imagine what "[Typescript with React](https://egghead.io/co
 Or "[A Server-rendered ReactJS Application with Next.js](https://egghead.io/courses/build-a-server-rendered-reactjs-application-with-next-js)".  
 Or the "[State Monad in JavaScript](https://egghead.io/courses/state-monad-in-javascript)"
 
-Drawing well is difficult in its own right. Making a dog look like a dog or hand look like a hand requires a lot of training, practice and patience. 
-There's a whole extra layer to the challenge when you don't even know what that _thing_ is yet.
-
-Good meaningful illustration works on three layers:
-* conceptual metaphor
-* clear visual communication
-* making it look cool. 
-
-A whole lot of people ask how to make things look cool. Which is a legitimate desire. I am very into making shit look cool.
-
-In fact, a significant number of people will be here hoping to learn what pixel size I set my #EAEFF1 brush to in order to careful render a diffuse light across a reflective metallic surface in Photoshop CC 2020 on a 15-inch Macbook Pro 2015 hooked up to a Wacom Cintiq 22HD running OS Catalina 10.15.1.
-
-<SmallCenter>
-
-![Shiny metallic illustration with an annotated sketch on top pointing to shiny render effects](./EGH_ngrxAngular_424@2x.png)
-
-</SmallCenter>
-
-This is not that blog post. <Tooltip tiptext={<span>If you would like to learn how, take <a href="">Sam Neilson's Fundamentals of Lighting</a> on Schoolism. It will drown you in the minutiae of rendering light on surfaces.<br />Also check out the <a href="https://illustrated.dev/resources">Resources</a> page.</span>}>3</Tooltip>
-
-To get the tool talk out of the way, here's my tech stack:
-
-![A Wacom Cintiq]()
-![An iPad Pro]()
-![Adobe Photoshop]()
-![Adobe Illustrator]()
-
-They are definitely helpful. But they're also the surface level of the Thing We're Doing. Which is learning how to draw invisible things.
-
-Good, now we can get back to talking about the meaty stuff.
-
----
-
-## Part One - Making Metaphors
-
-This is instead about Metaphors. Specifically, **Visual Metaphors**.
-
-While much of my work does involve drawing shapes correctly and picking nice colours and rendering lighting effects, those are very much the top layer of the illustration cake. Visual metaphors are the base.
-
-![Illustration of a layered cake with metaphor on the bottom, good drawing foundations in the middle, and colours with pretty lighting effects on the top. And a cherry representing whatever photoshop brush I'm using to make these](./cake.png)
-
-## What's a Metaphor?
-
-The first step to getting good at visual metaphor is understanding what it is.
-
-![Diagram of intangible fuzzy thing through the frame of a physical object](./metaphor.jpeg)
-
-Conceptual metaphor is the basis of how we draw every single non-literal object. Drawing an orange is fairly straight forward. Drawing anything non-physical abstract __thing__ – freedom, financial crashes, racial tension, teamwork, speculation, database management, capitalism, productivity – all relies on metaphor. 
 
 
 ---

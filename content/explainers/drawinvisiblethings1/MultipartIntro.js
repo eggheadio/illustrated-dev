@@ -72,7 +72,7 @@ const MultipartIntro = () => {
       })}>
       <div>
         <span>Part 1</span>
-        <PartName to='#' partName='Making Metaphors' />
+        <PartName to='#' partName='A Metaphorical Introduction' />
         <BottomBar />
       </div>
       <div>
@@ -87,7 +87,7 @@ const MultipartIntro = () => {
       </div>
       <div>
         <span>Part 4</span>
-        <PartName to='#' partName='Making It' />
+        <PartName to='#' partName='Composition, Colour, and Completion' />
         <BottomBar />
       </div>
     </div>
