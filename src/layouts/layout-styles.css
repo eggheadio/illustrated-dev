@@ -19,7 +19,7 @@ h4 {
   font-family: 'ff-tisa-web-pro', Georgia, 'Times New Roman', Times, serif;
   font-weight: 700;
   text-rendering: optimizeLegibility;
-  line-height: 1em;
+  line-height: 1.2em;
 }
 
 h3,
@@ -383,7 +383,6 @@ dd {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
-
 figure {
   margin-left: 0;
   margin-right: 0;
@@ -425,17 +424,6 @@ fieldset {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
-}
-blockquote {
-  margin-left: 1.45rem;
-  margin-right: 1.45rem;
-  margin-top: 0;
-  padding-bottom: 1rem;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 1rem;
-  text-align: center;
   margin-bottom: 1.45rem;
 }
 form {
@@ -508,9 +496,6 @@ li > ul {
   margin-left: 1.45rem;
   margin-bottom: calc(1.45rem / 2);
   margin-top: calc(1.45rem / 2);
-}
-blockquote *:last-child {
-  margin-bottom: 0;
 }
 li *:last-child {
   margin-bottom: 0;
