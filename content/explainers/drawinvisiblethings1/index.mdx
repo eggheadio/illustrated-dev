@@ -8,16 +8,10 @@ category: meta
 published: true
 ---
 
-import TwoCol from '../../../src/components/mdx/TwoCol.js'
 import SmallCenter from '../../../src/components/mdx/SmallCenter.js'
-import Center from '../../../src/components/mdx/Center.js'
-import Tooltip from '../../../src/components/mdx/Tooltip.js'
 import Feature from './Feature.js'
-import Image from '../../../src/components/mdx/Image.js'
-import ImageGrid from '../../../src/components/mdx/ImageGrid.js'
 import FourImageGrid from '../../../src/components/mdx/FourImageGrid.js'
 import EggheadCourseCard from '../../../src/components/mdx/egghead-course-card.js'
-import Link from '../../../src/components/Link.js'
 import MultipartIntro from './MultipartIntro.js'
 
 ---
@@ -26,7 +20,7 @@ This is a long, overdue case study showing how I make an <Link to="https://egghe
 
 It spans everything from <Link to="https://en.wikipedia.org/wiki/Conceptual_metaphor">cognitive metaphor theory</Link> to Photoshop rendering so I hope you have a hot, caffienated beverage with you.
 
-<Center>It also comes numerous parts:</Center>
+<Center><h3>It also comes numerous parts...</h3></Center>
 
 <MultipartIntro />
 
@@ -43,7 +37,7 @@ As you might expect, it's a whole lot of JavaScript, React, GraphQL, Vue, classi
 
 My job involves taking all those abstract, hard-to-explain programming concepts and making them visible in a way that helps people understand them. Sometimes through illustrated notes, or animations, or diagrams, or interpretive dance on zoom calls.
 
-One part of that work is making _**course illustrations**_, which are like album artwork for all the courses we publish.  <Tooltip tiptext={<span>I don't make all of our illustrations  – I have a wonderful team that includes <a href="#">Maxime</a> and <a href="#">Aleksander</a> who help with the load.</span>}>1</Tooltip>
+One part of that work is making _**course illustrations**_, which are like album artwork for all the courses we publish.  <Tooltip tiptext={<span>I don't make all of our illustrations  – I have a wonderful team that includes <a href="https://dribbble.com/maximebourgeois">Maxime</a> and <a href="https://dribbble.com/Aleksandr_Ageev">Aleksander</a> who help with the load.</span>}>1</Tooltip>
 
 <br />
 
@@ -107,10 +101,7 @@ One part of that work is making _**course illustrations**_, which are like album
 
 </FourImageGrid>
 
-So far I've made over 150 of these things and I'm almost beginning to think I what I'm doing. <Tooltip tiptext='Only in course illustrations, definitely not in life.'>2</Tooltip>
-
-
-<!-- That includes everything from making cover illustrations for every course we release, drawing illustrating notes (eg. everything on this website), and animating helpful diagrams. I've been doing it for half a decade now and am almost starting to think I know what I'm doing. -->
+So far I've made over 150 of these things and I'm almost beginning to think I what I'm doing. <Tooltip tiptext='Only in course illustrations. Definitely not in life.'>2</Tooltip>
 
 ---
 
@@ -125,22 +116,22 @@ The first step in starting a design task of any kind – illustration, innovativ
 
 That might seem dumb and obvious, but you'd be surprised how easy it is to get off track without stating the goal up front.
 
-At this point it's good to make clear that "Web Security" is not a single, physical, made-of-atoms object in the world.
+At this point it's good to make clear that "Web Security" is not a single, physical, made-of-atoms-and-quarks object in the world.
 
 Thus begins our problem.
 
-# How do you draw a thing that's not a thing?
+## How do you draw a thing that's not a thing?
 
 It's a good question.
 One I've been obsessed with for a while.
+
+Drawing well is difficult in its own right. Making a dog look like a dog or hand look like a hand requires a lot of training, practice and patience. 
+There's a whole extra layer to the challenge when you don't even know what that _thing_ is yet.
 
 How do you take a historically-constructed, fuzzy-edged, evolving cultural concept like "Web Security," and draw it?
 
 Capturing the essence of any  is a fascinating challenge.
 
-
-Drawing well is difficult in its own right. Making a dog look like a dog or hand look like a hand requires a lot of training, practice and patience. 
-There's a whole extra layer to the challenge when you don't even know what that _thing_ is yet.
 
 Good, meaningful illustration works in four layers <Tooltip tiptext='Not an official theory of any sort - just IMHO. Feel free to email this to real illustration professors and PhD students so they can burn it on the sacrificial cross of correctness'>3</Tooltip>
 * a well-chosen metaphor
@@ -158,7 +149,7 @@ In fact, a significant number of people will be here hoping to learn how to make
 
 </SmallCenter>
 
-This is not that blog post. <Tooltip tiptext={<span>If you would like to learn how to do the shiny lighting stuff, take <a href="">Sam Neilson's Fundamentals of Lighting</a> on Schoolism. It will drown you in the minutiae of rendering light on surfaces.<br />Also check out the <a href="https://illustrated.dev/resources">Resources</a> page.</span>}>4</Tooltip>
+This is not that blog post. <Tooltip tiptext={<span>If you would like to learn how to do the shiny lighting stuff, take <Link to="https://www.schoolism.com/school.php?id=3">Sam Neilson's Fundamentals of Lighting</Link> on Schoolism. It will drown you in the minutiae of rendering light on surfaces.<br />Also check out the <a href="https://illustrated.dev/resources">Resources</a> page.</span>}>4</Tooltip>
 
 But I feel the need to get the tool talk out of the way, so here's my tech stack:
 
