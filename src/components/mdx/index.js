@@ -14,6 +14,7 @@ import TwoCol from './TwoCol'
 import Link from '../Link'
 import NotesContainer from './NotesContainer'
 import FullNote from './FullNote'
+import SmallCenter from './SmallCenter'
 
 export default {
   h1: props => <Title {...props} />,
@@ -31,6 +32,7 @@ export default {
   Tooltip: props => <Tooltip {...props} />,
   Link: props => <Link {...props} />,
   TwoCol: props => <TwoCol {...props} />,
+  SmallCenter: props => <SmallCenter {...props} />,
   NotesContainer: props => <NotesContainer {...props} />,
   FullNote: props => <FullNote {...props} />,
   pre: preProps => {
