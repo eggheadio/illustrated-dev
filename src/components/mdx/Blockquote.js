@@ -5,7 +5,7 @@ export default styled.blockquote`
     max-width: 90%;
     text-align: center;
     margin: 0.8em auto;
-    font-size: 1.8em;
+    font-size: 1.7em;
     line-height: 1.4em;
     font-family: 'brandon-grotesque';
   }
