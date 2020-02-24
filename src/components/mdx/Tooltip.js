@@ -20,8 +20,9 @@ const Tooltip = forwardRef((props, ref) => {
           display: 'inline-block',
           color: '#53BDC9',
           border: '1px solid #53BDC9',
-          padding: '0 10px 6px 10px',
-          lineHeight: '1.2em',
+          padding: '0 8px 7px 7px',
+          marginRight: '10px',
+          lineHeight: '1em',
           borderRadius: '2px',
           transition: 'all 0.4s',
           ':hover, :focus': {
