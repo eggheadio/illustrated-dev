@@ -7,21 +7,25 @@ const Feature = props => {
   return (
     <span
       css={css({
+        [bpMinMD]: {
+          gridTemplateColumns: '40% 60%',
+        },
+        marginTop: '60px',
         display: 'grid',
-        gridTemplateColumns: '60% 40%',
+        gridTemplateColumns: '1fr',
         gridGap: '30px',
         img: {
           maxWidth: '100%',
-          marginBottom: '30px',
+          borderRadius: '5px',
         },
       })}>
-      <img src={props.imageURL} />
       <div>
         <Link to={props.sourceURL}>
-          <h6>{props.sourceTitle}</h6>
+          <h5>{props.sourceTitle}</h5>
         </Link>
         <p>{props.children}</p>
       </div>
+      <img src={props.imageURL} />
     </span>
   )
 }
