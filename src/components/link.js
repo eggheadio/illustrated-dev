@@ -28,13 +28,13 @@ const LinkTooltip = forwardRef((props, ref) => {
       arrow={false}
       animation='shift-away'
       content={props.link}>
-      <div
+      <span
         css={css({
-          display: 'inline-block',
+          display: 'inline',
           transition: 'all 0.4s',
         })}>
         <span ref={ref}>{props.children}</span>
-      </div>
+      </span>
     </Tippy>
   )
 })
