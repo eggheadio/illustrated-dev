@@ -32,7 +32,7 @@ const Feature = props => {
         </Link>
         <p>{props.children}</p>
       </div>
-      <img src={props.imageURL} />
+      <img alt={props.sourceTitle} src={props.imageURL} />
     </span>
   )
 }
