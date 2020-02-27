@@ -3,7 +3,7 @@ import Title from './Title'
 import Paragraph from './Paragraph'
 import Blockquote from './Blockquote'
 import Code from './Code'
-import Image from './Image'
+import BlogImage from './BlogImage'
 import ImageGrid from './ImageGrid'
 import Divider from './Divider'
 import { H2, H3, H4, H5, H6 } from './Subheaders'
@@ -25,7 +25,7 @@ export default {
   h6: props => <H6 {...props} />,
   p: props => <Paragraph {...props} />,
   blockquote: props => <Blockquote {...props} />,
-  img: props => <Image {...props} />,
+  img: props => <BlogImage {...props} />,
   ImageGrid: props => <ImageGrid {...props} />,
   hr: props => <Divider {...props} />,
   Center: props => <Center {...props} />,
