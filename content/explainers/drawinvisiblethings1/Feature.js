@@ -18,12 +18,18 @@ const Feature = props => {
           maxWidth: '100%',
           borderRadius: '5px',
         },
+        h5: {
+          fontWeight: 'bold',
+        },
+        h4: {
+          fontSize: '1.4em',
+        },
       })}>
       <div>
-        <Link to={props.sourceURL}>
-          <h5>{props.sourceTitle}</h5>
-        </Link>
         <h5>{props.illustrator}</h5>
+        <Link to={props.sourceURL}>
+          <h4>{props.sourceTitle}</h4>
+        </Link>
         <p>{props.children}</p>
       </div>
       <img src={props.imageURL} />
