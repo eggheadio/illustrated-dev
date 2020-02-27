@@ -47,7 +47,7 @@ const MultipartIntro = () => {
         display: 'grid',
         gridGap: '10px',
         textAlign: 'center',
-        padding: '20px 0',
+        padding: '8px 0',
         div: {
           alignSelf: 'flex-end',
           transition: '0.5s',

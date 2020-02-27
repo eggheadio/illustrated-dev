@@ -23,6 +23,7 @@ const Feature = props => {
         <Link to={props.sourceURL}>
           <h5>{props.sourceTitle}</h5>
         </Link>
+        <h5>{props.illustrator}</h5>
         <p>{props.children}</p>
       </div>
       <img src={props.imageURL} />
