@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { bpMinSM } from '../utils/breakpoints'
-import Link from './link'
+import Link from './Link'
 import RecCourses from './recCoursesCard'
 
 export default function ResourceCard(props) {

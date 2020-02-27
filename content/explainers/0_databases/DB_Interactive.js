@@ -1,6 +1,6 @@
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
-import Link from '../../../src/components/link'
+import Link from '../../../src/components/Link'
 import mainImage from './interactive_illo/mainImage'
 
 const DB6 = () => {

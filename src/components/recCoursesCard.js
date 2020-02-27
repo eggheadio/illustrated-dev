@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { css } from '@emotion/core'
-import Link from './link'
+import Link from './Link'
 import downArrow from './downArrow.svg'
 // import { CSSTransition, TransitionGroup } from 'react-transition-group'
 

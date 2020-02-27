@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
-import Link from '../components/link'
+import Link from '../components/Link'
 
 export default function SiteMap({ data: { explainers, meta } }) {
   return (

@@ -4,7 +4,7 @@ import { css } from '@emotion/core'
 import Tippy from '@tippy.js/react'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
-import './link-tooltip-theme.css'
+import './Link-tooltip-theme.css'
 
 const LinkTooltip = forwardRef((props, ref) => {
   const noToolTip = props.noToolTip
