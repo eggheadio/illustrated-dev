@@ -7,7 +7,7 @@ import Container from '../components/container'
 import eggheadpwrd from '../images/egghead-powered.svg'
 import MainCardGrid from '../components/MainCardGrid'
 
-export default function Index({ data: { site, allMdx, sketches } }) {
+export default function Index({ data: { site, allMdx } }) {
   return (
     <>
       <SEO title={site.siteMetadata.title} />
