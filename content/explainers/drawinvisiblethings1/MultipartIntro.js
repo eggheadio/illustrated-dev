@@ -3,21 +3,6 @@ import { css } from '@emotion/core'
 import { bpMinMD } from '../../../src/utils/breakpoints.js'
 import Link from '../../../src/components/Link.js'
 
-const BottomBar = () => {
-  return (
-    <div
-      id='bottomBar'
-      css={css({
-        background: '#EEC57C',
-        borderRadius: '12px',
-        margin: '0 auto',
-        height: '2px',
-        width: '95%',
-      })}
-    />
-  )
-}
-
 const PartName = props => {
   return (
     <Link noToolTip to={props.to}>
@@ -29,7 +14,7 @@ const PartName = props => {
           paddingTop: '6px',
           alignSelf: 'center',
           fontSize: '1.2em',
-          lineHeight: '1.2em',
+          lineHeight: '1.25em',
           display: 'block',
         })}>
         {props.partName}
@@ -42,53 +27,70 @@ const MultipartIntro = () => {
   return (
     <div
       css={css({
-        [bpMinMD]: { gridTemplateColumns: '1fr 1fr 1fr 1fr' },
-        gridTemplateColumns: '1fr 1fr 1fr 1fr',
+        [bpMinMD]: { gridTemplateColumns: 'repeat(4, 1fr)' },
+        gridTemplateColumns: 'repeat(2, 1fr)',
         display: 'grid',
         gridGap: '10px',
+        alignItems: 'start',
         textAlign: 'center',
-        padding: '8px 0',
-        div: {
-          alignSelf: 'flex-end',
-          transition: '0.5s',
+        padding: '10px 0',
+        transition: '0.6s',
+        '#outer': {
+          borderTop: '1px solid #92A3BB',
+          padding: '14px',
+          alignItems: 'center',
+          transition: '0.6s',
           ':hover': {
-            '#bottomBar': {
-              height: '6px',
-              background: '#0CAFD2',
-            },
+            borderTop: '2px solid #7B44BC',
+            transition: '0.6s',
+            transform: 'translateY(-6px)',
             p: {
-              color: '#0CAFD2',
-              transition: '0.5s',
+              color: 'black',
+              transition: '0.6s',
+            },
+            span: {
+              color: '#7B44BC',
+              transition: '0.6s',
             },
           },
         },
+        div: {
+          height: '140px',
+          display: 'grid',
+          transition: '0.6s',
+        },
+        p: {
+          color: '#718597',
+          transition: '0.6s',
+          alignSelf: 'center',
+        },
         span: {
           color: '#718597',
+          alignSelf: 'start',
           fontFamily: 'sans-serif',
-          alignSelf: 'flex-start',
           fontSize: '0.9em',
           display: 'block',
+          transition: '0.6s',
         },
       })}>
-      <div>
+      <div id='outer'>
         <span>Part 1</span>
-        <PartName to='#' partName='A Metaphorical Introduction' />
-        <BottomBar />
+        <PartName
+          to='https://egghead.io/'
+          partName='A Metaphorical Introduction'
+        />
       </div>
-      <div>
+      <div id='outer'>
         <span>Part 2</span>
-        <PartName to='#' partName='Cultural Research' />
-        <BottomBar />
+        <PartName to='#' partName='Cultural and Linguistic Research' />
       </div>
-      <div>
+      <div id='outer'>
         <span>Part 3</span>
-        <PartName to='#' partName='Creative Play' />
-        <BottomBar />
+        <PartName to='#' partName='Lateral Thinking and Creative Play' />
       </div>
-      <div>
+      <div id='outer'>
         <span>Part 4</span>
         <PartName to='#' partName='Composition, Colour, and Completion' />
-        <BottomBar />
       </div>
     </div>
   )
