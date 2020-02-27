@@ -6,7 +6,7 @@ const TwoCol = props => {
   return (
     <div
       css={css({
-        [bpMinMD]: { gridTemplateColumns: '1fr 1fr' },
+        [bpMinMD]: { gridTemplateColumns: '50% 50%' },
         gridTemplateColumns: '1fr',
         display: 'grid',
         gridGap: '20px',
