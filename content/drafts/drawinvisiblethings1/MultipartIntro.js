@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { bpMinMD } from '../../../src/utils/breakpoints.js'
-import Link from '../../../src/components/Link.js'
+import Link from '../../../src/components/link.js'
 
 const PartName = props => {
   return (

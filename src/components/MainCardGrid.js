@@ -4,7 +4,7 @@ import get from 'lodash/get'
 import includes from 'lodash/includes'
 import isEmpty from 'lodash/isEmpty'
 import { bpMinSM, bpBtnFlexSM, bpBtnFlexMD } from '../utils/breakpoints'
-import Link from './Link'
+import Link from './link'
 import Card from './card'
 
 const ALL_CATEGORY = 'all'

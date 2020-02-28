@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from '../../../src/components/Link.js'
+import Link from '../../../src/components/link.js'
 import { css } from '@emotion/core'
 import { bpMinMD } from '../../../src/utils/breakpoints.js'
 
