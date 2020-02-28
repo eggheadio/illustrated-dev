@@ -108,7 +108,7 @@ module.exports = {
         typekit: {
           id: 'vre2jfc',
           families: [
-            'FF Tisa Web Pro:100,300,800',
+            'FF Tisa Web Pro:300,400,700',
             'Brandon Grotesque:400,700',
             'Freight Sans Pro:300,400,600',
           ],

@@ -143,7 +143,7 @@ class SignUp extends React.Component {
                 color: '#5BC5CF',
                 fontStyle: 'italic',
                 fontFamily: 'ff-tisa-web-pro',
-                fontWeight: '100',
+                fontWeight: '400',
                 fontSize: '1.1em',
               })}>
               A fresh set of programming illustrations delivered right to your

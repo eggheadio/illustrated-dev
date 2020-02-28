@@ -4,9 +4,21 @@ import { css } from '@emotion/core'
 import Tippy from '@tippy.js/react'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
-import './link-tooltip-theme.css'
+import './Link-tooltip-theme.css'
 
 const LinkTooltip = forwardRef((props, ref) => {
+  const noToolTip = props.noToolTip
+  if (noToolTip === true) {
+    return (
+      <div
+        css={css({
+          display: 'inline-block',
+          transition: 'all 0.4s',
+        })}>
+        <span ref={ref}>{props.children}</span>
+      </div>
+    )
+  }
   return (
     <Tippy
       duration='600'
@@ -16,20 +28,18 @@ const LinkTooltip = forwardRef((props, ref) => {
       arrow={false}
       animation='shift-away'
       content={props.link}>
-      <div
+      <span
         css={css({
-          display: 'inline-block',
+          display: 'inline',
           transition: 'all 0.4s',
         })}>
         <span ref={ref}>{props.children}</span>
-      </div>
+      </span>
     </Tippy>
   )
 })
 
-//
-
-const Link = ({ children, to, ...other }) => {
+const Link = ({ noToolTip, children, to, ...other }) => {
   const internal = /^\/(?!\/)/.test(to)
 
   if (internal) {
@@ -42,7 +52,9 @@ const Link = ({ children, to, ...other }) => {
 
   return (
     <a target='_blank' rel='noopener noreferrer' href={to} {...other}>
-      <LinkTooltip link={to}>{children}</LinkTooltip>
+      <LinkTooltip noToolTip={noToolTip} link={to}>
+        {children}
+      </LinkTooltip>
     </a>
   )
 }

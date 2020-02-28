@@ -4,7 +4,7 @@ import { css } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import mdxComponents from '../components/mdx'
-import Link from '../components/link'
+import Link from '../components/Link'
 import Container from '../components/container'
 import { bpMinMD, bpMinSM } from '../utils/breakpoints'
 import SEO from '../components/seo'
@@ -55,7 +55,7 @@ class MetaTemplate extends React.Component {
                   },
                   fontSize: '2.1rem',
                   textAlign: 'center',
-                  fontWeight: '100',
+                  fontWeight: '300',
                   marginBottom: '40px',
                   fontFamily: 'ff-tisa-web-pro, serif',
                 })}>
@@ -112,7 +112,7 @@ class MetaTemplate extends React.Component {
                   <h2
                     css={css({
                       opacity: '0.8',
-                      fontWeight: '100',
+                      fontWeight: '400',
                       fontFamily: 'ff-tisa-web-pro, serif',
                       fontSize: '1.5em',
                       fontStyle: 'italic',
@@ -146,7 +146,7 @@ class MetaTemplate extends React.Component {
                   <h4>next</h4>
                   <h2
                     css={css({
-                      fontWeight: '100',
+                      fontWeight: '400',
                       fontFamily: 'ff-tisa-web-pro, serif',
                       fontSize: '2.2em',
                       fontStyle: 'italic',

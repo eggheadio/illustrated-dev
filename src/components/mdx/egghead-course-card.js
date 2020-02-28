@@ -20,7 +20,6 @@ const EggheadCourseCard = props => {
             },
           },
           img: {
-            display: 'block',
             maxWidth: '100%',
             maxHeight: '80%',
           },

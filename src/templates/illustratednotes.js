@@ -4,7 +4,7 @@ import { css } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import mdxComponents from '../components/mdx'
-import Link from '../components/link'
+import Link from '../components/Link'
 import Container from '../components/container'
 import { bpMinMD, bpMinSM } from '../utils/breakpoints'
 import SEO from '../components/seo'
@@ -104,21 +104,21 @@ class SketchesTemplate extends React.Component {
               <div
                 css={css({
                   gridColumnStart: '1',
-                  margin: '80px 40px 0 0',
+                  margin: '60px 40px 0 0',
                   paddingRight: '40px',
                   borderRight: '1px solid hsla(200, 10%, 80%, 0.7)',
                   textAlign: 'right',
                   h4: {
                     fontFamily: 'freight-sans-pro, sans-serif',
                     textTransform: 'uppercase',
-                    fontSize: '16px',
+                    fontSize: '18px',
                     color: 'hsla(200, 10%, 30%, 0.7)',
                   },
                 })}>
                 <Link to={`/${previous.frontmatter.slug}`} rel='previous'>
                   <h4
                     css={css({
-                      opacity: '0.6',
+                      opacity: '0.8',
                     })}>
                     previous
                   </h4>
@@ -128,6 +128,7 @@ class SketchesTemplate extends React.Component {
                       fontWeight: '100',
                       fontFamily: 'ff-tisa-web-pro, serif',
                       fontSize: '1.5em',
+                      lineHeight: '1.2em',
                       fontStyle: 'italic',
                       marginBottom: '40px',
                     })}>
@@ -147,12 +148,11 @@ class SketchesTemplate extends React.Component {
               <div
                 css={css({
                   gridColumnStart: '2',
-                  marginTop: '80px',
-
+                  marginTop: '60px',
                   h4: {
                     fontFamily: 'freight-sans-pro, sans-serif',
                     textTransform: 'uppercase',
-                    fontSize: '16px',
+                    fontSize: '18px',
                     color: 'hsla(0, 0%, 0%, 0.5)',
                   },
                 })}>
@@ -164,6 +164,7 @@ class SketchesTemplate extends React.Component {
                       fontFamily: 'ff-tisa-web-pro, serif',
                       fontSize: '2.2em',
                       fontStyle: 'italic',
+                      lineHeight: '1.2em',
                       marginBottom: '80px',
                     })}>
                     {next.frontmatter.title}{' '}
