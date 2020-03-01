@@ -152,7 +152,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         const explainers = result.data.explainers.edges
 
-        const allPosts = illustratednotes.concat(explainers)
+        const allPosts = illustratednotes.concat(explainers, meta)
 
         pages.forEach(({ node }) => {
           createPage({
@@ -166,13 +166,13 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        meta.forEach(({ node }) => {
-          createPage({
-            path: `${node.frontmatter.slug}`,
-            component: path.resolve(`./src/templates/meta.js`),
-            context: { id: node.id },
-          })
-        })
+        // meta.forEach(({ node }) => {
+        //   createPage({
+        //     path: `${node.frontmatter.slug}`,
+        //     component: path.resolve(`./src/templates/meta.js`),
+        //     context: { id: node.id },
+        //   })
+        // })
 
         allPosts.forEach(({ node }, index) => {
           const next =

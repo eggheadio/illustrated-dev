@@ -11,10 +11,11 @@ import { preToCodeBlock } from 'mdx-utils'
 import Center from './Center'
 import Tooltip from './Tooltip'
 import TwoCol from './TwoCol'
-import Link from '../Link'
+import Link from '../link'
 import NotesContainer from './NotesContainer'
 import FullNote from './FullNote'
 import SmallCenter from './SmallCenter'
+import ReadNext from './ReadNext'
 
 export default {
   h1: props => <Title {...props} />,
@@ -34,6 +35,7 @@ export default {
   TwoCol: props => <TwoCol {...props} />,
   SmallCenter: props => <SmallCenter {...props} />,
   NotesContainer: props => <NotesContainer {...props} />,
+  ReadNext: props => <ReadNext {...props} />,
   FullNote: props => <FullNote {...props} />,
   pre: preProps => {
     const props = preToCodeBlock(preProps)

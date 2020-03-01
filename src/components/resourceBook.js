@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 // import Img from 'gatsby-image'
 // import { StaticQuery, graphql } from 'gatsby'
 import { bpMinSM } from '../utils/breakpoints'
-import Link from './Link'
+import Link from './link'
 
 export default function ResourceBook(props) {
   return (

@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { bpMinSM } from '../../utils/breakpoints'
 
-const FourImageGrid = props => {
+const ThreeImageGrid = props => {
   return (
     <>
       <div
@@ -12,7 +12,7 @@ const FourImageGrid = props => {
           },
           gridTemplateColumns: 'repeat(2, 1fr)',
           display: 'grid',
-          gridGap: '26px',
+          gridGap: '30px',
           padding: '20px 0px',
           img: {
             maxWidth: '100%',
@@ -26,4 +26,4 @@ const FourImageGrid = props => {
   )
 }
 
-export default FourImageGrid
+export default ThreeImageGrid

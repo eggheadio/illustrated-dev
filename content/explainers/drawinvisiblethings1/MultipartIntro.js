@@ -19,6 +19,7 @@ const PartName = props => {
         })}>
         {props.partName}
       </p>
+      {props.focus ? <span>You are here</span> : null}
     </Link>
   )
 }
@@ -35,24 +36,39 @@ const MultipartIntro = () => {
         textAlign: 'center',
         padding: '10px 0',
         transition: '0.6s',
+        '#focus': {
+          padding: '14px',
+          alignItems: 'center',
+          transition: '0.6s',
+          borderTop: '2px solid #7B44BC',
+          transition: '0.6s',
+          p: {
+            color: 'black',
+            transition: '0.6s',
+          },
+          span: {
+            color: '#7B44BC',
+            transition: '0.6s',
+          },
+        },
         '#outer': {
           borderTop: '1px solid #92A3BB',
           padding: '14px',
           alignItems: 'center',
           transition: '0.6s',
-          ':hover': {
-            borderTop: '2px solid #7B44BC',
-            transition: '0.6s',
-            transform: 'translateY(-6px)',
-            p: {
-              color: 'black',
-              transition: '0.6s',
-            },
-            span: {
-              color: '#7B44BC',
-              transition: '0.6s',
-            },
-          },
+          // ':hover': {
+          //   borderTop: '2px solid #7B44BC',
+          //   transition: '0.6s',
+          //   transform: 'translateY(-6px)',
+          //   p: {
+          //     color: 'black',
+          //     transition: '0.6s',
+          //   },
+          //   span: {
+          //     color: '#7B44BC',
+          //     transition: '0.6s',
+          //   },
+          // },
         },
         div: {
           height: '140px',
@@ -73,24 +89,21 @@ const MultipartIntro = () => {
           transition: '0.6s',
         },
       })}>
-      <div id='outer'>
+      <div id='focus'>
         <span>Part 1</span>
-        <PartName
-          to='https://egghead.io/'
-          partName='A Metaphorical Introduction'
-        />
+        <PartName focus partName='A Metaphorical Introduction' />
       </div>
       <div id='outer'>
         <span>Part 2</span>
-        <PartName to='#' partName='Cultural and Linguistic Research' />
+        <PartName partName='Cultural and Linguistic Research' />
       </div>
       <div id='outer'>
         <span>Part 3</span>
-        <PartName to='#' partName='Lateral Thinking and Creative Play' />
+        <PartName partName='Lateral Thinking and Creative Play' />
       </div>
       <div id='outer'>
         <span>Part 4</span>
-        <PartName to='#' partName='Composition, Colour, and Completion' />
+        <PartName partName='Composition, Colour, and Completion' />
       </div>
     </div>
   )

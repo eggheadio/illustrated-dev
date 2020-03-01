@@ -1,7 +1,7 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
-import Link from '../components/Link'
+import Link from '../components/link'
 import { css } from '@emotion/core'
 import SEO from '../components/seo'
 import { bpMinSM, bpMinMD } from '../utils/breakpoints'

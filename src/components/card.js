@@ -15,7 +15,7 @@ const Card = ({ title, image = [], description, category, date, featured }) => {
 
   let categoryLabel
   if (category === 'explainers') {
-    categoryLabel = 'Explainer'
+    categoryLabel = 'A Visual Explanation'
   } else if (category === 'meta') {
     categoryLabel = 'Meta Post'
   } else if (category === 'illustrated notes') {
