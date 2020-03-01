@@ -21,7 +21,7 @@ class PostsTemplate extends React.Component {
     let categoryLabel
     const category = post.fields.category
     if (category === 'explainers') {
-      categoryLabel = 'Illustrated Explainer'
+      categoryLabel = 'A Visual Explanation'
     } else if (category === 'meta') {
       categoryLabel = 'Meta Post'
     } else if (category === 'illustrated notes') {
