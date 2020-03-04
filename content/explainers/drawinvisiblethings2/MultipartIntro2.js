@@ -24,7 +24,7 @@ const PartName = props => {
   )
 }
 
-const MultipartIntro = () => {
+const MultipartIntro2 = () => {
   return (
     <div
       css={css({
@@ -91,16 +91,16 @@ const MultipartIntro = () => {
           transition: '0.6s',
         },
       })}>
-      <div class='focus'>
-        <span>Part 1</span>
-        <PartName focus partName='A Metaphorical Introduction' />
-      </div>
       <div class='outer linked'>
-        <span>Part 2</span>
+        <span>Part 1</span>
         <PartName
-          to='./drawinginvisibles2'
-          partName='Cultural and Linguistic Research'
+          to='/drawinginvisibles1'
+          partName='A Metaphorical Introduction'
         />
+      </div>
+      <div class='focus'>
+        <span>Part 2</span>
+        <PartName focus partName='Cultural and Linguistic Research' />
       </div>
       <div class='outer'>
         <span>Part 3</span>
@@ -114,4 +114,4 @@ const MultipartIntro = () => {
   )
 }
 
-export default MultipartIntro
+export default MultipartIntro2
