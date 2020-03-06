@@ -15,30 +15,30 @@ import Link from '../../../src/components/link.js'
 
 <NotesContainer>
 
-![](./web-security-1.png)
+![Web security essentials - Let's look at three common attacks](./web-security-1.png)
 
 ## Man in the Middle
 
-![](./web-security-2.png)
+![First, man in the middle is a peice of software that intercepts data between a client and a server](./web-security-2.png)
 
-![](./web-security-6.png)
+![If this connection is over HTTP all your data packets are readable cleartext. Anyone on the network can use a packet sniffer to see your data. Instead we use HTTPS to encrypt packets. ](./web-security-6.png)
 
-![](./web-security-7.png)
+![How to protect yourself. Use HSTS headers. Require HTTPS everywhere. Redirect HTTP to HTTPS](./web-security-7.png)
 
 ## Cross-Site Request Forgery
 
-![](./web-security-3.png)
+![Cross-site request forgery is an attack that tricks the user into visiting a malicious site while they're already logged into a trusted site.](./web-security-3.png)
 
-![](./web-security-4.png)
+![This is possible because browsers send cookies between sites by default. How to protect yourself. Cookies come with a 'sameSite' property that prevents them from being passed between sites. Set it to 'lax' or 'strict'](./web-security-4.png)
 
 ## Cross-Site Scripting
 
-![](./web-security-5.png)
+![Cross-site scripting is an attack that injects malicious code into a trusted site. This can happen is the site allows user input to appear on the page without validating or encoding it. Protect yourself with a content security policy which manages which types of resources are allowed to load and where.](./web-security-5.png)
 
 </NotesContainer>
 
 <FullNote coursename="Web Security Essentials" courselink="https://egghead.io/courses/web-security-essentials?af=54fd64">
 
-<img src="./web-security-final--small.png" />
+<img alt="The fully illustrated notes on web security essentials" src="./web-security-final--small.png" />
 
 </FullNote>
