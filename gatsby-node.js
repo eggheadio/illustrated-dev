@@ -166,14 +166,6 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        // meta.forEach(({ node }) => {
-        //   createPage({
-        //     path: `${node.frontmatter.slug}`,
-        //     component: path.resolve(`./src/templates/meta.js`),
-        //     context: { id: node.id },
-        //   })
-        // })
-
         allPosts.forEach(({ node }, index) => {
           const next =
             index === allPosts.length - 1 ? null : allPosts[index + 1].node
