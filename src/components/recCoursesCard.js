@@ -64,7 +64,7 @@ function RecCourses(props) {
                 },
               })}
               key={index}>
-              <Link to={rc.url}>
+              <Link noToolTip={true} to={rc.url}>
                 <p>{rc.title}</p>
               </Link>
               <h5>by {rc.instructor}</h5>

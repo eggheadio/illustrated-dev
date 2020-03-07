@@ -7,7 +7,7 @@ const EggheadCourseCard = props => {
       <div
         css={css({
           padding: '30px 20px',
-          maxHeight: '450px',
+          maxHeight: '500px',
           border: '1px solid #E7EEF3',
           borderRadius: '6px',
           boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.1)',
@@ -20,8 +20,7 @@ const EggheadCourseCard = props => {
             },
           },
           img: {
-            display: 'block',
-            maxWidth: '100%',
+            maxWidth: '95%',
             maxHeight: '80%',
           },
           p: {

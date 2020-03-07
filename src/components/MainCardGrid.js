@@ -49,7 +49,7 @@ const MainCardGrid = ({ posts }) => {
           alignItems: 'center',
           [bpBtnFlexMD]: { marginBottom: '10px' },
         })}>
-        <p>Illustrated Explainers & Notes</p>
+        <p>Illustrated Explanations & Notes</p>
         <span
           css={css({
             justifySelf: 'end',

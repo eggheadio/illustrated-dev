@@ -77,7 +77,7 @@ class InlineSignUp extends React.Component {
           color: 'rgb(80, 100, 110)',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'flex-start',
+          alignItems: 'flex-left',
           input: {
             border: '1px solid #A6B8D2',
             color: '#A6B8D2',
@@ -85,7 +85,7 @@ class InlineSignUp extends React.Component {
             borderRadius: '5px',
             padding: '8px 8px',
             marginBottom: '8px',
-            maxWidth: '160px',
+            maxWidth: '360px',
             textAlign: 'left',
             [bpMinMD]: {
               marginRight: '10px',
