@@ -33,10 +33,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            meta: allMdx(
-              sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { frontmatter: { category: { eq: "meta" } } }
-            ) {
+            allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
               edges {
                 node {
                   id
@@ -53,61 +50,6 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     title
                     slug
-                  }
-                }
-              }
-            }
-            illustratednotes: allMdx(
-              sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { frontmatter: { category: { eq: "illustrated notes" } } }
-            ) {
-              edges {
-                node {
-                  id
-                  parent {
-                    ... on File {
-                      name
-                      sourceInstanceName
-                    }
-                  }
-                  excerpt(pruneLength: 250)
-                  fields {
-                    category
-                  }
-                  frontmatter {
-                    title
-                    slug
-                    date
-                    category
-                  }
-                }
-              }
-            }
-            explainers: allMdx(
-              sort: {
-                order: DESC
-                fields: [frontmatter___featured, frontmatter___date]
-              }
-              filter: { frontmatter: { category: { eq: "explainers" } } }
-            ) {
-              edges {
-                node {
-                  id
-                  parent {
-                    ... on File {
-                      name
-                      sourceInstanceName
-                    }
-                  }
-                  excerpt(pruneLength: 250)
-                  fields {
-                    category
-                  }
-                  frontmatter {
-                    title
-                    slug
-                    date
-                    category
                   }
                 }
               }
@@ -146,13 +88,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         const pages = result.data.pages.edges
 
-        const meta = result.data.meta.edges
-
-        const illustratednotes = result.data.illustratednotes.edges
-
-        const explainers = result.data.explainers.edges
-
-        const allPosts = illustratednotes.concat(explainers, meta)
+        const allPosts = result.data.allMdx.edges
 
         pages.forEach(({ node }) => {
           createPage({
