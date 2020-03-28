@@ -18,7 +18,7 @@ export default function ResourceBook(props) {
             },
             ':hover': {
               img: {
-                boxShadow: '0 10px 30px -10px rgba(0,0,0,0.15)',
+                boxShadow: '0 10px 30px -10px rgba(0,0,20,0.25)',
                 transition: 'all 350ms ease',
               },
             },
@@ -27,7 +27,7 @@ export default function ResourceBook(props) {
           <div
             css={css({
               [bpMinSM]: {
-                padding: '25px',
+                padding: '20px',
               },
               padding: '8px',
               color: '#464E55',
@@ -56,6 +56,7 @@ export default function ResourceBook(props) {
               '.description': {
                 lineHeight: '1.3em',
                 fontSize: '1em',
+                maxWidth: '450px',
               },
               ':hover': {
                 transition: 'all 1s ease-in',
@@ -65,14 +66,14 @@ export default function ResourceBook(props) {
             <img
               css={css({
                 padding: '10px',
-                maxWidth: '150px',
-                maxHeight: '200px',
+                maxWidth: props.large ? '250px' : '150px',
+                maxHeight: props.large ? '300px' : '200px',
                 alignSelf: 'center',
                 justifySelf: 'center',
-                borderRadius: '6px',
+                borderRadius: '3px',
                 transition: 'all 350ms ease',
                 background: 'white',
-                boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.05)',
+                boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.2)',
               })}
               alt='book cover'
               src={props.img}
