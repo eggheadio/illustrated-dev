@@ -54,7 +54,7 @@ export default function ResourceBook(props) {
                 alignSelf: 'center',
               },
               '.description': {
-                lineHeight: '1.3em',
+                lineHeight: '1.4em',
                 fontSize: '1em',
                 maxWidth: '450px',
               },
