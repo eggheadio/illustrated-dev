@@ -14,6 +14,8 @@ const FullNote = props => {
           borderRadius: '4px',
           boxShadow: '0px 8px 16px -12px rgba(120, 134, 138, 0.75)',
           maxHeight: '100%',
+          maxWidth: props.verticalNote ? '500px' : null,
+          margin: props.verticalNote ? '0 auto' : null,
         }}>
         {props.children}
       </div>

@@ -13,20 +13,26 @@ import Share from '../components/share'
 
 class PostsTemplate extends React.Component {
   render() {
-    const explainer = this.props.data.mdx
+    const post = this.props.data.mdx
     const site = this.props.data.site
     const { next, previous } = this.props.pageContext
-    const thumbnail = get(
-      explainer,
-      'frontmatter.thumbnail.childImageSharp.fluid'
-    )
-    const image = get(explainer, 'frontmatter.image.childImageSharp.fluid')
+    const thumbnail = get(post, 'frontmatter.thumbnail.childImageSharp.fluid')
+    const image = get(post, 'frontmatter.image.childImageSharp.fluid')
+    let categoryLabel
+    const category = post.fields.category
+    if (category === 'explainers') {
+      categoryLabel = 'A Visual Explanation'
+    } else if (category === 'meta') {
+      categoryLabel = 'Meta Post'
+    } else if (category === 'illustrated notes') {
+      categoryLabel = 'Illustrated Notes'
+    }
     return (
       <>
         <SEO
-          description={explainer.frontmatter.description}
+          description={post.frontmatter.description}
           image={thumbnail && `https://illustrated.dev${thumbnail.src}`}
-          title={explainer.frontmatter.title}
+          title={post.frontmatter.title}
         />
         <Container
           noVerticalPadding
@@ -60,7 +66,7 @@ class PostsTemplate extends React.Component {
                   paddingBottom: '0',
                   textTransform: 'capitalize',
                 })}>
-                {explainer.fields.category}
+                {categoryLabel}
               </p>
               <h1
                 css={css({
@@ -77,7 +83,7 @@ class PostsTemplate extends React.Component {
                   margin: '0 auto',
                   paddingTop: '10px',
                 })}>
-                {explainer.frontmatter.title}
+                {post.frontmatter.title}
               </h1>
               <p
                 css={css({
@@ -90,21 +96,21 @@ class PostsTemplate extends React.Component {
                   margin: '20px auto',
                   paddingBottom: '20px',
                 })}>
-                Published or updated on {explainer.frontmatter.date}
+                Published or updated on {post.frontmatter.date}
               </p>
               <MDXProvider components={mdxComponents}>
-                <MDXRenderer>{explainer.body}</MDXRenderer>
+                <MDXRenderer>{post.body}</MDXRenderer>
               </MDXProvider>
               <Share
                 socialConfig={{
                   twitterHandle: site.siteMetadata.author,
                   config: {
-                    url: `https://illustrated.dev/${explainer.frontmatter.slug}`,
-                    title: explainer.frontmatter.title,
+                    url: `https://illustrated.dev/${post.frontmatter.slug}`,
+                    title: post.frontmatter.title,
                     media: `${image && `https://illustrated.dev${image.src}`}`,
                   },
                 }}
-                tags={explainer.frontmatter.tags}
+                tags={post.frontmatter.tags}
               />
             </div>
           </div>
@@ -203,7 +209,7 @@ class PostsTemplate extends React.Component {
 }
 
 export const pageQuery = graphql`
-  query explainerQuery($id: String) {
+  query postQuery($id: String) {
     site {
       siteMetadata {
         author
@@ -241,7 +247,6 @@ export const pageQuery = graphql`
       fields {
         category
       }
-
       body
     }
   }
