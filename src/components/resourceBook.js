@@ -42,6 +42,7 @@ export default function ResourceBook(props) {
               },
               h5: {
                 fontSize: '0.9em',
+                textTransform: 'uppercase',
                 letterSpacing: '0.1em',
                 lineHeight: '1.3em',
               },

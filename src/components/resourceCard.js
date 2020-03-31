@@ -43,8 +43,9 @@ export default function ResourceCard(props) {
             },
             h5: {
               textAlign: 'right',
-              fontSize: '0.8em',
+              fontSize: '0.9em',
               letterSpacing: '0.1em',
+              lineHeight: '1.3em',
             },
             img: {
               height: 'auto',
