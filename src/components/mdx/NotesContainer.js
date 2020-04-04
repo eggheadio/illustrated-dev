@@ -1,7 +1,16 @@
-import styled from '@emotion/styled'
+import React from 'react'
+import { css } from '@emotion/core'
 
-const NotesContainer = styled.div`
-  max-width: 760px;
-  margin: 0 auto;
-`
+const NotesContainer = (props) => {
+  return (
+    <div
+      css={css({
+        maxWidth: '760px',
+        margin: '0 auto',
+      })}>
+      {props.children}
+    </div>
+  )
+}
+
 export default NotesContainer
