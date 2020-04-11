@@ -47,7 +47,7 @@
     "react-lottie": "^1.2.3",
     "react-masonry-component": "^6.2.1",
     "react-responsive-embed": "^2.1.0",
-    "react-scrollama": "^1.0.2",
+    "react-scrollmagic": "^2.2.0",
     "react-share": "^2.4.0",
     "react-transition-group": "^4.3.0",
     "react-twitter-embed": "^2.0.8",
