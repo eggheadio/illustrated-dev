@@ -13,6 +13,7 @@ const APIs = () => {
     stroke-dashoffset: 20;
   }
   `
+  console.log({ linkImage }, { mainImage })
 
   return (
     <svg
