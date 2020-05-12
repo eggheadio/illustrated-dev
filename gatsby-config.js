@@ -8,7 +8,7 @@ module.exports = {
     description: `Illustrated web development & javascript tutorials`,
     author: '@mappletons',
     twitterUsername: '@mappletons',
-    image: '/static/images/id_opengraph.png'
+    image: '/static/images/id_opengraph.png',
   },
   plugins: [
     'gatsby-plugin-printer',
@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-layout',
       options: {
-        component: require.resolve(`./src/layouts/layout.js`)
-      }
+        component: require.resolve(`./src/layouts/layout.js`),
+      },
     },
     {
       resolve: `gatsby-plugin-mdx`,
@@ -36,20 +36,20 @@ module.exports = {
               maxWidth: 900,
               linkImagesToOriginal: false,
               wrapperStyle: {
-                float: 'left'
-              }
-            }
-          }
-        ]
-      }
+                float: 'left',
+              },
+            },
+          },
+        ],
+      },
     },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /content/
-        }
-      }
+          include: /content/,
+        },
+      },
     },
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
@@ -58,40 +58,41 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`,
-        ignore: [`**/\.*`] // ignore files starting with a dot
-      }
+        ignore: [`**/\.*`], // ignore files starting with a dot
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/illustratednotes/`,
         name: 'illustrated notes',
-        ignore: [`**/\.*`] // ignore files starting with a dot,
-      }
+        ignore: [`**/\.*`], // ignore files starting with a dot,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/explainers/`,
         name: 'explainers',
-        ignore: [`**/\.*`] // ignore files starting with a dot,
-      }
+        ignore: [`**/\.*`], // ignore files starting with a dot,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: '',
-        head: true
-      }
+        head: true,
+      },
     },
     'gatsby-plugin-emotion',
+    'gatsby-plugin-netlify',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -100,8 +101,8 @@ module.exports = {
         background_color: '#7A44BB',
         theme_color: '#7A44BB',
         display: 'minimal-ui',
-        icon: 'src/images/id_favicon.svg' // This path is relative to the root of the site.
-      }
+        icon: 'src/images/id_favicon.svg', // This path is relative to the root of the site.
+      },
     },
     {
       resolve: 'gatsby-plugin-web-font-loader',
@@ -111,10 +112,10 @@ module.exports = {
           families: [
             'FF Tisa Web Pro:300,400,700',
             'Brandon Grotesque:400,700',
-            'Freight Sans Pro:300,400,600'
-          ]
-        }
-      }
+            'Freight Sans Pro:300,400,600',
+          ],
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-feed`,
@@ -132,16 +133,16 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
+              return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.description,
                   image_url: `https://${site.siteMetadata.title}/images/id_favicon.svg`,
                   url: `https://${site.siteMetadata.title}/${edge.node.frontmatter.slug}`,
                   guid: `https://${site.siteMetadata.title}/${edge.node.frontmatter.slug}`,
                   enclosure: {
-                    url: `${site.siteMetadata.title}${edge.node.frontmatter.thumbnail.childImageSharp.original.src}`
+                    url: `${site.siteMetadata.title}${edge.node.frontmatter.thumbnail.childImageSharp.original.src}`,
                   },
-                  custom_elements: [{ 'content:encoded': edge.node.html }]
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
                 })
               })
             },
@@ -178,13 +179,13 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: 'Illustrated.dev'
-          }
-        ]
-      }
-    }
+            title: 'Illustrated.dev',
+          },
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-  ]
+  ],
 }

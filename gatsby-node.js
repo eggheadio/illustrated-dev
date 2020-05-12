@@ -26,8 +26,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 const path = require('path')
 
+const REDIRECT_SLUGS = ['databases']
+
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createRedirect, createPage } = actions
+  REDIRECT_SLUGS.forEach((slug) => {
+    createRedirect({
+      fromPath: `/${slug}`,
+      toPath: `https://maggieappleton.com/${slug}`,
+      redirectInBrowser: true,
+      isPermanent: true,
+    })
+  })
+
   return new Promise((resolve, reject) => {
     resolve(
       graphql(
@@ -50,6 +61,7 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     title
                     slug
+                    redirects
                   }
                 }
               }
@@ -74,13 +86,14 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     title
                     slug
+                    redirects
                   }
                 }
               }
             }
           }
         `
-      ).then(result => {
+      ).then((result) => {
         if (result.errors) {
           console.error(result.errors)
           reject(result.errors)
@@ -91,6 +104,8 @@ exports.createPages = ({ graphql, actions }) => {
         const allPosts = result.data.allMdx.edges
 
         pages.forEach(({ node }) => {
+          console.log(node.frontmatter.redirects)
+
           createPage({
             path: `${
               node.frontmatter.title
@@ -103,6 +118,17 @@ exports.createPages = ({ graphql, actions }) => {
         })
 
         allPosts.forEach(({ node }, index) => {
+          console.log(node.frontmatter.redirects)
+          console.log(node.frontmatter.slug)
+          if (node.frontmatter.redirects) {
+            createRedirect({
+              fromPath: `/${node.frontmatter.slug}`,
+              toPath: `/${node.frontmatter.redirects}`,
+              redirectInBrowser: true,
+              isPermanent: true,
+            })
+          }
+
           const next =
             index === allPosts.length - 1 ? null : allPosts[index + 1].node
           const previous = index === 0 ? null : allPosts[index - 1].node
