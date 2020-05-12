@@ -26,7 +26,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 const path = require('path')
 
-const REDIRECT_SLUGS = ['databases']
+// Redirect functionality
+const REDIRECT_SLUGS = ['api', 'databases']
 
 exports.createPages = ({ graphql, actions }) => {
   const { createRedirect, createPage } = actions
@@ -123,7 +124,7 @@ exports.createPages = ({ graphql, actions }) => {
           if (node.frontmatter.redirects) {
             createRedirect({
               fromPath: `/${node.frontmatter.slug}`,
-              toPath: `/${node.frontmatter.redirects}`,
+              toPath: node.frontmatter.redirects,
               redirectInBrowser: true,
               isPermanent: true,
             })
