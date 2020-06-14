@@ -27,7 +27,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 const path = require('path')
 
 // Redirect functionality
-// const REDIRECT_SLUGS = ['api', 'databases', 'drawinginvisibles1']
+// const REDIRECT_SLUGS = ['api', 'databases', 'drawinginvisibles1', 'customhooks']
 
 exports.createPages = ({ graphql, actions }) => {
   const { createRedirect, createPage } = actions
