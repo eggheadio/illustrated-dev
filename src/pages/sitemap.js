@@ -14,7 +14,6 @@ export default function SiteMap({ data: { explainers, meta } }) {
           <h3>
             <Link to={`/${data.fields.slug}`}>{data.frontmatter.title}</Link>
           </h3>
-          <p>{data.excerpt}</p>
         </div>
       ))}
       <h2>The Metalayer</h2>
@@ -23,7 +22,6 @@ export default function SiteMap({ data: { explainers, meta } }) {
           <h3>
             <Link to={`/${data.fields.slug}`}>{data.frontmatter.title}</Link>
           </h3>
-          <p>{data.excerpt}</p>
         </div>
       ))}
     </Main>
@@ -74,7 +72,6 @@ export const pageQuery = graphql`
             category
             slug
           }
-          excerpt(pruneLength: 50)
           frontmatter {
             title
           }
@@ -97,7 +94,6 @@ export const pageQuery = graphql`
             category
             slug
           }
-          excerpt(pruneLength: 50)
           frontmatter {
             title
           }

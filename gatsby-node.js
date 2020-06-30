@@ -27,10 +27,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 const path = require('path')
 
 // Redirect functionality
-// const REDIRECT_SLUGS = ['api', 'databases', 'drawinginvisibles1', 'customhooks']
+const REDIRECT_SLUGS = ['api', 'databases', 'drawinginvisibles1', 'customhooks', 'maintainers', 'advancedjs', 'websecurity', 'immer', 'contentful-gatsby', 'es2019', 'graphql', 'cypress', 'react360', 'vuesocket', 'jsx', 'react-vdom', 'spread', 'fruit-comparison', 'compilers', 'babel', 'resources', 'faq', 'about']
 
 exports.createPages = ({ graphql, actions }) => {
   const { createRedirect, createPage } = actions
+
+  createRedirect({
+    fromPath: `/`,
+    toPath: `https://maggieappleton.com/`,
+    redirectInBrowser: true,
+    isPermanent: true,
+  })
+
   REDIRECT_SLUGS.forEach((slug) => {
     createRedirect({
       fromPath: `/${slug}`,
@@ -101,11 +109,9 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         const pages = result.data.pages.edges
-
         const allPosts = result.data.allMdx.edges
 
         pages.forEach(({ node }) => {
-          console.log(node.frontmatter.redirects)
 
           createPage({
             path: `${
@@ -119,8 +125,6 @@ exports.createPages = ({ graphql, actions }) => {
         })
 
         allPosts.forEach(({ node }, index) => {
-          console.log(node.frontmatter.redirects)
-          console.log(node.frontmatter.slug)
           if (node.frontmatter.redirects) {
             createRedirect({
               fromPath: `/${node.frontmatter.slug}`,
