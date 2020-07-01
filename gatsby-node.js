@@ -123,6 +123,7 @@ exports.createPages = ({ graphql, actions }) => {
               fromPath: `/${node.frontmatter.slug}`,
               toPath: node.frontmatter.redirects,
               redirectInBrowser: true,
+              force: true,
               isPermanent: true,
             })
           }
