@@ -27,7 +27,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 const path = require('path')
 
 // Redirect functionality
-const REDIRECT_SLUGS = ['api', 'databases', 'drawinginvisibles1', 'customhooks', 'maintainers', 'advancedjs', 'websecurity', 'immer', 'contentful-gatsby', 'es2019', 'graphql', 'cypress', 'react360', 'vuesocket', 'jsx', 'react-vdom', 'spread', 'fruit-comparison', 'compilers', 'babel', 'resources', 'faq', 'about']
+const REDIRECT_SLUGS = ['databases', 'drawinginvisibles1', 'customhooks', 'maintainers', 'advancedjs', 'websecurity', 'immer', 'contentful-gatsby', 'es2019', 'graphql', 'cypress', 'react360', 'vuesocket', 'jsx', 'react-vdom', 'spread', 'fruit-comparison', 'compilers', 'babel', 'resources', 'faq', 'about']
 
 exports.createPages = ({ graphql, actions }) => {
   const { createRedirect, createPage } = actions
