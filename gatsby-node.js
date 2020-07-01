@@ -37,8 +37,17 @@ exports.createPages = ({ graphql, actions }) => {
       fromPath: `/${slug}`,
       toPath: `https://maggieappleton.com/${slug}`,
       redirectInBrowser: true,
+      force: true,
       isPermanent: true,
     })
+  })
+
+  createRedirect({
+    fromPath: `/`,
+    toPath: `https://maggieappleton.com/`,
+    redirectInBrowser: true,
+    force: true,
+    isPermanent: true,
   })
 
   return new Promise((resolve, reject) => {
