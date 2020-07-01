@@ -49,7 +49,7 @@ export default function ResourcesPage() {
             alignItems: 'center',
           })}>
           {resourceCourses.map((d, i) => {
-            console.log(d.recCourses)
+            
             return (
               <ResourceCard
                 key={i}

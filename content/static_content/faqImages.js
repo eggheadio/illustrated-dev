@@ -15,7 +15,6 @@ const FAQDiagram = () => {
     }
   `)
 
-  console.log(data.faqDiagram.childImageSharp.fluid)
 
   return (
     <Img
