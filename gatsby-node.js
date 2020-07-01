@@ -32,13 +32,6 @@ const REDIRECT_SLUGS = ['api', 'databases', 'drawinginvisibles1', 'customhooks',
 exports.createPages = ({ graphql, actions }) => {
   const { createRedirect, createPage } = actions
 
-  createRedirect({
-    fromPath: `/`,
-    toPath: `https://maggieappleton.com/`,
-    redirectInBrowser: true,
-    isPermanent: true,
-  })
-
   REDIRECT_SLUGS.forEach((slug) => {
     createRedirect({
       fromPath: `/${slug}`,
